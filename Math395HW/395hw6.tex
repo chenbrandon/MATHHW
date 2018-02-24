@@ -1,0 +1,173 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage[margin=1in]{geometry}
+
+\begin{document}
+
+\noindent Brandon Chen
+
+\noindent MATH 395 HW 5
+
+\noindent Ch 7: 45, 9, 21, 23, 32, 75
+
+\begin{itemize}
+
+	\item[7.45]
+
+		$X_1,X_2,X_3,X_4$ are pairwise uncorrelated random variables, each having mean 0, var 1, compute the correlations of 
+
+		a) $X_1 + X_2$, $X_2 + X_3$
+
+		Corr($X_1+X_2, X_2 + X_3) = \frac{Cov(X_1+X_2, X_2 + X_3)}{\sqrt{Var(X_1 + X_2)Var(X_2+X_3}}$
+
+		Expand numerator, this is $Cov(X_1,X_2) + Cov(X_1,X_3) + Cov(X_2, X_2) + Cov(X_2,X_3)$
+
+		But since pairwise uncorrelated, they are all zero, except for $Cov(X_2,X_2)$, which is just $Var(X_2) = 1$
+
+		Expand denominator, this is $\sqrt{(Var(X_1) + Var(X_2) + 2Cov(X_1,X_2))(Var(X_2)+ Var(X_3) + 2Cov(X_2, X_3))}$
+
+		Since pairwise uncorrelated, cov terms go to 0
+
+		Simplifies to $\sqrt{4} = 2$
+
+		So Corr($X_1 + X_2, X_2 + X_3) = \frac{1}{2}$
+
+		b) $X_1 + X_2$, $X_3 + X_4$
+
+		Corr($X_1+X_2, X_3 + X_4) = \frac{Cov(X_1+X_2, X_3 + X_4)}{\sqrt{Var(X_1 + X_2)Var(X_3+X_4}}$
+
+		Expand numerator, this is $Cov(X_1,X_3) + Cov(X_1,X_4) + Cov(X_2, X_3) + Cov(X_2,X_4)$
+
+		Since pairwise uncorrelated, cov terms go to 0
+
+		Expand denominator, this is $\sqrt{(Var(X_1) + Var(X_2) + 2Cov(X_1,X_2))(Var(X_3)+ Var(X_4) + 2Cov(X_3, X_4))}$
+
+		Cov terms go to 0, denominator simplifies to 2
+
+		So Corr = 0
+
+	\item[7.9]
+
+		A total of $n$ balls numbered 1 through $n$ are put into $n$ urns, also numbered 1 through $n$ in such a wy that ball $i$ is equally likely to go into any of the urns. 
+
+		Hint: Let $X_i = 1$ if urn $i$ is empty, 0 otherwise
+
+	a) Find the expected number of urns that are empty
+
+		$E[X_i] = (1 - \frac{1}{i})(1- \frac{1}{i+1})(1-\frac{1}{1+2})...(1-\frac{1}{n})$
+
+		$E[X] = \sum_{i=1}^{n} E[X_i]$, independent
+
+		$E[X] = \frac{(n-1)}{2}$
+
+	b) Find the probability that none of the urns is empty
+
+		For the urns not to be empty, the $n^{th}$ ball must be dropped into the $n^{th}$ urn.
+
+		This is $\frac{1}{n} \frac{1}{n-1} ... \frac{1}{1} = \frac{1}{n!}$
+
+
+	\item[7.21]
+
+		Hint a: Let $X_i = 0$ if 3 people have birthday on day $i, i = 1,..365$, 0 otherwise
+
+		Hint b: Let $X_i = 1$ if no one has a birthday, day $i$, 0 otherwise
+
+	For a group of 100 people, compute
+
+	a) The expected number of days of the year that are birthdays of exactly 3 people
+
+	3 people have a birthday on day $i$, call it event $X_i$
+
+	This happens with probability $\binom{100}{3}\frac{1}{365}^3 \frac{364}{365}^{97}$
+
+	$E[X] = \sum_{i=1}^{365} E[X_i]$
+
+	$= 365 \binom{100}{3} \frac{1}{365}^3 \frac{364}{365}^{97}$
+
+	b) the expected number of distinct birthday
+
+	If no one has a birthday on day $i$, call this event $X_i$, then this is a $\frac{364}{365}^{100}$ chance
+
+	Then if someone does have a birthday on day $i$, this is complement event, has $1- \frac{364}{365}^{100}$ probability
+
+	Then $E[X] = \sum_{i=1}^{100} (1-E[X_i])$
+
+	$E[X] = 365[1-\frac{364}{365}^{100}]$
+
+	\item[7.23]
+
+		Urn 1 contains 5 white, 6 black
+
+		Urn 2 contains 8 white 10 black
+
+		Two balls are randomly selected from urn 1 and are put into urn 2. If 3 balls are then randomly selected from urn 2, compute the expected number of white balls in the trio.
+
+		Hint: let $X_i = 1$ if $i^{th}$ white ball initially in urn 1 is oen of the three selected, let $X_i = 0$ otherwise
+
+		Similarly, let $Y_i = 1$ if $ith$ white ball from urn 2 is one of the three selected, 0 otherwise.
+
+		The number of the white balls in the trio can now be written as 
+
+		$\sum_1^5 X_i + \sum_1^8 Y_i$
+
+		Want $E[\sum_1^5 X_i + \sum_1^8 Y_i] = \sum_1^5 E[X_i] + \sum_1^8 E[Y_i]$
+
+		$P(X_i = 1) = P$(ith white in urn 2$|$ ith white in urn 1)P(ith white in urn 1) = $\frac{3}{20} \frac{2}{11}$
+
+		$P(Y_i = 1) = \frac{\binom{19}{2}}{\frac{20}{3}} = \frac{3}{20}$
+
+		$E[\sum_1^5 X_i + \sum_1^8 Y_i] = \sum_1^5 \frac{3}{20} \frac{2}{11} + \sum_1^5 \frac{3}{20} = \frac{147}{110}$
+
+	\item[7.32]
+
+		$X_i = 1$ if box $i$ empty, 0 else
+
+		$E[X_i] = P(X_i = 1) = \prod_{i=j}^n 1- \frac{1}{i}$
+
+		Then $Var(X_i) = E[X_i](1-E[X_j])$
+
+		And ofr $j < k$, $E[X_j X_k] = \prod_{i=j}^{k-1} (1 - 1/i) \prod_{i=k}^{n} (1-2/i)$
+
+		So $Cov(X_j, X_k) = \prod_{i=j}^{k-1} (1 - 1/i) \prod_{i=k}^{n} (1-2/i) - \prod_{i=j}^{n} (1 - 1/i) \prod_{i=k}^{n} (1 - 1/i)$
+
+		$Var(X) = \sum_{i=1}^{n} E[X_i](1-E[X_j]) + 2Cov(X_j, X_k)$
+
+	\item[7.75]
+
+		Hint: Identify the distributions from the mgf, and the njust use hteir probabilities $P(X=2)$, etc		
+
+		The moment generating function of $X$ is given by $M_x(t) = e^{2e^t -2}$ and that of $Y$ by $M_y (t) = (\frac{3}{4} e^t + \frac{1}{4})^{10}$
+
+		$X$ is poisson distribution with $\lambda = 2$
+
+		$Y$ is binomial with parameters $10, \frac{3}{4}$
+
+		If $X,Y$ independent, what are
+
+		a) $P(X + Y = 2)$?
+
+		Discrete, sums to 2
+
+		$P(X = 0)P(Y = 2) + P(X=1)P(Y=1) + P(X=2)P(Y=0)$
+
+		$=e^{-2} \binom{10}{2} \frac{3}{4}^2 \frac{1}{4}^8 + 2e^{-2} \binom{10}{1} \frac{3}{4}\frac{1}{4}^9 + 2e^{-2}\frac{1}{4}^{10}$
+
+		b) $P(XY = 0)$?
+
+		Need either 1 or both of $X,Y$ to be 0
+
+		This is $P(X = 0) + P(Y = 0) - P(X=0\cap Y = 0)$
+
+		$=e^{-2} + \frac{1}{4}^{10} - e^{-2}\frac{1}{4}^{10}$
+
+		c) $E[XY]$?
+
+		Independent, linear
+
+		$E[XY] = E[X]E[Y] = 2*10*\frac{3}{4} = 15$
+
+\end{itemize}
+\end{document}

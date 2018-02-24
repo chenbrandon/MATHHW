@@ -1,0 +1,362 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage[margin=1in]{geometry}
+
+\begin{document}
+
+\noindent Brandon Chen
+
+\noindent MATH 394 HW 4
+
+\noindent 3.79, 3.84 on p.97 of Chapter 3. 
+
+\noindent 4, 11, 13, 19, 20, 21, 24, 29, 32, 33, 35 and 39 on page 163 of Chapter 4
+
+
+\begin{itemize}
+\item[3.79]
+  Let A = \{sum = 7\} = \{(1,6), (2,5), (3,4), (4,3), (5,2), (6,1)\}
+
+  Then P(A) = $\frac{6}{36} = \frac{1}{6}$
+
+  Let B = \{sum = even\}
+
+  Then P(B) = $\frac{1}{2}$, since half the time, both dice will be both even or both odd.
+
+  We want the probability of getting 2 sevens before 6 evens.
+
+  So in successive rolls, P(A) = $\frac{\frac{1}{6}}{\frac{1}{6} + \frac{1}{2}} = \frac{1}{4}$
+
+  And P(B) = $\frac{\frac{1}{2}}{\frac{1}{6}+\frac{1}{2}} = \frac{3}{4}$
+
+  Call the roll a success if the sum is 7
+
+  We know that the probability of exactly k successes in m+n-1 trials is
+
+  $\binom{m+n-1}{k}p^k (1-p)^{m+n-1-k}$
+
+  So it follows that the desired probability of n successes before m failures is
+
+  $P_{n,m} = \sum_{k=n}^{m+n-1} \binom{m+n-1}{k} p^k(1-p)^{m+n-1-k}$
+
+  So $P(2 sevens before 6 evens) = \sum_{k=2}^{2+7-1} \binom{2+6-1}{k} p^k (1-p)^{2+6-1-k}$
+
+  We know $\sum_{k=0}^{2+7-1} \binom{2+6-1}{k} p^k (1-p)^{2+6-1-k} = 1$
+
+  So $P(2sevensbefore6evens) = 1 - \sum_{k=0}^{1} \binom{7}{k} p^k (1-p)^{7-k}$
+
+  This is equal to $1 - [\binom{7}{0}p^0(1-p)^{7} + \binom{7}{1} p^1 (1-p)^{6}]$
+
+  We call 7 a success, so $p = \frac{1}{4}, (1-p) = \frac{3}{4}$
+
+  So the desired probability is $1 - [\binom{7}{0}\frac{1}{4}^0(\frac{3}{4})^{7} + \binom{7}{1} \frac{1}{4}^1 (\frac{3}{4})^{6}]$
+
+  Which is equal to $\frac{4547}{8192} \approx 0.55505$
+\item[3.84]
+  a) If the balls are replaced, the probability of grabbing a white ball is always $\frac{4}{12} = \frac{1}{3}$
+
+  P(A) winning = $\sum_{i=0}^{\infty} P(\text{A wins on the $i^{th}$ draw})$
+
+  For A to win on any given $i^{th}$ draw, A must draw a white with probability $\frac{1}{3}$, and everyone from previous hands must lose with probability $\frac{2}{3}$ each for each previous draw.
+
+  This is equal to $\sum_{i=0}^{\infty} \frac{1}{3}(\frac{2}{3})^{3i}$
+
+  This is a geometric series, and converges to $\frac{a}{1-r}$
+
+  That is $\frac{1}{3} \frac{1}{1-\frac{8}{27}} = \frac{9}{19}$
+
+  P(B) winning = $\sum_{i=0}^{\infty} P(\text{B wins on the $i^{th}$ draw})$
+
+  For B to win on any given $i^{th}$ draw, A must draw a non white ball with probability $\frac{2}{3}$, and B must draw a white ball with probability $\frac{2}{3}$, and all previous draws must be non white with probability $\frac{2}{3}$
+
+  This is equal to $\frac{2}{3}\frac{1}{3} \frac{1}{1-\frac{8}{27}} = \frac{6}{19}$
+
+  P(C) winning = 1 - P(A) - P(B) = $\frac{4}{19}$
+
+  b) If the balls are not replaced
+
+  P(A) = Sum P(A wins on $i^{th}$ draw)
+
+  This is equal to $\frac{4}{12} + [\frac{8}{12}\frac{7}{11}\frac{6}{10}]*\frac{4}{9} + [\frac{8}{12}\frac{7}{11}\frac{6}{10}\frac{5}{9}\frac{4}{8}\frac{3}{7}]*\frac{4}{6} = \frac{7}{15} \approx 0.4666$
+
+  P(B) = Sum P(B wins on $i^{th}$ draw)
+
+  $\frac{8}{12}\frac{4}{11} + [\frac{8}{12}\frac{7}{11}\frac{6}{10}]\frac{5}{9}\frac{4}{8} + [\frac{8}{12}\frac{7}{11}\frac{6}{10}\frac{5}{9}\frac{4}{8}\frac{3}{7}]\frac{2}{6}\frac{4}{5} = \frac{53}{165} \approx 0.3212$
+
+  P(C) = 1 - P(A) - P(B) $\approx 0.212$
+\item[4.4]
+  There are 5 men, 5 women, they are ranked, all unique, all rankings equally likely
+
+  Let X=i denote women's highest rank achieved at rank at i
+
+  P(X=1) is when the highest ranked woman is rank 1
+
+  Out of 5 women, pick 1 to be rank 1. There are 9! remaning permutations for the remaining people
+
+  So P(X=1) = $\frac{\binom{5}{1} 9!}{10!} = \frac{1}{2}$
+
+  P(X=2) when the highest ranked woman is rank 2
+
+  The rank 1 person is male. 5 males to choose one to be rank 1
+
+  The rank 2 is female, 5 females to choose one to be rank 2
+
+  8! permutations for the remaining rankings
+
+  P(X=2) = $\frac{5\binom{5}{1} 8!}{10!} = \frac{5}{18}$
+
+  Rank 1 and 2 are male, 5 choices male rank 1, 4 choices male rank 2
+
+  Rank 3 female, 5 females choose 1 for rank 3, 7! permutations for others
+
+  P(X=3) = $\frac{5*4\binom{5}{1} 7!}{10!} = \frac{5}{36}$
+
+  Rank 1,2, and 3 are male. 5 choices for rank 1, 4 for 2, 3 for 3. 5 choices for female rank 4. 6! permutations for remaining people.
+
+  P(X=4) = $\frac{5*4*3\binom{5}{1} 6!}{10!} = \frac{5}{84}$
+
+  Rank 1,2,3, and 4 male. 5 choices female for rank 5. 5! permutations for remaining people.
+
+  P(X=5) = $\frac{5*4*3*2\binom{5}{1}5!}{10!} = \frac{5}{252}$
+
+  Rank 1,2,3,4, and 5 are male. 5 choices for female rank 6. 4! permutations for remaining.
+
+  P(X=6) = $\frac{5!\binom{5}{1}4!}{10!} = \frac{1}{252}$
+
+  Rank 1,2,3,4,5, and 6 are male. impossible.
+
+  P(X=7) = P(X=8) = P(X=9) = P(X=10) = 0
+\item[4.11]
+  a)
+  For 3, $10^3 = 3*333 + 1$, so 333 numbers between 1 and $10^3$ are divisible by 3
+
+  So P(3) = $\frac{333}{1000}$
+
+  For 5, $10^3 = 5*200$, so 200 numbers between 1 and 1000 are divisible
+
+  P(5) = $\frac{200}{1000}$
+
+  For 7, $10^3 = 7*142 + 6$, so 142 numbers between 1 and 1000 are divisible
+
+  P(7) = $\frac{142}{1000}$
+
+  For 15, $10^3 = 15*66 + 10$, so 66 numbers
+
+  P(15) = $\frac{66}{1000}$
+
+  For 105, $10^3 = 105*9 + 55$, so 9 numbers
+
+  P(105) = $\frac{9}{1000}$
+
+  For k large enough, $P(a \text{ divides } N)$ converges to $\frac{1}{a}$
+
+  b) Find $P(\mu (N) = 0)$, as $k \rightarrow \infty$
+
+  $P(\mu (N) = 0)$ = P(N is not divisible by $P_i^2, i \geq 1$)
+
+  = $\prod_i^{\infty}$ P(N is not divisible by $p_i^2$)
+
+  = $\prod_i^{\infty} $ P(1 - N is divisible by $p_i^2$)
+
+  Know that the probability of a number $N$ being divisible by a number $a$ from $10^k$ for k large converges to $\frac{1}{a}$
+
+  In this case, $a$ = $p_i^2, i \geq 1$
+
+  = $\prod_i^{\infty}(1 - \frac{1}{p_i^2})$
+
+  Know that this is equal to $\frac{6}{\pi ^2}$
+\item[4.13]
+  Let s be a successful sale
+
+  Let 1st be the first sale, and 2nd be the second sale
+
+  Let dlx be a deluxe sale, and std be a standard sale
+
+  $P(s|1st) = 0.3$
+
+  $P(s|2nd) = 0.6$
+
+  $P(dlx|s) = 0.5$
+
+  $P(std|s) = 0.5$
+
+  Let X be the value of all sales.
+
+  X = \{0, 500, 1000, 1500, 2000\}
+
+  P(X = 0) = $P(s^c | 1st) * P(s^c|2nd) = (1-0.3)(1-0.6) = 0.28$
+
+  P(X = 500) = $P(s^c | 1st) * P(s|2nd) * P(std|s) + P(s|1st)(std|s) * P(s^c | 2nd) = (1-0.3)(0.6)(0.5) + (0.3)(0.5)*(1-0.6) = 0.27$
+
+  P(X = 1000) =
+
+  $P(s|1st)*P(std|s)*P(s|2nd)P(std|s) + P(s|1st)P(dlx|s)P(s^c|2nd) + P(s^c|1st)P(s|2nd)P(dlx|s) = [0.3*0.5*0.6*0.5]+[0.3*0.5*0.4] + [0.7*0.6*0.5] = 0.315$
+
+  P(X = 1500) = $P(s|1st)*P(dlx|s)*P(s|2nd)*P(std|s) + P(s|1st)*P(std|s)+P(s|2nd)*P(dlx|s) = [0.3*0.5*0.6*0.5] + [0.3*0.5*0.6*0.5] = 0.09$
+
+  P(X = 2000) = $P(s|1st)*P(dlx|s)*P(s|2nd)*P(dlx|s) = [0.3*0.5*0.6*0.5] = 0.045$
+\item[4.19]
+  $P(b < 0) = 0$
+
+  $P(0 \leq b < 1)  = \frac{1}{2}$
+
+  $P(1 \leq b < 2) = \frac{3}{5} - \frac{1}{2} = \frac{1}{10}$
+
+  $P(2 \leq b < 3) = \frac{4}{5} - \frac{3}{5} = \frac{1}{5}$
+
+  $P(3 \leq b < 3.5) = \frac{9}{10} - \frac{4}{5} = \frac{1}{10}$
+
+  $p(b \geq 3.5) = 1 - \frac{9}{10} = \frac{1}{10}$
+\item[4.20]
+  a) $P(X > 0) = $ P(Win first) + P(lose, win, win)
+
+  = $\frac{18}{38} + \frac{20}{38}\frac{18}{38}^2 \approx 0.5918$
+
+  b) No, this is not a foolproof strategy because it is possible to win 1, or lose 1 or 3.
+
+  c) To win 1, player can win first, or lose and win 2nd and 3rd.
+
+  To end with 0, impossible.
+
+  To lose 1, player loses first, and then plays a second and third round. There are 2 choices to pick 1 to win, the other is a loss.
+
+  To lose 2, it is impossible.
+
+  To lose 3, the player loses the first, and loses the second and third.
+  
+  $E[X] = [1 * \frac{18}{38} + \frac{20}{38}\frac{18}{38}^2] + [(-1) * \frac{20}{38}\binom{2}{1}\frac{20}{38}\frac{18}{38}] + [(-3) * \frac{20}{38}^3] \approx -0.10803$
+\item[4.21]
+  148 students
+
+  a) It is more likely to select a student in a bigger bus than it is to select a student from any bus with equal probability. So $E[X] > E[Y]$
+
+  b) $E[X] = 40*\frac{40}{148} + 33*\frac{33}{148} + 25*\frac{25}{148} + 50*\frac{50}{148} \approx 39.28$
+
+  $E[Y] = \frac{(40 + 33 + 25 + 50)}{4} = 37$
+\item[4.24]
+  P(b guess 1) = p
+  P(b guess 2) = 1 - p
+
+  Loss = 3/4 unit paid
+
+  Win = i units received
+
+  a) Determine expected if A has written down number 1
+
+  $E[X] = p*1 - (1-p)\frac{3}{4}$
+
+  b) Determine expected if A has written down number 2
+
+  $E[X] = p*-\frac{3}{4} + (1-p)*2$
+
+  Set the two equations equal to each other to find best p
+
+  $p*1 - (1-p)\frac{3}{4} = p*-\frac{3}{4} + (1-p)*2$
+
+  Solving for p, we get $p = \frac{11}{18}$
+
+  So maximum at $p = \frac{11}{18}$, so max = $\frac{23}{72}$
+
+  c) P(a writes 1) = q
+
+  P(a writes 2) = 1-q
+
+  $E[X] = q*1 - (1-q)*\frac{3}{4}$
+
+  d) $E[X] = -\frac{3}{4}*q + (1-q)*2$
+
+  Setting the equations equal and solving for q,
+
+  We get $q = \frac{11}{18}$. At this value, A's maximum loss is equal to B's maximum gain.
+\item[4.29]
+  There are two possibilities: Machine 1 is broken, with probability p, or Machine 2 is broken with probability 1-p
+
+  If we check machine 1 first, cost is $C_1$, and there is a $(1-p)$ probability that machine 2 is broken instead, and we need to check that for $C_2$ and pay $R_2$ for repairs. Otherwise there is a p probability that 1 is the problem so we pay $R_1$ to fix it
+
+  Then the expected value for cost is $C_1 + (1-p)(C_2 + R_2) + (p)(R_1)$
+
+  If we check machine 2 first, cost is $C_2$, and there is a p probability that machine 2 is broken, and we need to check that for $C_1$ and pay $R_1$ for repair. Otherwise there is a $(1-p)$ probability that 2 is the problem, so we pay $R_2$ to fix it
+
+  Then the expected value for cost is $C_2 + (p)(C_1 + R_1) + (1-p)(R_2)$
+
+  We would want to it in ascending order if the expected value for cost of checking 1 first is less than the expected value of cost for checking 2 first
+
+  So we check when $C_1 + (1-p)(C_2 + R_2) + (p)(R_1) \leq C_2 + (p)(C_1 + R_1) + (1-p)(R_2)$
+
+  This is equivalent to $C_1 \leq p(C_1 + C_2)$
+
+  So when the inequality $C_1 \leq p(C_1 + C_2)$ is not satisfied, it is better to reverse the checking order.
+\item[4.32]
+  100 people, 10 groups of 10 people
+
+  0.1 probability for disease, each person, independent
+
+  Let p = probability disease = 0.1
+
+  If someone in the group of 10 is positive, with a probability $(p)^{10}$, then 11 tests must be conducted
+
+  If no one in the group of 10 is positive, with a probability $(1-p)^{10}$, then only 1 test is performed
+
+  $E[X] = 1[(1-0.1)^{10}] + 11[(0.1)^{10}] \approx 0.3486$
+\item[4.33]
+  Purchase for 10
+
+  Sell for 15
+
+  Demand is a binomial variable, n = 10
+
+  Probability of purchase $p = \frac{1}{3}$
+
+  Binomial, so we know $E[X] = np = \frac{10}{3} \approx 3.333$
+
+  So he can expect to sell 3 papers (can't buy and sell fractions of paper), so he should purchase 3 papers to maximize his profit.
+\item[4.35]
+  5 red marbles, 5 blue marbles
+
+  Draw 2 randomly
+
+  If they are the same color, win 1.10
+
+  If different colors, lose 1
+
+  a) Find the expected value of win
+
+  Two events can happen, either they are both the same color, or not the same
+
+  Let p = both same color
+
+  Then E[X] = p(1.1) + (1-p)(-1) = 2.1p - 1
+
+  There are 5 red marbles, and 5 blue marbles. Then the probability of picking two different colors $ = 1 - p = \frac{\frac{5}{1}\frac{5}{1}}{\binom{10}{2}} = \frac{5}{9} \approx 0.555$
+
+  So $p = \frac{4}{9} \approx 0.4444$
+
+  So $E[X] = 2.1(\frac{4}{9}) - 1 = \frac{-1}{15} \approx -0.0666$
+
+  b) Find the variance of the amount you win
+
+  $Var(X) = E[X^2] - (E[X])^2$
+
+  Find $E[X^2]$
+
+  $E[X^2] = (1.1)^2 \frac{4}{9} + (-1)^2 \frac{5}{9} = \frac{82}{75} \approx 1.09333$
+
+  So $Var(X) = \frac{82}{75} - [\frac{-1}{15}]^2 = \frac{49}{45} \approx 1.0888$
+\item[4.39]
+  Urn contains 3 white balls, 3 black balls
+
+  Draw a ball, with replacement.
+
+  What is the probability that of the first 4 balls drawn, exactly 2 are white?
+
+  We know $P(X = k) = \binom{n}{k}p^k(1-p)^{n-k}$
+
+  Probability of drawing a black or white ball is 0.5 each
+
+  So $n = 4, k = 2, p = 0.5$
+
+  So $P(X = 2) = \binom{4}{2} 0.5^2 (1-0.5)^{4-2} = \frac{3}{8} \approx 0.375$
+\end{itemize}
+\end{document}

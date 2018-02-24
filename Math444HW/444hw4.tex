@@ -1,0 +1,184 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{mathrsfs}
+\usepackage[margin=1in]{geometry}
+
+\begin{document}
+
+\noindent Brandon Chen
+
+\noindent MATH 444 HW 4
+
+\noindent 3 H, J, K, L
+
+\begin{itemize}
+
+	\item[3H]
+
+		Prove that every circle contains infinitely many points [hint: use exercise 3F and 3G]
+
+		Given any circle, it has a center $O$ and radius $r$
+
+		The circle is described by $\mathscr{C}(O,r) = \{P:OP = r\}$
+
+		We know by exercise 3F that the point $O$ lies on infinitely many distinct lines. 
+
+		Given any one of those distinct lines, call it $\ell$, there exists a coordinate function $f:\ell \rightarrow \mathbb{R}$ such that $f(O) = 0$
+
+		$f$ is bijective, take $P = f^{-1} (r)$
+
+		Then $OP = |f(P) - f(O)| = |r - 0| = r$, so $P$ is on the circle
+
+		Claim: For any point $P$ on the circle, there is only one line connecting $O$ and $P$
+
+		\indent Assume two lines, $\ell_1, \ell_2$ connect $O$ and $P$
+
+		\indent Then this violates that distinct lines must not contain 2 of the same points. 
+
+		So for any point $P$ on the circle, there must be only one unique line connecting $O$ and $P$
+
+		Since there are infinitely many distinct lines through $O$, there are infinitely distinct points on the circle.
+
+	\item[3J]
+
+		Prove Theorem 3.35 (the segment construcion theorem) [Hint: use an adapted coordinate function. Look ath the proof of theorem 3.27 for inspiration.]	
+
+		Theorem 3.35: Suppose $\overrightarrow{a}$ is a ray starting at the point $A$ and $r$ is a positive real number. Then there exists a unique point $C$ in the interior of $\overrightarrow{a}$ such that $AC = r$
+
+		$\overrightarrow{a}$ is a ray, it is part of a line, call it $\ell$
+
+		$\ell$ has a coordinate function $f:\ell \rightarrow \mathbb{R}$, and $f(A) = 0$
+
+		And $\overrightarrow{a}$ is described as $\{P\in\ell : f(P) > 0\}$
+
+		Let $C = f^{-1}(r)$
+
+		Then $f(C) > 0$, so $C$ is on the ray
+
+		And $AC = |f(C) - f(A)| = |r - 0| = r$
+
+		So there exists a point $C$ on the ray such that the distance $AC = r$
+
+		Show that this point $C$ is unique
+
+		Assume that $C$ is not unique, then there must be another point, call it $D$ such that it is on the ray and $AD = r$
+
+		Then $AD = |f(D) - f(A)| = r$
+
+		Then $|f(D)| = r$
+
+		Then $f(D) = \pm r$
+
+		Case: $f(D) = +r$
+
+		Then since $f$ is bijective, $C = D$, contradicts that $D$ is not $C$
+		
+		Case: $f(D) = -r$
+
+		Then $f(D) < 0$
+
+		Then $D$ is not on the ray, contradiction
+
+		So $C$ must be unique.
+
+	\item[3K]
+
+		Prove Corollary 3.37 (Euclid's segment cutoff theorem)
+
+		Corollary 3.37: If $\overline{AB}$ and $\overline{CD}$ are segments with $CD>AB$, there is a unique point $E$ in the interior of $\overline{CD}$ such that $\overline{CE} \cong \overline{AB}$
+
+		Let $r = AB$
+
+		$\overline{CD}$ is a segment on the line $\ell$
+
+		$\ell$ has a coordinate function $f:\ell \rightarrow \mathbb{R}$ such that $f(C) = 0, f(D) > 0$
+
+		Then all points on $\overline{CD}$ are $\{P\in\ell : 0 \leq f(P) \leq f(D)\}$
+
+		We know $AB < CD$, so $|f(D) - f(C)| = |f(D)| = f(D) > r$
+
+		Then let $E = f^{-1}(r)$
+
+		Then $f(E) = r, 0 < r < f(D)$, so $E$ is on the segment
+
+		And $CE = |f(E) - f(C)| = |r - 0| = AB$
+
+		So there exists a point $E$ on the segment $\overline{CD}$ such that $CE = AB$
+
+		Show that $E$ is a unique point
+
+		Assume that $E$ is not unique, then there exists another point $F$ such that $CF = AB$, and $F$ is on the segment $CD$
+
+		If $CF = AB$, then $|f(F) - f(C)| = r = AB$
+
+		$|f(F)| = r$
+
+		Then $f(F) = \pm r$
+
+		Case 1: $f(F) = r$
+
+		Then since $f$ is bijective, $F = E$, contradicts that $F \neq E$
+
+		Case 2: $f(F) = -r$
+
+		Then $f(F) = -r < 0$, then $F$ is not on the segment $\overline{CD}$, contradiction
+
+		So $E$ must be unique.
+
+	\item[3L]
+
+		Prove Theorem 3.42 (on intersections and unions of rays).
+
+		Theorem 3.42: Suppose $A,B$ are two distinct points. Then the following set of equalities hold
+
+		a) $\overrightarrow{AB} \cap \overrightarrow{BA} = \overline{AB}$
+
+		Show that $\overrightarrow{AB} \cap \overrightarrow{BA} \subseteq \overline{AB}$
+
+		Rays $\overrightarrow{AB}, \overrightarrow{BA}$ exist on the line $\ell$ containing $A,B$
+
+		Then there exists a coordinate function $f: \ell \rightarrow \mathbb{R}, f(A) = 0, f(B) > 0$
+
+	  So $\overline{AB} = \{P\in\ell : 0 \leq f(P) \leq f(B)\}$
+
+		Points in $\overrightarrow{AB}$ satisfy $\{P\in\ell : f(P) \geq 0\}$
+
+		And $\overrightarrow{BA}$ satisfy $\{P\in\ell : f(P) < f(B)\}$
+
+		So points in $\overrightarrow{AB} \cap \overrightarrow{BA}$ satify $P\in\ell : 0 \leq f(P) \leq f(B)$
+
+		So $\overrightarrow{AB} \cap \overrightarrow{BA} \subseteq \overline{AB}$
+
+		Show that $\overline{AB} \subseteq \overrightarrow{AB} \cap \overrightarrow{BA}$
+
+		Points in the segment $\overline{AB}$ are $\{P\in\ell : 0 \leq f(P) \leq f(B)\}$
+
+		And we know points in $\overrightarrow{AB} \cap \overrightarrow{BA}$ satify $P\in\ell : 0 \leq f(P) \leq f(B)$
+
+		So $\overline{AB} = \overrightarrow{AB} \cap \overrightarrow{BA}$
+
+		b) $\overrightarrow{AB} \cup \overrightarrow{BA} = \overleftrightarrow{AB}$
+
+		Show that $\overrightarrow{AB} \cup \overrightarrow{BA} \subseteq \overleftrightarrow{AB}$
+
+		Points in $\overrightarrow{AB}$ satisfy $\{P\in\ell : f(P) \geq 0\}$
+
+		And $\overrightarrow{BA}$ satisfy $\{P\in\ell : f(P) < f(B)\}$
+
+		So $\overrightarrow{AB} \cup \overrightarrow{BA} = \{P\in\ell : f(P) \geq 0\} \cup \{P\in\ell : f(P < f(B)\}$
+
+		So $\overrightarrow{AB} \cup \overrightarrow{BA} \subseteq \ell$
+
+		Show $\ell \subseteq \overrightarrow{AB} \cup \overrightarrow{BA}$
+
+		Given a point $P$ in $\ell$, then show that $P \in \overrightarrow{AB} \cup \overrightarrow{BA}\}$
+
+		We know $\overrightarrow{AB} \cup \overrightarrow{BA} = \{P\in\ell : f(P) \geq 0\} \cup \{P\in\ell : f(P < f(B)\}$
+
+		So $P \in \ell$, which is true.
+
+		So $\overrightarrow{AB} \cup \overrightarrow{BA} \subseteq \overleftrightarrow{AB}$
+\end{itemize}
+\end{document}

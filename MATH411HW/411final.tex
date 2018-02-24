@@ -1,0 +1,545 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath} 
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage[margin=1in]{geometry} % for margins
+\begin{document}
+
+\begin{itemize}
+\item[memorize these]
+
+  Bezouts theorem, for integers $a,b$, there exists integers $r,s$ such that $ar + bs = gcd(a,b)$
+
+  The solution for $ax + by = e$ can be found by euclidean, works only if $gcd(a,b) | e$
+
+  Theorem 6.2 - $a,m$ are positive integers, $a<m$, The element $[a]_m$ is a unit in $\mathbb{Z}_m$ if and only if they are relatively prime ($gcd(a,m) = 1$)
+
+  If $m$ is not prime, then $m = ab$ for some $a,b < m$
+
+  Multiplicative identity: this element multiplied by another element X has product X
+
+  Unit: If this element Y multiplied by another element Z produces the multiplicative identity
+
+  Field: If all elements other than 0 are units
+
+  Nonzero divisor: exists non zero elements a,b such that ab = 0 in the ring
+
+  Integral domain: there are no nonzero divisors
+
+  $\phi(m)$ is the number of units in the ring $\mathbb{Z}_m$, or the count of numbers relatively prime to $m$ in $\mathbb{Z}_m$
+
+  Euler's theorem, if $u$ is a unit (u relatively prime to m), and $m > 1$, then for any unit in the ring $\mathbb{Z}_m$, then $u^{\phi(m)} = 1$
+
+  Greatest common divisor - Find the lowest exponents
+
+  Least common multiple - Find the highest exponents
+
+  Inaccessible N = am - a - m
+
+  $(\sqrt{2} - 1)^n,(\sqrt{2} + 1)^n$ are units, are inverses
+
+  7.6, Roots of unity for $\mathbb{Z}[i]$, for a,b real numbers
+
+  Second root of unity, 1, -1
+
+  Third $-\frac{1}{2} + \frac{\sqrt{3}}{2}i, \pm 1$
+
+  Fourth, $\pm i, \pm 1$
+
+  Sixth, $\frac{1}{2} \pm \frac{\sqrt{3}}{2}i, \pm 1$
+
+  Roots of $\mathbb{Z}[i]$, for a,b integers are 1,-1, i, -i
+
+  RSA = $c^{d} = (p^{e})^d = p^{ed} = p^{1 + \phi(n)t}$ so $c^d = p$ (mod n)
+
+  Want to solve for POSITIVE $d$ in $ed + \phi(n)f = 1$, using euclidean
+
+  Polynomial of degree 0 = constants
+
+  Polynomial of negative degree, is 0, has degree $-\infty$
+
+  Polynomial is reducible if $F(x) = g(x)h(x)$ for $degree(h(x)), degree(h(x))$ both less than degree(F(x)), irreducible otherwise
+
+  Root of F(x) if $F(x) = (x - root)h(x)$, that is, (x-root) divides F(x)
+
+  If F(x) is degree n, then there are at most n distinct roots
+
+  Division: a(x), b(x) nonzero, b(x) = a(x)q(x) + r(x)
+
+  \newpage
+
+\item[1]
+  a) Use the Euclidean algorithm to find an integer solution to the equation $$7x + 37y = 1$$
+
+  First, need to check that for $ax + by = e, gcd(a,b) = d, d|e$
+
+  Find gcd(7,37), by Euclidean Algorithm
+
+  $37 = 7(5) + 2$
+
+  $7 = 2(3) + 1$
+
+  $2 = 1(2) + 0$
+
+  Reverse it to find values for $x,y$
+
+  i) $1 = 7 + 2(-3)$
+
+  ii) $2 = 37 + 7(-5)$
+
+  Plugin the value for 2 into i)
+
+  $1 = 7 + (37 + 7(-5))(-3)$
+
+  Simplify
+
+  $1 = 7(16) + 37(-3)$
+
+  Then $(x,y) = (16,-3)$ is a solution to the equation
+
+  b) Explain how to use the solution of part(a) to find all solutions to the equation $7x + 37y = 3$
+
+  We know that $7(16) + 37(-3) = 1$
+
+  So multiplying the entire equation by 3, the equivalent equation is
+
+  $7(48) + 37(-9) = 3$
+
+  Then $(x,y) = (48, -9)$ is a solution to the equation
+
+  We know that there are infinitely many solutions, $x,y$ take the form
+
+  $x = x_0 + \frac{b}{gcd(a,b)} t$ for some integer $t$
+
+  $y = y_0 - \frac{a}{gcd(a,b)} t$ for some integer $t$
+
+  So all solutions $(x,y)$ for $7x + 37 = 3$ are in the form $(x,y) = (48 + 37t, -9 - 7t)$
+
+  c) Explain how to use the solution of part(a) to find all a solution to the congruence $7x \equiv 1$ (mod 37)
+
+  This is equivalent to saying that $37 | 7x - 1$, which has solutions $7x + 37y = 1$
+
+  So the congruence $7x \equiv 1$ (mod 37) can be satisfied using $x = 16$
+
+  d) Explain why $[7]$ is a unit in the ring $\mathbb{Z}_{37}$
+
+  Know by theorem 6.2 that 
+
+  $[7]$ is a unit in $\mathbb{Z}_{37}$ if and only if $gcd(7,37) = 1$
+
+  7 is relatively prime to 37, so $[7]$ is a unit in $\mathbb{Z}_{37}$
+
+\item[2]
+  a) List the units in $\mathbb{Z}[i]$, indicating for each one what its multiplicative inverse is. Make sure to prove you have all the units
+
+  Units are
+
+  1, inverse 1
+
+  -1, inverse -1
+
+  i, inverse -i
+
+  -i, inverse i
+
+  Prove that these are all the units
+
+  Suppose $(a + bi)$ is a unit with inverse $(c + di)$
+
+  Then $(a + bi)(c + di) = (ac - bd) + (cb + ad)i = 1$
+
+  The right hand side has zero multiples of $i$, so $(ac - bd) = 1, (cb + ad) = 0$
+
+  We know that product $(a + bi)(a - bi)(c + di)(c - di)$ = 1
+
+  And $(a+bi)(a-bi) = (a^2 + b^2)$, is an integer
+
+  And $(c+di)(c-di) = (c^2 + d^2)$, is an integer
+
+  And $(a^2 + b^2)(c^2 + d^2) = 1$
+
+  So $a^2 + b^2 = \pm 1$, but $a^2 + b^2 \geq 0$, so $a^2 + b^2 = 1$
+
+  But $a^2 + b^2 = 1$ has only 4 integer solutions $(a,b) \in \{ (1,0), (0,1), (-1,0) (0,-1) \}$
+
+  These $a,b$ values correspond to units in $\mathbb{Z}[i]$ $a + bi$: $1, i, -1, -i$
+
+  b) Find the smallest positive integer $N$ so that $u^N = 1$ for all units $u \in\mathbb{Z}[i]$
+
+  $1^1 = 1$
+
+  $-1^2 = 1$
+
+  $i^2 = -1, (i^2)^2 = 1$, so $i^4 = 1$
+
+  $(-i)^2 = -1, ((-i)^2)^2 = 1$, so $(-i)^4 = 1$
+
+  So the smallest positive integer $N$ is $4$
+
+  c) Provide a nontrivial factorization of 53 in $\mathbb{Z}[i]$. Explain why your factorization is not trivial.
+
+  A factorization is not trivial is $n = rs$, where neither $r$ nor $s$ is a unit
+
+  The units in $\mathbb{Z}[i]$ are $1,-1,i,-i$
+
+  We know $53 = 49 + 4$
+
+  This is $53 = 7^2 + 4^2$
+
+  Then a non trivial factorizaion would be $r = (7 + 4i), s = (7 - 4i)$, since neither $r,s$ are units
+
+  d) Factor 130 as a product of six non-units in $\mathbb{Z}[i]$
+
+  We know $130 = 2*5*13$
+
+  And we know $2 = 1^2 + 1^2, 5 = 2^2 + 1^2, 13 = 3^2 + 2^2$
+
+  So a nontrivial factorization would be $(1+i)(1-i)(2+i)(2-i)(3+2i)(3-2i)$
+
+\item[3]
+  Suppose that $R$ is a ring with additive identity 0. An element $r$ of $R$ is called a zero divisor if $r$ is nonzero and there is a nonzero element $s$ of $R$ such that $rs = 0$
+
+  a) Find a zero divisor of $\mathbb{Z}_{10}$ and explain why it is one
+
+  Example, 2 is a nonzero divisor of the ring, since $2*5 = 0$ (mod 10)
+
+  So $2*5 = 0$ in the ring $\mathbb{Z}_{10}$
+
+  b) Suppose that $m \geq 2$ is an integer that is not a prime. Find a zero-divisor in $\mathbb{Z}_m$ and explain why it is one
+
+  We know $m$ not prime, so $m = ab$ for integers $a,b < m$
+
+  So take the element $a$ in the ring, then it is a zero divisor since $b$ is also an element in the ring and $ab = 0$ (mod m), so $[a][b] = 0$ in the ring
+
+  c) Suppose that $p$ is a prime number. Recall that if $p$ divides a product $ab$ of two integers, then it divides at least one of $a, b$. Use this to prove that there are no zero-divisors in $\mathbb{Z}_p$
+
+  By contradiction: Assume that there a non zero divisor of $\mathbb{Z}_p$
+
+  Suppose that $a$ is a zero divisor of $p$, then $a$ is nonzero, and $p|ab$
+
+  $p|ab$, so p divides at least one of $a,b$
+
+  Without loss of generality, assume $p|a$
+
+  Then $a = pk$ for some integer $k$
+
+  So $a \in \{0, p, 2p, 3p, .. kp\}$
+
+  But all elements in the ring $\mathbb{Z}_p$ are $\{0, 1, 2,...,p-1\}$
+
+  So $a$ must be 0
+
+  But this contradicts that $a$ is nonzero, so there must be no zero divisors in the ring
+
+\item[4]
+  a) Which element of $R$ is a multiplicative identity. Why?
+
+  The multiplicative identity is the one where if you multiply this element with any other element, call it x, then the product is x
+
+  In this case, this happens for element e
+
+  b) Which elements of $R$ are units. Why?
+
+  Units are elements that have multiplicative inverses
+
+  That is, for an element x, there is an element y such that the product xy is 1 (the multiplicative identity, in this case, e)
+
+  This only happens for e,f
+
+  c) Is R a field? Why or why not
+
+  No, because not all non zero elements in the ring are units, (examples b,c,d are not units)
+
+  d) Can the multiplication table above be the multiplication table of $\mathbb{Z}_6$, with the six elements of $\mathbb{Z}_6$ being assigned (somehow) the names $a,b,c,d,e,f$?
+
+  Yes, since there are 6 total elements, and both have 2 units
+
+\item[5]
+  In this problem, $\phi$ represents the Euler phi function and $m$ is a positive integer
+
+  a) Define $\phi(m)$
+
+  This is the number of units in the ring $\mathbb{Z}_m$
+
+  Or, this is the count of numbers relatively prime to $m$ in $\mathbb{Z}_m$
+
+  b) Suppose $m = p^e$ for some prime number $p$ and positive integer $e$. State a formula for $\phi(m)$ in terms of $p, e$ and prove that the formula is correct. (for full credit, do this from scratch: you shouldnt need to cite any results from the book)
+
+  We know that $\phi(p^e)$ is just the count of numbers relatively prime to $m$ in $[1, m]$
+
+  This is equal to the total count of numbers in $[1,m]$ minus the count of numbers not relatively prime to $m$
+
+  There are $p^e$ numbers in $[1,p^e]$, they are $\{1,2,...p^e\}$
+
+  For a number to be not relatively prime to $p^e$, it must share common factor $p$
+
+  So for a number $x$ to not be relatively prime to $p^e$, $x = pk$ for some $k$
+
+  There are $p^{e-1}$ many numbers $x$ in $[1,p^e]$, they are $\{1, p, 2p,...p^{e-1}\}$
+
+  So $\phi(p^e) = p^e - p^{e-1}$
+
+  c) Calculate
+
+  The idea is that we want to break the numbers into the prime factorizations, and then apply phi funciton to each prime factor, and the result will be the product of all
+
+  $\phi(11) = (11^1) - 11^0 = 11 - 1 = 10$
+
+  $\phi(64) = \phi(2^6) = 2^6 - 2^5 = 32$
+
+  $\phi(280) = \phi(2^3 * 5* 7) = (2^3 - 2^2)(5^1 - 5^0)(7^1 - 7^0) = (4)(4)(6) = 96$
+
+  d) State Euler's theorem. Make sure that all of the terms occuring are clearly identified and any restrictions on them are described.
+
+  Let $m$ be an integer greater than 1, then every unit $u$ in $\mathbb{Z}_m$ satisfies
+
+  $u^{\phi(m)} = 1$ in the ring $\mathbb{Z}_m$
+
+  This is equivalent to saying
+
+  $m$ is an integer greater than 1, every integer $a$, relatively prime to $m$, satisfies
+
+  $a^{\phi(m)} \equiv 1$ (mod m)
+
+  e) Use Euler's theorem to find the smallest positive integer $c$ such that $5^{773} \equiv c$ (mod 121)
+
+  We know gcd(5,121) = 1, relatively prime, and 121 > 1
+
+  So we can use Eulers theorem, then $5^{\phi{121}} \equiv 1$ (mod 121)
+
+  $\phi(121) = \phi(11^2) = 11^2 - 11^1 = 110$
+
+  So $5^{110} \equiv 1$ (mod 121)
+
+  We know $5^{773} = 5^{7*110}*5^{3}$
+
+  So $5^{773} \equiv 1*125$ (mod 121)
+
+  So $5^{773} \equiv 4$ (mod 121)
+
+  So the smallest $c$ would be 4
+
+\item[6] Suppose $a = 2700 = 2^2*3^3*5^2, b = 630 = 2*3^2*5*7$
+
+  a) What is the greatest common divisor of a,b?
+
+  To find the greatest common divisor, we look at the prime factorizations, and we pick the lowest exponent for each prime factor
+
+  So for $a = 2^2 * 3^3 * 5^2* 7^0$, $b = 2^1*3^2*5^1*7*1$,
+
+  The lowest exponents would be $2^1*3^2*5^1*7^0 = 90$
+
+  b) What is the least common multiple of a,b?
+
+  To find the least common multiple, we have to look at the prime factorizations, and we pick the greatest exponent for each prime factor
+
+  So for $a = 2^2 * 3^3 * 5^2* 7^0$, $b = 2^1*3^2*5^1*7*1$,
+
+  The greatest exponents would be $2^2 * 3^3 * 5^2 * 7^1 = 18900$
+
+\item[7] Assume $K$ is not a multiple of $7$
+
+  a) Explain why gcd(K,7) = 1
+
+  7 is prime, so its only divisors are 1 and 7
+
+  But $K$ is not a multiple of 7, so its divisors do not include 7, but does include 1
+
+  So gcd(K,7) must be 1
+
+  b) Prove that $rK - 7$ is $(K,7)$ inaccessible for $1 \leq r \leq 6$
+
+  By contradiction
+
+  Assume that $rK -7$ is $(k,7)$ accessible
+
+  Then there exists nonnegative integers $s,t$ such that
+
+  $rK - 7 = Ks + 7t$
+
+  Group like terms by addition and subtraction
+
+  $rK - Ks = 7t + 7$
+
+  Then $K(r-s) = 7(t + 1)$
+
+  Then $7|k$
+
+  But this contradicts that $K$ is not a multiple of $7$
+
+  c) What is the largest (13,7) inaccessible positive integer, and why?
+
+  We know that the largest inaccessible integer for two numbers $a,m$ is $N = am - a - m$
+
+  In this case, $N = 13*7 - 13 - 7 = 71$
+
+  Explain why it is inaccessible
+
+  Another way to say this is that $N = 13(7-1) - 7$
+
+  We know that 13 is not a multiple of 7, and we picked $r \in [1,6]$
+
+  So using the part b, $N = 13(6) - 7 =  71$ is inaccessible by (13,7)
+
+\item[8] Review the successive squares procedure
+
+\item[9]  Review the division theorem for Gaussian Integers
+
+\item[10]
+  a) Find the smallest positive integer $N$ such taht $u^N = 1$ for all units in $\mathbb{Z}_7$
+
+  If $m$ is prime, this is simply $\phi(m)$, so $N = 6$
+
+  b) Find the smallest positive integer $N$ such that $U^n = 1$ for all units in $\mathbb{Z}_{15}$
+
+  $m$ is not prime, need to check all
+
+  Calculations show that the smallest needed for all is 4
+
+  c) Write $(\sqrt{2} + 1)^7 (\sqrt{2} - 1)^9$ in the form $a + b\sqrt{2}$ for integers a,b
+
+  We know that the multiplicative inverse of $(\sqrt{2} + 1)$ is $(\sqrt{2} -1)$
+
+  So $(\sqrt{2} + 1)^7(\sqrt{2} - 1)^7 = 1$
+
+  So $(\sqrt{2} + 1)^7 (\sqrt{2} - 1)^9 = 1*(\sqrt{2} -1)^2 = 3 - 2\sqrt{2}$
+
+  d) Write $(\frac{1}{2} + \frac{i\sqrt{3}}{2})^{62}$ in the form $a + bi$ for real numbers
+
+  We know that $(\frac{1}{2} + \frac{i\sqrt{3}}{2})$ is the sixth root of unity
+
+  That is, $(\frac{1}{2} + \frac{i\sqrt{3}}{2})^6 = 1$
+
+  We know $(\frac{1}{2} + \frac{i\sqrt{3}}{2})^{62} = (\frac{1}{2} + \frac{i\sqrt{3}}{2})^{6*10}(\frac{1}{2} + \frac{i\sqrt{3}}{2})^{2}$
+
+  This is equal to $1*(\frac{1}{2} + \frac{i\sqrt{3}}{2})^{2})$
+
+  Which is equal to $-\frac{1}{2} + \frac{\sqrt{3}}{2}i$
+
+  e) Write $i^{62} \in \mathbb{Z}[i]$ in the form a + bi for integers a,b
+
+  We know that $i^4 = 1$
+
+  And $i^{62} = i^{4*15}*i^2$
+
+  So $i^{62} = 1*i^2 = -1$
+
+  f) Let $c$ be an integer, if $5|c, 7|c$, does $35|c$?. Explain
+
+  Yes. Since c must have factorization with prime factor $5^e$, and prime factor $7^f$ for $e,f \geq 1$
+
+  And 35 has prime factorization $5^1 * 7^1$, so 35 must also divide $c$
+
+  g) Explain why $(2^{510} - 1)$ is not divisible by 511.
+
+  h) In $\mathbb{Z}_{175}$ explain why $128^{240} = 1$
+
+  We know gcd(128, 175) = 1, so 128 is a unit, and 175 > 1
+
+  So we can use Eulers theorem to say
+
+  $128^{\phi(175)} = 1$ in $\mathbb{Z}_{175}$
+
+  $\phi(175) = \phi(5^2 * 7) = (25 - 5)(6) = 120$
+
+  So $128^{120} = 1$ in the ring
+
+  So $128^{120n} = 1$ in the ring, and let $n = 2$, then
+
+  $128^{240} = 1$ in the ring
+
+\item[11]
+  a) What is the encrypted ciphertext that would arise from the plaintext PUBLIC, using block size 4 digits, $n = 2537, p = 43, q = 59, e = 13$
+
+  Convert PUBLIC to plaintext, using chart, in chunks of 4 digits
+
+  p = 1520 0111 0802
+
+  Then cipher text = $p^{e}$ mod n
+
+  So $1520^{13}$ mod 2537 = $0095$
+
+  $0111^{13}$ mod 2537 = 1648
+
+  $0802^{13}$ mod 2537 = 1410
+
+  b) What is the decryption key $d$, and why?
+
+  We know $c^d = (p^e)^d = p^{ed} = p^{1+\phi(n)t}$ (mod n) for some t
+
+  So $c^d = p * p^{\phi(n)t}$
+
+  We know by a previous theorem that $p^{\phi(n)t} = 1$
+
+  So $c^d = p$ (mod n)
+
+  So we want to find a number $d$ such that $ed = 1 + \phi(n)t$
+
+  That is, we want $ed + \phi(n)f = 1$
+
+  In this case, $e = 13, \phi(n) = (43 - 1)(59 - 1) = 2436$
+
+  So we want some integer $d$ for $13d + 2436f = 1$
+
+  We use the euclidean algorithm and then in reverse to solve
+
+  $2436 = 13(187) + 5$
+
+  $13 = 5(2) + 3$
+
+  $5 = 3(1) + 2$
+
+  $3 = 2(1) + 1$
+
+  $2 = 1(2) + 0$
+
+  Solving backwards,
+
+  $1 = 3 + 2(-1)$
+
+  $2 = 5 + 3(-1)$
+
+  $3 = 13 + 5(-2)$
+
+  $5 = 2436 + 13(-187)$
+
+  Plugging in,
+
+  $1 = [13 + 5(-2)] + 2(-1)$
+
+  $1 = [13 + 5(-2)] + [5 + 3(-1)](-1)$
+
+  $1 = 13 + 5(-2) + 5(-1) + 3$
+
+  $1 = 13 + 5(-3) + 3$
+
+  $1 = 13 + 5(-3) + [13 + 5(-2)]$
+
+  $1 = 13 + 5(-3) + 13 + 5(-2)$
+
+  $1 = 13(2) + 5(-5)$
+
+  $1 = 13(2) + [2436 + 13(-187)](-5)$
+
+  $1 = 13(2) + 2436(-5) + 13(935)$
+
+  $1 = 13(937) + 2436(-5)$
+
+  We need $d$ to be positive, this is fine.
+
+  So $d = 937$ 
+
+  c) Decrypt $1299 0811$
+
+  $p = c^d$ (mod n)
+
+  $1299^{937}$ (mod 2537) $\equiv 1004 = "KE"$
+
+  $0811^{937}$ (mod 2537) $\equiv 2402 = "YC"$
+
+  Original message KEYC
+\end{itemize}
+\end{document}
+
+
+

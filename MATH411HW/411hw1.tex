@@ -1,0 +1,86 @@
+\documentclass[11pt]{article}
+\usepackage{amsfonts}
+\setlength{\parindent}{0pt}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\begin{document}
+Brandon Chen \\
+MATH 411\\
+
+1.4\\
+\\
+
+\begin{enumerate}
+
+
+\item m is a positive integer divisible by 3, so $m = 3k$ for $k\in\mathbb{N}$. Then instead of using boxes of m, we may instead use $k$ boxes of 3 instead of each m. Thus, whatever we can do with boxes of 3 and m, we can do with boxes of 3 alone. 
+The only numbers produced by boxes of 3 are multiples of 3, so the only numbers that are (3, m) accessible are multiples of 3.
+
+\item %% 2 %%
+(3,5) inaccessible integers are $\{1,2,4,7\}$\\
+(3,5) accessible integers are 3, 5, 6, 8, 9, and all integers $\geq 10$\\
+
+(3,7) inaccessible integers are $\{1,2,4,5,8,11\}$\\
+(3,7) accessible integers are 3, 6, 7, 10,12, 13, and all integers $\geq 14$\\
+
+(3,8) inaccessible integers are $\{1,2,4,5,7,10,13\}$\\
+(3,8) accessible integers are 3,6,8,9,11,12,14,15, and all integers $\geq 16$\\
+
+
+\item %3%
+The largest N inaccessible by (3,m) is $2m-3$
+
+\item %4%
+Divide $\mathbb{N}$ into three lists, numbers divided by three with a remainder of 1, numbers divided by 3 with a remainder of 2, and numbers divided by three with a remainder of 0. Name these list one, list two, and list zero.
+
+Numbers $n$ in list one take the form $n = 3k + 1, k\in\mathbb{N} \cup \{0\}$
+
+Numbers $n$ in list two take the form $n = 3k + 2, k\in\mathbb{N} \cup \{0\}$
+
+Numbers $n$ in list zero take the form $n = 3k, k\in\mathbb{N}$
+
+Every number in list zero is a multiple of 3, so it is (3,m) accessible.
+
+m is not divisible by 3, so it can be rewritten as 
+
+$m = 3k + r$, for $k\in\mathbb{N}, r\in\{1,2\}$.
+
+\break
+\break
+if $r = 1$, then m can be found in list one, and all numbers $\geq m$ in list one can be obtained by adding some number of 3's and m, so they are accessible.
+
+We know $m = 3k +1$
+
+So $2m = 6k + 2$ 
+
+$2m = 3(2k) + 2$
+
+so 2m is divided by 3 with a remainder of 2, so 2m can be found in list two.
+
+Numbers $\geq 2m$ in list two can be obtained by adding some number of 3's and 2m, so they are (3,m) accessible.
+\\[0.15in]
+if $r = 2$, then m can be found in list two, all numbers $\geq m$ in list two can be obtained by adding some number of 3's and m, so they are accessible.
+
+We know $m = 3k + 2$, 
+
+So $2m = 6k + 4$
+
+Then $2m = 3(2k + 1) + 1$
+
+So 2m is divided by 3 with a remainder of 1, so 2m can be found in list one.
+
+Numbers $\geq 2m$ in list one can be obtained by adding some number of 3's and 2m, so they are (3,m) accessible.
+
+In the list containing 2m, 2m is the lowest number accessible by (3,m), since all numbers below it are not a combination of 3's and m's.
+
+
+So the number below it in the same list must be the greatest number inaccessible by (3,m), this number is $2m-3$.
+
+
+In the other list, the list containing m, m is the lowest number accessible by (3,m), since all numbers below it are not a combination of 3's and m's.
+
+So the number before it in this list must be the greatest number inaccessible by (3,m), this number is $m-3$.
+
+We want the greatest inaccessible number, and $2m-3 > m-3$, so the greatest inaccessible number is $2m-3$.
+\end{enumerate}
+\end{document}

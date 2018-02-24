@@ -1,0 +1,155 @@
+\documentclass[11pt]{article}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\begin{document}
+\noindent Brandon Chen \\
+MATH 411 \\
+HW 2 - 3.6-10
+
+
+\begin{itemize}
+\item[3.6]
+  Assuming $d = gcd(a,b)$, prove that $\exists r,s$ such that $d = ar + bs$
+
+  By induction
+
+  Base case: Assume one iteration of euclidean algorithm to find $gcd(a,b)$, show that $d = ar + bs$ for some integers $r,s$
+
+  After one iteration of euclidean algorithm, $a$ and $b$ take the form
+
+  $b = aq_1 + r_1$
+
+  $a = r_1q_2 + 0$
+
+  Then $gcd(a,b) = r_1$
+
+  Then $d = r_1 = a(-q_1) + b(1)$
+
+  Inductive step:
+
+  Inductive hypothesis: Assume that for $k$ iterations of the euclidean algorithm to find $gcd(a,b)$, then $d = ar + bs$ for some integers $r,s$
+
+  Show that for a pair of integers $a,b$ requiring $k + 1$ iterations to find gcd, $d = ar + bs$ for some integers $s,r$
+
+  The algorithm starts with
+
+  $b = aq_1 + r_1$
+
+  $a = r_1q_1 + r_2$
+
+  After $k$ iterations, the inductive hypothesis tells us there exists $r,s$ such that $d = r_1r + as$
+
+  We know that $b = aq_1 + r_1$, so $r_1 = b - aq_1$
+
+  So $d = (b- aq_1)r + as$
+
+  So $d = a(s - q_1) + br$ 
+
+\item[3.7]
+  Assuming $a, b$ are integers, $d = gcd(a,b)$, and $e$ is a common divisor for both $a$ and $b$, show that $e | d$
+
+  $e | a$, so $a = ek$ for some integer $k$. $e | b$, so $b = em$ for some integer $m$.
+
+  According to Bezout's theorem, there exists integers $r, s$ that satisfy $d = ar + bs$
+
+  So $d = ekr + ems \iff d = e(kr + ms)$
+
+  So $e | d$
+\item[3.8]
+  $a, b$ are integers, $a,b$ relatively prime, $c$ is an integer such that $a | bc$
+
+  Show that $a | c$
+
+  $a,b$ relatively prime, so $gcd(a,b) = 1$
+
+  So $d = gcd(a,b) = 1$
+
+  According to Bezout's theorem, $\exists r,s$ such that $d = ar + bs$
+
+  So $1 = ar + bs$
+
+  Multiplying entire equation by $c$, we get $c = arc + bsc$
+
+  Know that $a | arc$ and $a | bcs$, so $a$ must divide the left side of the equation as well.
+
+  So $a$ divides $c$
+
+  Show that if the assumption that $a,b$ are relatively prime is dropped, it may fail.
+
+  Example: $a = 4, b = 6, gcd(4,6) = 2$
+
+  Take $c = 2$, then $bc = 6*2 = 12$
+
+  Then $a | bc$, but $a\nmid b$ and $a\nmid c$
+\item[3.9]
+  $a, b$ are integers, relatively prime, $c,n$ are integers such at $a | b^n c$
+
+  Show that $a | c$
+
+  By induction:
+
+  Base case: $n = 1$
+
+
+  $a | bc$
+
+  Then according to theorem 3.4, $a | c$
+
+  Inductive step:
+
+  Inductive Hypothesis: Assume that if $a | b^n c$, then $a | c$
+
+  Show that if $a | b^{n+1} c$, then $a | c$
+
+  $a | b^{n+1} c \iff a | b(b^n c)$
+
+  So by theorem 3.4, $a | b^n c$
+
+  So by inductive hypothesis, $a | c$
+\item[3.10]
+  Given the equation
+
+  $$a_n x^n + a_{n-1}x^{n-1} + .... + a_1x + a_0 = 0$$
+
+  Suppose that $r$ and $s$ are relatively prime integers such that $\frac{r}{s}$ is the solution to the above equation.
+
+  Show that $s | a_n$ and $r | a_0$
+
+  Substitute $x = \frac{r}{s}$ in to the equation, and multiply the equation by $s^n$
+
+  $$a_n(\frac{r}{s})^n s^n + a_{n-1}(\frac{r}{s})^{n-1} s^n + .... a_1 (\frac{r}{s}) s^n + a_0 s^n = 0$$
+
+  $\iff$
+
+  $$a_n r^n + a_{n-1} r^{n-1} s + .... a_1 r s^{n-1} + a_0 s^n = 0$$
+
+  $\iff$
+
+  $$a_n r^n + s(a_{n-1} r^{n-1} + ... + a_0 s^{n-1}) = 0$$
+
+  $$a_n r^n = s * -(a_{n-1} r^{n-1} + ... + a_0 s^{n-1})$$
+
+  So $s | a_n r^n$
+
+  So by corollary 3.5, since $gcd(r,s) = 1$, relatively prime, and $s | a_n r$,
+
+  Then $s | a_n$
+
+  We know
+
+  $$a_n(\frac{r}{s})^n s^n + a_{n-1}(\frac{r}{s})^{n-1} s^n + .... a_1 (\frac{r}{s}) s^n + a_0 s^n = 0$$
+
+  $\iff$
+
+  $$r(a_n r^{n-1} + a_{n-1} r^{n-2} s + ..... + a_1s^{n-1}) + a_0 s^n = 0$$
+
+
+  $$r * -(a_n r^{n-1} + a_{n-1} r^{n-2} s + ..... + a_1s^{n-1}) = a_0 s^n$$
+
+  So $r | a_0 s^n$
+
+  So by corollary 3.5, $r | a_0$
+\end{itemize}
+\end{document}

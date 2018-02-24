@@ -1,0 +1,222 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage[margin=1in]{geometry}
+
+\begin{document}
+
+\noindent Brandon Chen
+
+\noindent MATH 395 HW 5
+
+\noindent Ch 6:  28,29
+
+\noindent Ch 7: 1,4, 30and33, TE18
+
+\begin{itemize}
+
+\item[6.28]
+
+	The time that it takes to service a car is an exponential random variable with rate 1
+
+		a) If a brings his car in at times 0 and m brings her car in at time t, what is the probability that m's car is ready before a's car? (Assume that service times are independent and service begins on arrival)
+
+		Let $X$ be the time for A's car
+
+		Let $Y$ be the time for M's car
+
+		Need $Y + t$ to be less than $X$
+
+		Then joint probability of X,Y is
+
+		$f_{X,Y}(x,y) = e^{-(x+y)} \quad 0 < y + t < x, 0 < x < \infty, 0 otherwise$
+
+		Then $P(Y + t < X) = \int_0^{\infty} \int_{t+y}^{\infty} e^{-(x+y)}dxdy$
+
+		$=\int_0^{\infty} [-e^{-(x+y)}]_{t+y}^{\infty} dy$
+
+		$= \int_0^{\infty} [0+e^{-(t+2y)}]dy$
+
+		$= [\frac{-1}{2} e^{-(t+2y)}]_0^{\infty}$
+
+		$=[0 + \frac{1}{2}e^{-t}]$
+
+		b) If both cars arrive at time 0, with work starting on m's car only when a's car has been completely serviced, what is the probability that m's car is ready before time 2?
+
+	Want $P(X + Y < 2)$
+
+		Then $f_{X,Y}(x,y)$ is defined on $0 < x + y < 2$
+
+		This is $\int_0^2 \int_0^{2-y} e^{-(x+y)}dxdy$
+
+		$= \int_0^2 [-e^{-(x+y)}]_0^{2-y}dy$
+
+		$=\int_0^2 [-e^{-2} + e^{-y}] dy$
+
+		$=[-e^{-2}y - e^{-y}]_0^2$
+
+		$=[-2e^{-2} - e^{-2}] - [0 - 1]$
+
+		$=1 - 3e^{-2}$
+
+\item[6.29]
+
+	The gross weekly sales at a certain restaurant are a normal random variable with mean 2200 and stdv 230, what is the probability that
+
+		a) The total gross sales over the next 2 weeks exceeds 5000 dollars?
+
+		Let $X$ be sales on week 1, $Y$ be sales on week 2, each with mean 2200 and stdv 230
+
+		Want $P(X + Y > 5000)$
+
+		Let $W = X + Y$, then it has mean $E[X + Y] = E[X] + E[Y] = 4400$
+
+		And has variance $Var(X+Y) = Var(X) + Var(Y) = stdv(X)^2 + stdv(Y)^2 = 230^2+230^2$
+
+		So stdv $\sqrt{230^2 + 230^2} = 230\sqrt{2} \approx 325.269$
+
+		So want $P(W > 5000)$
+
+		This is $P(\frac{W - 4400}{230\sqrt{2}} > \frac{5000 - 4400}{230\sqrt{2}}$
+
+		Replace with $Z$, for Z score
+
+		We want $P(Z > 1.844)$
+
+		Using Z score table, this is 0.0326
+
+		b) Weekly sales exceed 2000 dollars in at least 2 of the next 3 weeks?
+
+		Let $X$ be the variable for sales in a week
+
+		Want $P(X > 2000)$
+
+		This is $P(\frac{X - 2200}{230} > \frac{2000-2200}{230})$
+
+		Replace with Z for z score, this is $P(Z > -0.8695)$
+
+		Using Z score table, this is $0.8078$
+
+		For the sales to exceed 2000 from at least 2 of the next 3 weeks
+
+		This is either all 3 make over 2000, or 2 make over 2000
+
+		This is $\binom{3}{3}(0.8078)^3 + \binom{3}{2}(0.8078)^2(1-0.8078) \approx 0.9033$
+
+		What independence assumptions have you made?
+
+		The independence assumpotions I have made is that each week sales is independent
+
+\item[7.1]
+
+	A Player throws a fair die and simultaneously flips a fair coin. If the coin lands on heads, then she wins twice, and if tails, then she wins one half of the expected value that appears on the die. Determine her expected winnings.
+
+	Let $X$ be the value of the coin flip
+
+	Let $Y$ be the value of the die roll
+
+	Then $X,Y$ must be independent
+
+	If heads, with 0.5 probability, then get 2x reward, otherwise 0.5x reward
+
+	Then $E[X] = 0.5*2 + 0.5*0.5 = 1.25$
+
+	$E[Y] = \frac{1}{6} + \frac{2}{6} + \frac{3}{6} + \frac{4}{6} + \frac{5}{6} + \frac{6}{6} = \frac{7}{2}$
+
+	Independent, so expectations multiply
+
+	Then expected return is $E[XY] = E[X]E[Y] = 4.375$
+
+\item[7.4]
+
+	If $X,Y$ have joint density function
+
+	$f_{X,Y}(x,y) = \begin{cases}
+		\frac{1}{y}, \quad 0<y<1, 0<x<y\\
+
+		0, \quad\text{otherwise}\\
+	\end{cases}$
+
+	find
+
+	a) E[XY]
+
+	$E[XY] = \int_0^1 \int_0^y xy\frac{1}{y} dxdy$
+
+	$=\int_0^1 [\frac{x^2}{2}]_0^y dy$
+
+	$=\int_0^1 [\frac{y^2}{2}]dy$
+
+	$=[\frac{y^3}{6}]_0^1 = \frac{1}{6}$
+
+	b) E[X]
+
+	$E[X] = \int_0^1 \int_0^y x\frac{1}{y} dxdy$
+
+	$= \int_0^1 [\frac{1}{y} \frac{x^2}{2}]_0^y dy$
+
+	$= \int_0^1 [\frac{y}{2}]dy$
+
+	$= [\frac{y^2}{4}]_0^1 = \frac{1}{4}$
+
+	c) E[Y]
+
+	$E[Y] = \int_0^1 \int_0^y y\frac{1}{y} dxdy$
+
+	$=\int_0^1 [x]_0^y dy$
+
+	$=\int_0^1 y dy$
+
+	$=\frac{y}{2}|_0^1 = \frac{1}{2}$
+\item[7.30and33]
+
+	30) If $X,Y$ are independent and identically distributed with mean $\mu$ and variance $\sigma^2$, find $E[(X-Y)^2]$
+
+	$E[(X-Y)^2] = E[X^2 - 2XY - Y^2]$
+
+	$=E[X^2] -2E[X]E[Y] - E[Y^2]$
+
+	We know that $Var(X) = E[X^2] - (E[X])^2$, so $E[X^2] = Var(X) + (E[X])^2$, then
+
+	$=Var(X) + (E[X])^2 + Var(Y) + (E[Y])^2 - 2E[X]E[Y]$
+
+	$=\sigma^2 + \mu^2 - \sigma^2 + \mu^2 - 2\mu\mu$
+
+	$=2\sigma^2$
+
+	33) If $E[X] = 1, Var(X) = 5$, find 
+	
+	a) $E[(2 + X)^2]$
+
+	This is $E[4 + 4X + X^2] = E[X^2] + 4E[X] + 4$
+	
+	Since $E[X^2] = Var(X) + (E[X])^2$, then
+	
+	$=Var(X) + (E[X])^2 + 4E[X] + 4= 5 + 1 + 4 + 4 = 14$
+
+	b) $Var(4+3X)$
+
+	$Var(4 + 3X) = Var(3X) = 3^2 Var(X) = 9*5 = 45$
+
+\item[TE 7.18]
+
+	In example 4f, we showed that the covariance of the multinomial random variables $N_i, N_j$ is equal to $-mP_i P_j$ by expressing $N_i, N_j$ as the sum of indicator variables. We could also have obtained the result by using the formula $Var(N_i + N_j) = Var(N_i) + Var(N_j) + 2Cov(N_i,N_j)$
+
+	a) What is the distribution of $N_i + N_j$?
+
+	Sum of indiciators, $m$ trials, so it is a binomial random variable, with parameters $m$ and $P_i + P_j$
+
+	b) Use the preceding identity to show that $Cov(N_i,N_j) = -mP_i P_j$
+
+	Binomial, so $Var(N_i + N_j) = m(P_i + P_j)(1-(P_i + P_j))$
+
+	$=mP_i + mP_j -mP_i^2 -mP_iP_j -mP_iP_j -mP_j^2$
+
+	$=mP_i(1-P_i) + mP_j(1-P_j) - 2mP_iP_j$
+
+	$=Var(N_i) + Var(N_j) + 2Cov(N_i,N_j)$
+
+	So $Cov(N_i, N_j) = -mP_iP_j$
+\end{itemize}
+\end{document}

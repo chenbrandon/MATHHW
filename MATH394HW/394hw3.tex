@@ -1,0 +1,295 @@
+
+\documentclass[11pt]{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage[margin=1in]{geometry}
+
+\begin{document}
+
+\noindent Brandon Chen
+
+\noindent MATH 394 HW 3
+
+\noindent Self test ch 1 - 1, 2, 3, 5, 6 pg 19, Self test ch 2 - 1, 2, 3, 4, 5, 6 pg 54, Chapter 3 - 2, 10, 12, 14, 21, 29, 38, 44 pg 96
+
+
+
+
+\begin{itemize}
+\item[1.1]
+  a) To find the total number of arrangements where A and B are next to each other, we treat A and B as a single object, having 2 permutations, AB or BA. There are now 5 distinct objects, which we can permute $5!$ ways. So by the principle of counting, there are $2 * 5!$ possible linear arrangements with A next to B. There are 240 possible arrangements.
+
+  b) To find the total number of arrangements where A is before B, we find the total number of arrangements, and then ignore all of the arrangements where B comes before A. there are $6!$ total possible arrangements, but in arrangements, A is either before B or A is after B, with both having an equal number of possibilities. So to find the total number of possibilities where A is before B, we simply divide the total number of possibilities by 2. This is $\frac{6!}{2} = 360$
+
+  c) The total number of permutations where A is before B and B is before C is equal to the total number of permutations ignoring the permutations where the condition is not satisfied. To do this, we see that in any given arrangement, A, B, and C are featured in some order. We can divide out the unwanted orderings, counting only the ordering ABC. There are $3!$ ways to permute ABC, and we only want 1 of them, so we divide the total number of arrangements by the number of ways to permute ABC. This is $\frac{6!}{3!} = 120$  
+
+  d) Similar to problem 1.1b, there are 2! ways to permute A and B, and there are 2! ways to permute C and D. Then we divide by 2!2! to get rid of unwanted permutations. Then there are $\frac{6!}{2!2!} = 180$ possible arrangements.
+
+  e) Treat A and B as a single object, with 2! permutations. Treat C and D as a single object, with 2! permutations. There are now 4 distinct objects, with a total of 4! permutations. Then the total number of possible arrangements satisfying the condition is $4!2!2! = 96$
+
+  f) The total number of arrangements where E is not last in line is equal to the total number of arrangements minus the total number of arrangements where E is last in line. To find this, we put E as last in line, then there are 5 remaining letters to put in order, for a total of 5! arrangements. Then the total number of arrangements E is last in line is $5!$. Then the total number of arrangements where E is not last in line is $6! - 5! = 600$
+
+\item[1.2]
+	We can arrange Americans 4! ways, French people 3! ways, and British people 3! ways. They must sit next to their own people, so there are 3! ways to arrange which nation sits in the left, right, or middle. So the total number of possible seating arrangements is $4!3!3!3! = 5184$
+
+\item[1.3]
+	a) There are 10 possible choices for the president, 9 possible choices for the treasurer, and 8 possible choices for the secretary. Then there are 720 possible choices for the 3 officers.
+
+	b) A and B refuse to serve together, so we can find this by finding the total number of possibilities and subtracting the total number of possibilities where A and B are both together. The total number of possibilities where A and B are together is if out of the 3 officer positions, they are chosen for those 2 positions, and they may be arranged in either, and then the remaining officer is chosen from the remaining 8 candidates. This is equal to $\binom{3}{2} * 2! * 8 = 48$. Then the total number of possible choices where they do not serve together is $720 - 48 = 672$
+
+	c) This is equal to the total number of possibilities where C and D are together plus the total number of possibilitiess where C and D are both not officers. The total number of possibilities where C and D are officers is when they are 2 out of the 3 officers, and they may 1 of 2 of their roles. The third officer is chosen from the remaining 8, for a total of $\binom{3}{2} * 2 * 8 = 48$ possibilities. If C and D are both not officers, there are 8 choices for president, 7 choices are treasurer, and 6 choices for secretary. Then there are $8 * 7 * 6 = 336$ possibilities where C and D are both not on. Then the total number of possibiltiies where C and D are either both officers or not officers is $48 + 336 = 384$
+
+	d) If E must be an officer, then he can be 1 of the 3 possible officers. Then for the remaining two officer positions, there are 9 and 8 choices. Then the total number of possible choices with E being one of the officers is $3 * 9 * 8 = 216$
+
+	e) F must be president, or not serve at all, so there are 9 remaining choices for treasurer and 8 remaining choices for secretary. Then there are 72 possible choices for officers with F as president. If he is not presient, he will not serve at all. Then there are 9 possible choices for president remaining, 8 possible choices for treasurer, and 7 possible choices for secretary. Then there are 504 choices without F being an officer. Then there are 576 possible choices where F is either president or not an officer.
+\item[1.5]
+	There are 3 gifts to be given to the first child, 2 to the second, and 2 to the third. The total number of gifts given is 7. Then the total number of disitributions is is equal to $\binom{7}{3,2,2} = \frac{7!}{3!2!2!} = 210$
+\item[1.6]
+	There are 3 entries for letters, each letter with 26 possibilities. There are 4 digits, with 10 options for digits. There are 7 total character places, and the selected numbers and letters may be rearranged in any order. So there are $\binom{7}{3}$ valid ways to choose which indexes of the license plate are to be letters. Then the total number of license plates available is $\binom{7}{3} * 26^3 * 10^4 = 6151600000$ 
+\item[2.1]
+	a) 2 choices for entree, 3 choices for starch, and 4 choices for dessert. So there are a total of $2 * 3 * 4 = 24$ possible outcomes in the sample space.
+
+	b) Ice cream is chosen, and then there are 2 choices for entree and 3 choices for starch. Then there are 6 possible outcomes in event A.
+
+	c) Chicken is chosen, so there are 3 choices for starch, and 4 choices for dessert. So there are 12 outcomes where chicken is chosen.
+
+	d) $A \cap B$ outcomes are outcomes where ice cream is chosen for dessert and chicken is chosen for the entree. Then there are 3 remaining choices for starch. So there are 3 outcomes in $A \cap B$, Chicken, Icecream, and one of pasta, rice, or potatoes.
+
+	e) Rice is chosen for the starch, so there are 2 choices for entree, and 4 choices for dessert. So there are 8 total outcomes in C.
+
+	f) The entree is already chosen, the starch is already chosen, and the dessert is already chosen, so there is only one outcome in $A \cap B \cap C$, where the entree is Chicken, the starch is rice, and the dessert is ice cream.
+\item[2.2]
+	suit 	= 0.22
+	
+	shirt	= 0.30
+	
+	tie		= 0.28
+
+	$suit \cap shirt$	= 0.11
+
+	$suit \cap tie$	= 0.14
+
+	$shirt \cap tie$	= 0.10
+
+	$shirt \cap tie \cap suit = 0.06$
+
+	a) The probability that the customer will buy none of these items is equal to 1 minus the probability of $suit \cup shirt \cup tie$
+
+	The probability of the union is equal to suit + shirt + tie - $suit\cap shirt$ - $suit\cap tie$ - $shirt\cap tie$ + $shirt \cap suit \cap tie = 0.22 + 0.30 + 0.28 - 0.11 - 0.14 - 0.10 + 0.06 = 0.51$
+
+	So the probability that a customer will not buy anything is $1 - 0.51 = 0.49$
+
+	b) P(only suit) = suit - $suit \cap tie - suit \cap shirt + P(all)$
+
+	This is equal to 0.22 - 0.11 - 0.14 + 0.06 = 0.03
+
+		 P(only shirt) = shirt - $shirt \cap suit - shirt \cap tie + P(all)$
+
+		 This is equal to $0.30 - 0.11 - 0.10 + 0.06 = 0.15$
+
+		 P(only tie) = tie - $tie \cap shirt - tie \cap suit + P(all)$
+
+	This is equal to 0.28 - 0.14 - 0.10 + 0.06 = 0.10
+
+	Then the probability that the customer will buy exactly one item is 0.03 + 0.15 + 0.10 = 0.28
+
+
+\item[2.3]
+	a) 
+	Define $A_1, A_2, A_3, A_4$ to be sets where the 1st 2nd, 3rd, or 4th ace are chosen as 4th. Then the probability that the 14th card chosen will be an Ace is equal to the probability of the union of the $A_{i's}$. Each $A_i$ has the same number of outcomes. Ordering matters, since we want the 14th card to be an Ace of denomination i. So there are 51 choices for the first card, 50 for the second.... and there are 39 choices for the 13th card, and then only one choice for the 14th card. There are 52*51*50*.... 38 possible ordered 14 card dealings. So the probability that the 14th card will be an ace of denomination i is $\frac{51*50*49*...38}{52*....38} = \frac{1}{52}$	
+
+	Each event $A_i$ is mutually exclusive, since it is impossible for the 14th card to be both an Ace of more than one suit. Then the total number of possibilities is the sum of the possibilities, which is $4 * \frac{1}{52} = \frac{4}{52} = \frac{1}{13}$
+
+	b) Ordering matters, so there are 48 choices for the first card, 47 choices for the second card..... 36 choices for the thirteenth card. For the fourteenth card, there are 4 aces to choose from. Then the total number of possible dealings with the fourteenth card being the ace is $48*47*46*.....36$. To find the probability of this event, we need to divide by the total number of possible dealings, which is $52*51*50*....39$
+	Then the probability is $\frac{48*47...36}{52*51*...39} \approx 0.03116$
+\item[2.4]
+  A is the event where NY has a temperature of 70f
+
+  P(A) = 0.3
+
+  B is the event where LA has a temperature of 70f
+
+  P(B) = 0.4
+
+  C is the event where Max(Temp LA, Temp NY) = 70f
+
+  P(C) = 0.2
+
+  Let D be the event where Min(Temp LA, Temp NY) = 70f
+
+  Then $(C \cap D)$ is the event where both the min and max of the temperatures is 70
+
+  This happens precisely when the temperatures of both cities are 70f
+
+  This means that $(C \cap D) = (A \cap B)$
+
+  NY can be below 70f, equal to 70f, or above 70f
+
+  LA can be below 70f, equal to 70f, or above 70f
+
+  So $(A \cup B)$ covers all pairings of temperatures for the two cities.
+
+  Also, the temperatures of the two cities can have a minimum of 70, a maximum of 70, or be equal to 70. Then $(C \cup D)$ also covers all pairings of temperatures for the two cities.
+
+  Then $(A \cup B) = (C \cup D)$
+
+  We know by inclusion exclusion that $P(A \cup B) = P(A) + P(B) - P(A \cap B)$
+
+  We also know that $P(C \cup D) = P(C) + P(D) - P(C \cap D)$
+
+  So $P(A) + P(B) - P(A \cap B) = P(C) + P(D) - P(C \cap D)$
+
+  Which is equal to $P(A) + P(B) = P(C) + P(D)$
+
+  So $P(D) = P(A) + P(B) - P(C) = 0.3 + 0.4 - 0.2 = 0.5$
+\item[2.5]
+	a) There are 13 denominations, we choose 4 of these to be the unqiue denominations. For each denomination selected, there are 4 cards to choose 1 of. Then there are $\binom{13}{4} {\binom{4}{1}}^4$ possible hands with 4 unique denominations. 
+
+	The total possible number of hands of 4 cards is $\binom{52}{4}$, so the probability is $\frac{\binom{13}{4}*4^4}{\binom{52}{4}} \approx 0.6761$
+
+	b) There are 4 suits to pick from, and we need to pick 4 unique suits. There are $\binom{4}{4} = 1$ ways to do so. For each chosen suit, we need to pick 1 card from 13 available denominations. There are $(\binom{13}{1})^4 = 13^4$ ways to choose the 4 denominations. There are $\binom{52}{4}$ ways to choose 4 card hands. So the probability that 4 unique suits are chosen is $\frac{13^4}{\binom{52}{4}} \approx 0.105$
+\item[2.6]
+	The probability that both balls will be the same is equal to the sum of the probabilities that both balls will be red and both balls will be black. The probability that both balls will be red is if the first ball is red, with a $\frac{3}{6} = 0.5$ probability, and then the second ball is red, with a $\frac{4}{10} = 0.4$ probability. Then the probability that both balls wil lbe red is $0.5*0.4 = 0.2$
+
+	The probability that both balls will be black is if the first ball is black, with a 0.5 probability, and the second ball will be black, with a 0.6 probability. Then the probability that both balls will be black is $0.5 * 0.6 = 0.3$
+
+	Then the probability that both balls will be the same is $0.2 + 0.3 = 0.5$
+\item[3.2]
+	For $i < 7$, it is 0, since there are no occurences of 6 for two dice rolls with sum $i$.
+
+	For $i = 7$, there are 6 possible roll combinations, out of 36 possible rolls. Of these 6 rolls, 1 has 6 as the first roll, out of 36 combinations. So the probability that the first roll is 6 given that the sum is 7 is $\frac{\frac{1}{36}}{\frac{6}{36}} = \frac{1}{6}$
+
+	For $i = 8$, there are 8 possible roll combinations, of which only 1 has 6 as the first number. Then the probability is $\frac{1}{6}$
+
+	For $i = 9$, there are 4 possible roll combinations, of which only 1 has 6 as the first number. Then the probability is $\frac{1}{4}$
+
+	For $i = 10$, there are 4 possible roll combinations, of which only 1 has 6 as the first number. Then the probability is $\frac{1}{4}$
+
+	For $i = 11$, there are 2 possible roll combinations, of which only 1 has 6 as the first number. Then the probability is $\frac{1}{4}$
+
+	For $i = 12$, there are 2 possible roll combinations, of which 2 out of 2 have 6 as the first number. Then the probability is $\frac{2}{2} = 1$
+\item[3.10]
+	We pick 3 cards, with no replacement, and ordering matters. So for the third card, there are 13 possible spades to choose from. For the second card, there are 12 possible spades to choose from. For the first card, there are 50 possible cards to choose from (could be spade or not). For a 3 card ordered dealing, there 52 possible cards for the first card, 51 for the second, and 50 for the third. Then the probability that the second and third cards are both spade is $\frac{13*12*50}{52*51*50}$ 
+
+	If the third, second, and first cards are all spade, then there are 13 possible cards for card 3, 12 possible spades for card 2, and 11 possible spades for the first card. Then the probability that the first and second and third cards are all spades is $\frac{13*12*11}{52*51*50}$
+
+	We know that $P(1st|2nd,3rd) = \frac{P(1st \cap 2nd,3rd)}{P(2nd,3rd)}$
+
+	This is equal to $\frac{\frac{13*12*11}{52*51*50}}{\frac{13*12*50}{52*51*50}} = \frac{11}{50} \approx 0.22$
+\item[3.12]
+	a) Let 1 be the event that they pass the first exam, and 2 be the event they pass the second, and 3 be the event they pass the 3rd. Then we know that $P(1) = 0.9, P(2|1) = 0.8$, and $P(3|2) = 0.7$
+
+	So $P(3) = P(3|2) * P(2|1) * P(1) = 0.9 * 0.8 * 0.7 = 0.504$
+
+	b) Let Fail be the event that they do not pass all 3. Let Fail 2 be the event that they do not pass the second.
+
+	We know that P(Fail) is the complement of P(3). So P(Fail) = 1 - 0.504 = 0.496
+
+	We know that P(Fail 2) is occurs when they pass the first exam, but fail the second exam.
+
+	They pass the first exam with probability 0.9, and they have a 1-0.8 = 0.2 probability of failing the second exam.
+
+	So P(Fail 2) = 0.9*0.2 = 0.18
+
+	So $P(Fail 2 | Fail) = \frac{0.18}{0.496} \approx 0.3629$
+	
+\item[3.14]
+	a) For the first selection, there are 7 blacks out of 12 marbles.
+
+	We add 2 black marbles. 
+
+	For the second selection, there are 9 black of 14. Add 2 black marbles.
+
+	For the third selection, there are 5 white of 16. Add 2 white marbles.
+
+	For the third selection, there are 7 white of 18.
+
+	Then the probability that the first two will be black and then the third and fourth will be white is $\frac{7}{12} \frac{9}{14} \frac{5}{16} \frac{7}{18} = \frac{2205}{48384} = \frac{35}{768}$
+
+	b) 
+	2 of the balls are black, so we are looking for P(BBWW) + P(BWBW) + P(BWWB) + P(WBWB) + P(WWBB)
+
+	P(BBWW) = $\frac{7}{12}\frac{9}{14}\frac{5}{16}\frac{7}{18} = \frac{35}{768}$
+
+	P(BWBW) = $\frac{7}{12}\frac{5}{14}\frac{9}{16}\frac{7}{18} = \frac{35}{768}$
+
+	P(BWWB) = $\frac{7}{12}\frac{5}{14}\frac{7}{16}\frac{9}{18} = \frac{35}{768}$
+
+	P(WBWB) = $\frac{5}{12}\frac{7}{14}\frac{7}{16}\frac{9}{18} = \frac{35}{768}$
+
+	P(WBBW) = $\frac{5}{12}\frac{7}{14}\frac{9}{16}\frac{7}{18} = \frac{35}{768}$
+
+	P(WWBB) = $\frac{5}{12}\frac{7}{14}\frac{7}{17}\frac{9}{16} = \frac{35}{768}$
+
+	So the probability that exactly 2 of the 4 marbles will be black is $6\frac{35}{768} = \frac{210}{768} \approx 0.273$
+\item[3.21]
+	a) There are 212 couples where the husband earns less than 25000 and the wife earns less than 25000, and there are 36 couples where the husband earns less than 25000 and the wife earns more than 25000. Then there are 248 husbands that earn more than 25000, and there are 500 total husbands in the survey, so the probability is $\frac{248}{500} = 0.496$
+
+	b) $P(\text{Wife more than 25000} | \text{Husband more than 25000})$ = $\frac{P(\text{Wife and Husband more than 25000})}{P(\text{Husband more than 25000})}$
+
+	This is equal to $\frac{54}{252} \approx 0.214$
+
+	c) $P(\text{wife more} | \text{husband less})$ = $\frac{P(\text{husband less and wife more})}{P(\text{husband more})}$
+
+	This is equal to $\frac{36}{248} \approx 0.145$
+\item[3.29]
+	We want the probability that the second set of 3 balls drawn have never been used before.
+
+  Let A be the event that the 3 balls drawn have never been used.
+
+  Let $B_0$ be the event that 0 unused balls were used in the first round of picking.
+
+  Let $B_1$ be the event that 1 unused ball was used in the first round of picking.
+
+  Similarly, name $B_2, B_3$
+
+  Then $P(A) = P(A|B_0)P(B_0) + P(A|B_1)P(B_1) + P(A|B_2)P(B_2) + P(A|B_3)P(B_3)$
+
+  To find $P(B_0)$, there are 6 used balls, and we must pick 3 of them. There are $\binom{6}{3}$ ways to choose.
+
+  There are 15 balls total to choose 3 from, so the total possibilities with no restrictions is $\binom{15}{3}$
+
+  So the probability $P(B_0)$ is $\frac{\binom{6}{3}}{\binom{15}{3}} = \frac{4}{91}$
+
+  $B_1$ occurs when 1 of the balls selected in the first round is an unused ball.
+
+  We pick from 9 unused balls 1 ball to play, and then from the 6 used balls, we pick 2.
+
+  Then $P(B_1$) = $\frac{\binom{9}{1}\binom{6}{2}}{\binom{15}{3}} = \frac{27}{91}$
+
+  Similarly, $P(B_2) = \frac{\binom{9}{2}\binom{6}{1}}{\binom{15}{3}} = \frac{216}{455}$
+
+  And $P(B_3) = \frac{\binom{9}{3}\binom{6}{0}}{\binom{15}{3}} = \frac{12}{65}$
+
+  $(A|B_0)$ assumes that 0 unused balls were used. So we have 9 unused balls to choose 3 from.
+
+  So $P(A|B_0)$ = $\frac{\binom{9}{3}}{\binom{15}{3}} = \frac{12}{65}$
+
+  $P(A|B_1)$ occurs when 1 unused ball is used, leaving 8 unused balls to choose 3 from.
+
+  So $P(A|B_1)$ = $\frac{\binom{8}{3}}{\binom{15}{3}} = \frac{8}{65}$
+
+  Similarly, we find $P(A|B_2)$ = $\frac{\binom{7}{3}}{\binom{15}{3}} = \frac{1}{13}$
+
+  And we can also find $P(A|B_3)$ = $\frac{\binom{6}{3}}{\binom{15}{3} = \frac{4}{91}}$
+
+  So $P(A) = \frac{4}{91}\frac{12}{65} + \frac{27}{91}\frac{8}{65} + \frac{216}{455}\frac{1}{13} + \frac{12}{65}\frac{4}{91} = \frac{528}{5915} \approx 0.089264$
+\item[3.38]
+	$P(Tail | W) = \frac{P(Tail\cap W)}{P(W)}$
+
+	For flipping the coin, there is $\frac{1}{2}$ chance of heads or tails. If heads, there are is $\frac{5}{12}$ chance of getting white. If tails, there is a $\frac{3}{15}$ chance of getting white.
+
+	Then the probability of getting white is $\frac{1}{2} \frac{5}{12} + \frac{1}{2} \frac{3}{15} = \frac{37}{120}$
+
+	$P(Tail\cap W)$ is the event where the flipped coin is tails, with a 0.5 probability, and the ball drawn is white, with a $\frac{3}{15}$ probability. Then the probability is $\frac{3}{30} = 0.1$
+
+	Then $P(Tail | W) = \frac{0.1}{\frac{37}{120}} = \frac{12}{37} \approx 0.324$
+\item[3.44]
+	Prisoner A starts with a probability of getting executed as $\frac{1}{3}$, since there are 3 prisoners, each with the same likelihood of getting executed.
+
+	If the jailer reveals one of the free individuals, then the remaining two individuals would be A and another person, call them B. 
+
+	Since A and B are equally likely to be executed, and they are the only two individuals to be elected for execution, the probability that a specific person A or B will be executed is $\frac{1}{2}$, which is greater than the original $\frac{1}{3}$
+\end{itemize}
+\end{document}

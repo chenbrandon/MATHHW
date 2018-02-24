@@ -1,0 +1,186 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{mathrsfs}
+\usepackage[margin=1in]{geometry}
+
+\newcommand{\ray}[1]{\overrightarrow{#1}}
+\newcommand{\lines}[1]{\overleftrightarrow{#1}}
+
+\begin{document}
+
+\noindent Brandon Chen
+
+\noindent MATH 444 HW 6
+
+\noindent 4A, 4B, 4D, 4E, 4H, 4I
+
+\begin{itemize}
+
+	\item[4A]
+
+		Prove Theorem 4.9 (one ray must be between the other two)
+
+		If $\ray{a}, \ray{b}, \ray{c}$ are rays with a common end point, no two of which are collinear and all lying in a single half rotation, then exactly one of them les between the otehr two.
+
+		Claim: Rays are distinct
+
+		Assume $\ray{a}, \ray{b}, \ray{c}$ not distinct, then assume $\ray{a} = \ray{b}$
+
+		Then $\ray{a},\ray{b}$ collinear, contradiction
+
+		Then the rays must be distinct.
+
+		$\ray{a}, \ray{b}, \ray{c}$ share common end point, call it $O$.
+
+		Let $HR(\ray{r}, P)$ be any half rotation containing the rays $\ray{a}, \ray{b}, \ray{c}$, then we know there exists a bijective function $g:HR(\ray{r}, P) \rightarrow [0,180]$
+
+		Such that $g(\ray{a}) = 0$
+
+		Since $g$ is bijective, and $\ray{a},\ray{b},\ray{c}$ distinct and in the same single half rotation, $g(a) \neq g(b) \neq(c)$
+
+		Without loss of generality, say that $g(a) < g(b) < g(c)$
+
+		Then $\ray{b}$ is between $\ray{a}, \ray{c}$
+
+		Show that there is exactly one between the other two.
+
+		For more than one ray to be between the other two, we must have the inequality such that two of the three values $g(\ray{a}), g(\ray{b}), g(\ray{c})$ are between the largest and smallest. This is impossible since all values distinct, so there must be the only one in between the other two.
+
+		Then we have shown that exactly one ray, $\ray{b}$, is between the other two.
+
+	\item[4B]
+
+		Prove Corollary 4.10 (Consistency of betweenness of rays)
+
+		Let $\ray{a}, \ray{b}, \ray{c}$ be distinct rays with a common endpoint, no two of which are collinear, and all lying in a single half-rotation. If $HR(\ray{r}, P)$ is any half rotation containing all three rays and $g$ is a corresponding coordinate function, then $\ray{a} * \ray{b} * \ray{c}$ if and only if $g(\ray{a}) * g(\ray{b}) * g(\ray{c})$
+
+		Prove forwards: 
+
+		Assume $HR(\ray{r}, P)$ is any half rotation containing all three rays and $g$ is a corresponding function
+
+		This is already proven in Theorem 4.9	
+
+		Prove backwards: 
+
+		Assume $g(\ray{a}) * g(\ray{b}) * g(\ray{c})$
+
+		Then $\ray{a} * \ray{b} \ray{c}$
+
+		And by hypothesis, $\ray{a}, \ray{b}, \ray{c}$ are distinct noncollinear, so $HR(\ray{r}, P)$ is a half cotation containing all three rays
+
+	\item[4D]
+
+		Prove Theorem 4.17 (The vertical angles theorem)
+
+		Vertical angles are congruent
+
+		Two angles are said to form a pair of vertical angles if they ahve the same vertex, they are both proper, and their sides form two distinct pairs of opposite rays. 
+
+		Rays $\ray{c}, \ray{d}$ form an angle $\angle cd$ 
+
+		And rays $\ray{a}$ is opposite to $\ray{c}$ and $\ray{b}$ is opposite to $\ray{d}$
+
+		And they form angle $\angle ab$
+
+		Since $c$ opposite $a$, they form a line, call it $\lines{ac}$
+
+		Then since $\ray{d}$ forms a proper angle with $\ray{c}$, then $\angle{cd} + \angle{da} = 180$
+
+		And we know that $\ray{d}, \ray{b}$ and form a line, call it $\lines{db}$
+
+		And $\angle{ab}$ proper, so $\angle{ab} + \angle{da} = 180$
+
+		So $\angle{ab} = 180 - \angle{da}$
+
+		And $\angle{cd} = 180 - \angle{da}$
+
+		Then $\angle{ab}$ congruent $\angle {cd}$
+
+	\item[4E]
+
+		Prove Theorem 4.18 (the patial converse to the vertical angles theorem)
+
+		Suppose $\ray{a}$ and $\ray{c}$ are opposite rays starting at a point $O$, and $\ray{b}, \ray{d}$ are opposite rays starting at $O$ and lying on opposite sides of $\lines{a}$. If $\angle{ab} \cong \angle{cd}$, then $\ray{b},\ray{d}$ are opposite rays
+
+		$\ray{a}, \ray{c}$ form a line, call it $\lines{a}$
+
+		Then rays $\ray{b}, \ray{d}$ are rays starting at $O$ and lie on opposite sides of $\lines{a}$
+
+		Then $\ray{a}, \ray{b}$ form a proper angle, call it $\angle{ab}$
+
+		And since $\ray{a}$ opposite $\ray{c}$, then $\angle{ab} + \angle{bc} = 180$
+
+		And on opposite side of $\lines{a}$, we have that $\ray{d}$ forms proper angles $\angle{ad}, \angle{cd}$
+
+		Then since $\ray{a},\ray{c}$ are opposite, then $\angle{ad} + \angle{cd} = 180$
+
+		We know by hypothesis that $\angle{ab} \cong \angle{cd}$
+
+		So $\angle{cd} = \angle{ab}$
+
+		And $\angle{ad} + \angle{cd} = 180$
+
+		Then $\angle{ad} + \angle{ab} = 180$
+
+		Then $\ray{d}, \ray{b}$ must be opposite.
+
+	\item[4H]
+
+		Prove theorem 4.29 (The four right angles theorem)
+
+		If $\ell, m$ are are perpendicular lines, then $\ell$ and $m$ form four right angles
+
+		$\ell$ and $m$ are perpendicular lines if they intersect at a point $O$ and one of the rays in $\ell$ starting at $O$ makes an angle of 90 degrees with one of the rays in $m$ starting at $O$..
+
+		$\ell$ is formed by two opposite rays starting at $O$, call them $\ray{a}, \ray{c}$
+
+		$m$ is formed by two opposite rays starting at $O$, call them $\ray{b}, \ray{d}$
+
+		We know that $\ell, m$ perpendicular, so without loss of generality, assume $\angle{cd}$ is 90 degrees
+
+		Since $\ray{a},\ray{c}$ opposite, then $\angle{cd} + \angle{ad} = 180$
+
+		and Since $\ray{b},\ray{d}$ opposite, then $\angle{cd} + \angle{bd} = 180$
+
+		Then since $\angle{cd} = 90$, then both $\angle{ad}, \angle{bc} = 90$
+
+		Again, since $\ray{a}, \ray{c}$ opposite, then $\angle{bc} + \angle{ab} = 180$
+
+		Since $\angle{bc} = 90$, then $\angle{ab} = 90$
+
+		Then the two lines form 4 90 degree angles.
+
+	\item[4I]
+
+		Prove Theorem 4.30 (construction of perpendiculars)
+
+		Let $\ell$ be a line and let $P$ be a point on $\ell$. Then there exists a unique line $m$ that is perpendicular to $\ell$ at $P$.
+
+		$P$ is a point on $\ell$
+
+		Then there is a ray on $\ell$ starting from point $P$, call it $\ray{a}$
+
+		Then there is a coordinate function $g:HR(\ray{r}, P) \rightarrow [0,180]$ such that $g(\ray{a}) = 0$
+
+		Then let $\ray{b}$ form an angle of 90 degrees with $\ray{a}$
+
+		That is, let $\ray{b} = g^{-1} (90)$
+
+		And let $\ray{d}$ be the opposite of $\ray{b}$
+
+		And call $\ray{d} \cup \ray{b}$ the line $m$
+
+		Then $\angle{ab} = 90$, by construction
+
+		And since $\ray{a},\ray{c}$ opposite, then $\angle{ab} + \angle{bc} = 180$
+
+		Then $\angle{bc} = 90$
+
+		And since $\ray{b},\ray{d}$ opposite, then $\angle{bc} + \angle{cd} = 180$, then $\angle{cd} = 90$
+
+		Then $m$ is perpendicular to $\ell$
+
+\end{itemize}
+\end{document}

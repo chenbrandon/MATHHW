@@ -1,0 +1,264 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage[margin=1in]{geometry}
+
+\begin{document}
+
+\noindent Brandon Chen
+
+\noindent MATH 394 HW 6
+
+\noindent Ch 5 pg 212: 1, 3, 6, 7, 10, 12, 21, 23, 29, 31, 32, 34, 38, 40 and 41
+
+\begin{itemize}
+\item[1]
+  $f(x) = c(1-x^2), -1 < x < 1, 0$ otherwise
+
+  a) Find $c$
+
+  Know that $\int_{-\infty}^{\infty} f(x) dx = 1$
+
+  $f(x)$ is only non zero on $-1 < x < 1$, so integral is $\int_{-1}^{1} c(1-x^2)dx$
+
+  This is equal to $c\int_{-1}^{1} (1-x^2)dx = c(x - \frac{x^3}{3}) \big|_{-1}^{1} = c(1 - \frac{1}{3}) - c(-1 + \frac{1}{3} = \frac{4c}{3}$
+
+  So $\frac{4c}{3} = 1$, so $c = \frac{3}{4}$
+
+  b) What is the cumulative distribution function of $X$?
+
+  The cumulative distribution function of $X$ is $P(X \leq x)$
+
+  This is equal to $\int_{-\infty}^{x} f(x)dx$
+
+  Know that integral is $\int_{-1}^{x} \frac{3}{4} (1 - x^2) dx$
+
+  This is equal to $\frac{3}{4} (x - \frac{x^3}{3}) \big|_{-1}^{x}$
+
+  This is equal to $\frac{3}{4}[(x - \frac{x^3}{3}) - (-1 + \frac{1}{3})]$
+
+  Which is equal to $\frac{3x - x^3 + 2}{4}$
+\item[3]
+  $f(x) = C(2x - x^3)$ for $0 < x < \frac{5}{2}$, 0 otherwise
+
+  Could $f$ be a probability density function? If so, determine $C$.
+
+  In both cases, they cannot be density functions, since there is a point where $f(x)$ will be negative
+
+  In the first function, when $x = 5/2$, it is the opposite sign of when $x = 1$, regardless of $C$, so one of the must be negative, so it cannot be a density function
+
+  In the second function, when $x = 5/2$, it is the opposite sign of when $x = 1$, regardless of the value of $C$, so it cannot be a density function.
+\item[6]
+  We know that E[X] = $\int_{-\infty}^{\infty} xf(x)dx$
+
+  a) E[X] = $0 + \int_{0}^{\infty} x \frac{1}{4}xe^{-x/2} dx$
+
+  Substitution, let $t = \frac{x}{2}, dx = 2dt$
+
+  E[X] = $\int_{0}^{\infty} (2t)^2 e^{t} (2dt)$
+
+  E[X] = $2 \int_{0}^{\infty} t^2 e^{-t} dt$
+
+  Know gamma function defined by $\Gamma (n) = \int_{0}^{\infty} x^{n-1} e^-x dx, \Gamma (n) = (n-1)!$
+
+  E[X] = $2\Gamma (3) = 4$ 
+
+  b) We found $c = \frac{3}{4}$ in exercise 1 part a
+
+  E[X] = $0 + [\int_{-1}^{1} x \frac{3}{4} (1 - x^2)dx] + 0$
+
+  E[X] = $\frac{3}{4}\int_{-1}^{1} x - x^3 dx$
+
+  E[X] = $\frac{3}{4}[\frac{1}{2} x^2 - \frac{1}{4} x^4]\big|_{-1}^{1}$
+
+  E[X] = $\frac{3}{4}[(0.5 - 0.25) - (0.5 - 0.25)] = 0$
+
+  c) E[X] = $0 + \int_{5}^{\infty} x \frac{5}{x^2} dx$
+
+  E[X] = $5\int_{5}^{\infty} \frac{1}{x} dx = 5ln(x)\big|_{5}^{\infty} = \infty$
+\item[7]
+  $f(x) = a + bx^2, 0 \leq x \leq 1$, 0 otherwise
+
+  E[X] = $\frac{3}{5}$, find $a, b$
+
+  Know that $\int_{-\infty}^{\infty} f(x) = 1$
+
+  So $\int_{0}^{1} a + bx^2 dx = 1$
+
+  So $ax + \frac{b}{3} x^3 \big|_0^1 = a + \frac{b}{3} = 1$
+
+  Know E[X] = $\frac{3}{5}$, so $\int_{0}^{1} xa + bx^3 dx = \frac{3}{5}$
+
+  So $\frac{1}{2} ax^2 + \frac{b}{4} x^4 \big|_0^1 = \frac{a}{2} + \frac{b}{4} = \frac{3}{5}$
+
+  Solving system of equations for $a,b$,
+
+  So $a = \frac{3}{5}, b = \frac{6}{5}$
+\item[10]
+  a) 
+
+  The person can only ride from 7:05 - 7:15, 7:20 - 7:30, 7:35 - 7:45, or 7:50 - 8:00
+
+  Then the total number of minutes that this is possible is 40, with total minutes possible 60
+
+  Then $p(A) = \frac{40}{60} = \frac{2}{3}$
+
+  b) This is the same as part a, since the times to ride will still total 40 minutes from 7:10 to 8:10, and the total possible minutes will still be 60, for $p(b) = \frac{2}{3}$
+\item[12]
+  The bus can break down anywhere with equal probability
+
+  Then E[X] = 50
+
+  Since it is uniform, breakdowns will be spread around the expected value
+
+  So it is more advantageous to have stations between the midpoint and end points.
+
+%  Let Y denote the distance to travel to the station for the first scenario
+
+ % $Y = x, x \leq 25$
+  %$50 - x, x \in (25, 50)$
+ % $x - 50, x \in (50, 75)$
+ % $100 -x, x \in (75,100)$
+
+%  Then EY = $\frac{1}{100}[\int_0^{25} xdx + \int_{25}^{50} (50 - x) dx + \int_{50}^{75} (x - 50) dx + \int_{75}^{100} (100 - x) dx] = 12.5$
+
+
+
+%  Let X denote the distance to travel to the station for hte secon scenario
+
+% $X = 25 - x, x \leq 25$
+% $x - 25, x \in (25, 37.5)$
+% $50 - x, x \in (37.5, 50)$
+% $x - 50, x \in (50, 62.5)$
+% $75 - x, x \in (62.5, 75)$
+% $x - 75, x \in (75, 100)$
+
+% Then EX = 
+\item[21]
+  We know that the height of a 25 year old man is a normal random variable with parameters $\mu = 71, \sigma ^2 = 6.25$
+
+  a) Find $P(X > 74)$
+
+  $P(X > 74) = P(\frac{x - 71}{\sqrt{6.25}} > \frac{3}{\sqrt{6.25}})$
+
+  $=P(x > \frac{3}{\sqrt{6.25}})$
+
+  $=P(z < \frac{3}{\sqrt{6.25}}$
+
+  $=1 - \Phi (1.2) \approx 0.1151$
+
+  b) Find $P(X > 77 | x \geq 72)$
+
+  $= \frac{P(x > 77)}{P(x > 72)}$
+
+  $= \frac{ 1 - P(z < \frac{6}{\sqrt{6.25}})}{1 - P(z < \frac{6}{\sqrt{6.25}}}$
+
+  $= \frac{ 1 - \Phi(2.4)}{1 - \Phi(0.4)}$
+
+  $\approx 0.0238$
+\item[23]
+  Let X be a binomial random variable for number of 6's with probability 1/6, n = 1000
+
+  then EX = $\frac{1000}{6} \approx 166.6$
+
+  And Var(X) = $\frac{1000}{6} \frac{5}{6} = \frac{5000}{36} \approx 138.8$
+
+  a) Find $P(149.5 \leq x \leq 200.5)$
+
+  $= P(\frac{149.5-166.6}{\sqrt{138.8}} < z < \frac{200.5 - 166.6}{\sqrt{138.8}}$
+
+  $=\Phi(2.87) - 1 + \Phi(1.46) \approx 0.92$
+\item[29]
+  $u = 1.012, d = 0.990, p = 0.52$
+
+  Find probability that stocks will be up at least 30 percent after 1000 periods
+
+  Let X be the number of time periods with stock increases
+
+  Stock price = $s[u^xd^{1000-x}]$
+
+  $= sd^{1000} (\frac{u}{d})^x$
+
+  Want $d^{1000} (\frac{u}{d})^x > 1.3$
+
+  Which is $x > \frac{ln(1.3 - 1000ln(d)}{ln{\frac{u}{d}}} \approx 469.2$
+
+  So x needs to rise at least 470 times
+
+  So we need to find $P(X > 469.5) = P(\frac{x - 520}{\sqrt{249.6}} > \frac{469.5 - 520}{\sqrt{249.6}}$
+
+  $=P(z > -3.19)$
+
+  $\approx 0.99$
+\item[31]
+  a) The least travel for a uniform distribution would occur at the midpoint
+
+  This is equal to $\frac{A}{2}$
+
+  b) E[X - a] = $\int_0^A |x-a|\lambda e^{-\lambda x} dx$
+
+  $= \int_0^a (a - x) \lambda e^{-\lambda x} dx + \int_a^{\infty} (x - a) \lambda e^{-\lambda x} dx$
+
+  $= a + \frac{2}{\lambda}e^{-\lambda a} - \frac{1}{\lambda}$
+
+  Differentiating and setting to 0, we get $a =frac{ln(2)}{\lambda}$
+\item[32]
+  Exponentially distributed with random variable parameter $\lambda = \frac{1}{2}$
+
+  a) $P(x > 2) =?$
+
+  $P(x > 2) = \int_2^{\infty} \frac{1}{2} e^{\frac{-1}{2}t} dt$
+
+  $=e^{-1}$
+
+  b) $P(x > 10 | x > 9)$?
+
+  This is equal to $P(x > 10-9) = P(x > 1)$
+
+  This is equal to $1 - P(x < 1) = 1 - (1-e^{-1/2}) = e^{-\frac{1}{2}}$
+\item[34]
+  Exponential random variable with parameter $\frac{1}{20}$
+
+  a) Find $P(x > 30000 | x > 10000)$
+
+  This is equal to $P(X > 20000)$
+
+  $=\int_{20}^{\infty} e^{\frac{-1}{20}x}dx$
+
+  $= e^{-1}$
+
+  b) Let $X ~ U(0, 40)$
+
+  Want $P(X > 30 | x > 10)$
+
+  This is equal to $\frac{P(X > 30)}{P(X > 10)}$
+
+  $= \frac{   \int_{30}^{40} 1/40 dx} { \int_{10}^{40} 1/40 dx} $
+
+  $= \frac{1}{3}$
+\item[38]
+  For roots to be real, discriminant must be nonnegative
+
+  For $4x^2 + 4xy + y + 2 = 0$
+
+  Discriminant is $(4y)^2 - 4(4(y + 2)) \geq 0$
+
+  So $(y - 2)(y + 1) \geq 0$
+
+  So $y \geq 2$
+
+  Uniform over (0,5), need Y greater than or equal to 2
+
+  So $P(y \geq 2) = \frac{3}{5}$
+\item[40]
+  $Y = e^x$
+
+  $F_y (y) = P(e^x \leq y) = P(x \leq ln y)$
+
+  $=F_x(ln y)$
+
+  $F_y (y) = f_x (lny) \frac{1}{y} = \frac{1}{y}$ for $1 < y < e$
+\item[41]
+\end{itemize}
+\end{document}

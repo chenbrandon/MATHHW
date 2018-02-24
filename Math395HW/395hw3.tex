@@ -1,0 +1,219 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage[margin=1in]{geometry}
+
+\begin{document}
+
+\noindent Brandon Chen
+
+\noindent MATH 395 HW 3
+
+\noindent 6.1(a,b), 6.6, 6.10, 6.20, 8(a,b), 42 
+
+
+\begin{itemize}
+
+\item[6.1 a, b]
+	
+	Two fair dice are rolled. Find the joint probability mass function of $X, Y$ when
+
+		a) $X$ is the largest value obtained on any die, and $Y$ is the sum of the values
+
+		b) $X$ is the value on the first die, and $Y$ is the larger of the two values
+
+
+
+
+
+\newpage
+
+\item[6.6]
+
+	A bin of 5 transistors is known to contain 2 that are defective. The transistors are to be tested, one at a time, until the defective ones are identified. Denote by $N_1$ the number of tests made until the first is identified, and $N_2$ the number of additional tests until the second defective is identified. Find the joint probability mass function of $N_1$ and $N_2$
+
+	We know that $1 < N_1 < 4, N_1 < N_2 \leq 5$, since $N_2$ must come after $N_1$, and $N_1$ must be at least 1, but cannot be 5, or else there aren't 2 defective
+
+		5 transistors total, 2 defective, $\binom{5}{2} = 10$ possible outcomes, each equally likely
+
+		So joint probability is uniform distribution with 10 possibilities, all equally likely
+
+		So for specific $x, y$, we have
+
+		$P(N_1 = x, N_2 = y) = \frac{1}{10}, 1 \leq x < y \leq 5$
+
+\item[6.10]
+
+	The joint probability density function of $X, Y$ is given by $f(x,y) = e^{-(x+y)} 0 \leq x < \infty, 0 \leq y < \infty$
+
+		$f_X(x) = e^{-x}, f_Y(y) = e^{-y}, f_X(x) * f_Y(y) = f_{X,Y}(x,y)$, independent
+
+	a) $P(X < Y)$?
+	
+		$f_{X,Y}(x,y) = e^{-(x+y)}$
+
+		$P(X < Y) = \int_{0}^{\infty} \int_{0}^{y} e^{-(x+y)} dx dy$
+
+		$= \int_{0}^{\infty} -e^{-(x+y)}|_0^y dy$
+
+		$= \int_{0}^{\infty} -e^{-2y} + e^{-y} dy$
+
+		$= \frac{e^{-2y}}{2} - e^{-y}|_{0}^{\infty} = [0 - 0] - [\frac{1}{2} - 1] = \frac{1}{2}$
+
+	b) $P(X < a)$?
+
+		$P(X < a) = \int_{0}^{a} f_X(x)$ 
+
+		$= \int_{0}^{a} e^{-x} dx$
+
+		$= -e^{-x}|_{0}^{a}$
+
+		$= -e^{-a} + 1$
+
+\item[6.20]
+
+	The joint density of $X,Y$ is given by
+
+		$f_{X,Y} (x,y) = \begin{cases}
+			xe^{-(x+y)} & x > 0, y > 0\\
+
+			0 & \text{otherwise}\\
+
+		\end{cases}$
+
+	Are $X,Y$ independent? 
+
+		$f_Y(y) = \int_{0}^{\infty} xe^{-(x+y)}dx$
+
+		$= e^{-y}\int_{0}^{\infty} xe^{-x} dx$
+
+		Using $\Gamma(2) = 1$, $f_Y(y) = e^{-y}$
+
+		$f_X(x) = \int_{0}^{\infty} xe^{-(x+y)}dy$
+
+		$f_X(x) = xe^{-x} \int_{0}^{\infty} e^{-y} dy$
+
+		$f_X(x) = xe^{-x}[0 + 1] = xe^{-x}$
+
+		And we know $X,Y$ independent if $f_Y(y) * f_X(x) = f_{X,Y}(x,y)$
+
+		This is $e^{-y} * xe^{-x} = xe^{-(x+y)}$, so $X,Y$ are independent.
+		
+	If instead, $f_{X,Y}(x,y)$ were given by
+
+		$f_{X,Y} (x,y) = \begin{cases}
+			2 & 0 < x < y, 0 <y < 1\\
+			0 & \text{otherwise}\\
+		\end{cases}$
+
+	Would $X,Y$ be independent?
+
+	$f_X(x) = \int_{x}^{1} 2 d$
+
+	$ = 2y |_{x}^{1} = 2 - 2x, 0 < x < 1$
+
+	$f_Y(y) = \int_{0}^{y} 2dx = 2x|_{0}^{y} = 2y, 0 < y < 1$
+
+	$f_X(x) * f_Y(y) \neq f_{X,Y}(x,y)$
+
+	So $X,Y$ not independent
+
+\item[6.8 a, b]
+
+	The joint probability density function of $X,Y$ is given by
+
+	$f_{X,Y}(x,y) = c(y^2 - x^2)e^{-y},    -y \leq x \leq y, 0 < y < \infty$
+
+	a) Find $c$
+
+	We know that the total probability has to be equal to 1
+
+	$1 = \int_{0}^{\infty} \int_{-y}^{y} c(y^2 - x^2)e^{-y} dx dy$
+
+	$\frac{1}{c} = \int_{0}^{\infty} e^{-y} [ \int_{-y}^{y} (y^2 - x^2) dx] dy$
+
+	$ \frac{1}{c} = \int_{0}^{\infty} e^{-y} [(y*y^2 - \frac{1}{3}y^3) - (y*y^2 + \frac{1}{3}y^3)] dy$
+
+
+	$ \frac{1}{c} = \int_{0}^{\infty} e^{-y} [\frac{4}{3}y^3]dy$
+
+	$ \frac{3}{4c} = \int_{0}^{\infty} e^{-y} y^3 dy$
+
+	Using $\Gamma(4) = 3! = 6$, this is $\frac{3}{4c} = 6$
+
+	$c = \frac{1}{8}$
+
+	b) Find the marginal densities of $X,Y$
+	
+	Find $f_X(x)$
+
+	$f_X(x) = \frac{1}{8} \int_{|x|}^{\infty} (y^2 - x^2) e^{-y} dy$
+
+	$= [\frac{1}{8} \int_{|x|}^{\infty} y^2e^{-y}dy] - [\frac{1}{8}x^2 \int_{|x|}^{\infty} e^{-y}]$
+
+	$= [\frac{1}{8} \int_{|x|}^{\infty} y^2e^{-y}dy] + [\frac{1}{8}x^2 e^{-y}]_{|x|}^{\infty}$
+
+	$= [\frac{1}{8} \int_{|x|}^{\infty} y^2e^{-y}dy] + [0 - \frac{1}{8}x^2 e^{-|X|}]$
+
+	$= [\frac{1}{8} \int_{|x|}^{\infty} y^2e^{-y}dy] - [\frac{1}{8}x^2 e^{-|X|}]$
+
+	$= \frac{1}{8}[ -y^2e^{-y} - 2ye^{-y} - 2e^{-y}]_{|x|}^{\infty} - [\frac{1}{8}x^2 e^{-|X|}]$
+
+	$= \frac{1}{8}*0 - \frac{1}{8}[-|x|^2 e^{-|x|} - 2|x|e^{-|x|} - 2e^{-|x|}] - [\frac{1}{8}x^2 e^{-|x|}]$
+
+	And $x^2 = |x|^2$, so terms $x^2e^{-|x|}, |x|^2 e^{-|x|}$ cancel out
+
+	$= \frac{1}{8}[2|x|e^{-|x|} - 2e^{-|x|}]$
+
+	$= \frac{1}{4}[1 + |x|]e^{-|x|}, -\infty < x < \infty$
+
+
+	Find $f_Y(y)$
+
+	$f_Y(y) = \frac{1}{8} \int_{-y}^{y} (y^2 - x^2) e^{-y} dx$
+
+	$= \frac{1}{8} \int_{-y}^{y} y^2 e^{-y} - x^2e^{-y} dx$
+
+	$ = \frac{1}{8} [xy^2 e^{-y} - \frac{1}{3}x^3 e^{-y}]_{-y}^{y}$
+
+	$= \frac{1}{8} [(y^3 e^{-y} - \frac{1}{3}y^3 e^{-y}) - (-y^3 e^{-y} + \frac{1}{3}y^3 e^{-y})] $
+
+	$=\frac{1}{6} y^3 e^{-y}, 0 < y < \infty$
+
+
+
+
+
+\item[42]
+
+	The joint density of $X, Y$ is given by
+
+	$f_{X,Y}(x,y) = c(x^2 - y^2)e^{-x}, 0 \leq x < \infty, -x \leq y \leq x$
+
+	We know that $f_{Y|X}(x|y) = \frac{f_{X,Y}(x,y)}{f_{x}(x)}$
+
+	We found in exercise 6.8a that $c = \frac{1}{8}$
+
+	So we want the conditional distribution of $Y$ given $X = x$
+
+	We found in exercise 6.8b that $f_X(x) = c\frac{4}{3}x^3$
+
+	So $f_{Y|X}(y|x) = \frac{c(x^2 - y^2)e^{-x}}{c\frac{4}{3}x^3e^{-x}}$
+
+	So $f_{Y|X}(y|x) = \frac{3}{4}\frac{x^2-y^2}{x^3}, -x < y < x$
+
+	To find conditional cdf, we simply take the integral of the conditional pdf
+
+	That is $F_{Y|X}(y|x) = \int_{-x}^{y} \frac{3}{4} \frac{x^2 - y^2}{x^3} dy$
+
+	$= \frac{3}{4} \int_{-x}^{y} x^{-1} - \frac{y^2}{x^3}dy$
+
+	$= \frac{3}{4}[x^{-1}y - \frac{y^3}{3x^3}]_{-x}^{y}$
+
+	$= \frac{3}{4}[(yx^{-1} - \frac{y^3}{3x^3}) - (-1 + \frac{1}{3})]$ 
+	$= \frac{3}{4}[\frac{y}{x} - \frac{y^3}{3x^3}) + \frac{2}{3}]$
+
+	$=\frac{3y}{4x} - \frac{y^3}{4x^3} + \frac{1}{2}$
+\end{itemize}
+\end{document}

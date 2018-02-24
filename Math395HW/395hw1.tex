@@ -1,0 +1,178 @@
+
+\documentclass[11pt]{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage[margin=1in]{geometry}
+
+\begin{document}
+
+\noindent Brandon Chen
+
+\noindent MATH 395 HW 1
+
+\noindent 4.7 and 4.8 (a),(c), 4.51
+
+\noindent 5.1, 5.8, 5.11, 5.16
+
+\begin{itemize}
+	\item[4.7 (a,c only)]
+
+	Suppose that a die is rolled twice. What are the possible values that the following random variables can take on:
+
+	a) The maximum value to appear in the two rolls:
+
+	Possible values are : $\{1, 2, 3, 4, 5, 6\}$
+
+	c) The sum of the two rolls:
+
+	Possible values are : $\{2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12\}$
+
+	\item[4.8 (a,c only)]
+
+	If the die in Problem 4.7 is assumed fair, calculate the probabilities associated with the random variables in parts (a) through (d) (parts a,c only)
+
+	a) $P(1)$ happens when both rolls are 1, with probability $\frac{1}{6}$ each, so the probability that the maximum value is 1 is $\frac{1}{36}$
+
+	$P(2)$ happens when the first roll is 1 and the other 2, or vice versa, with probability $2 \frac{1}{36}$, or when both rolls are 2, with probability $\frac{1}{36}$
+
+	So $P(2) = 2\frac{1}{36} + \frac{1}{36}$
+
+	$P(3)$ happens when one of the two rolls is 3, and the other is 1 or 2, or when both are 3.
+
+	$P(3) = 2\frac{1}{36} + 2\frac{1}{36} + \frac{1}{36} = \frac{5}{36}$
+
+	$P(4)$ happens when one of the two rolls is 4, and the other is 1, 2, or 3, or when both are 4.
+
+	$P(4) = 2\frac{1}{36} + 2\frac{1}{36} + 2\frac{1}{36} + \frac{1}{36} = \frac{7}{36}$
+
+	$P(5)$ happens when one of the two rolls is 5, and the other is 1,2,3, or 4, or when both are 5.
+
+	$P(5) = 2\frac{1}{36} + 2\frac{1}{36} + 2\frac{1}{36} + 2\frac{1}{36} + \frac{1}{36} = \frac{9}{36}$
+
+	$P(6)$ happens when both rolls are 6
+
+	$P(6) = \frac{1}{36}$
+
+	c) 
+
+	2 happens with rolls (1,1), with probabiltiy $P(2) = \frac{1}{36}$
+
+	3 happens with rolls (1,2,), (2,1) with probability $P(3) = \frac{2}{36}$
+
+	4: (1,3), (2,2), (3,1), $P(4) = \frac{3}{36}$
+
+	5: (1,4), (2,3), (3,2), (4,1), $P(5) = \frac{4}{36}$
+
+	6: (1,5), (2,4), (3,3), (4,2), (5,1), $P(6) = \frac{5}{36}$
+
+	7: (1,6), (2,5), (3,4), (4,3), (5,2), (6,1), $P(7) = \frac{6}{36}$
+
+	8: (2,6), (3, 5), (4,4), (5,3), (2,6), $(P(8) = \frac{5}{36}$
+
+	9: (3,6), ... (6,3), $P(9) = \frac{4}{36}$
+
+	10: (4, 6) ... (6,4), $P(10) = \frac{3}{36}$
+
+	11: (5,6), (6,5), $P(11) = \frac{2}{36}$
+
+	12: (6,6), $P(12) = \frac{1}{36}$
+
+\item[4.51]
+
+	The expected number of typographical errors on a page of a certain magazine is 0.2. What is the probability that the next page you read contains 0, or 2 or more errors? Explain your reasoning.
+
+	a) 0 errors
+
+	We know that the probability that the number of errors on a certain page of a magazine is 0.2. We know that this sort of problem can be modeled with a poisson random variable, with expected value 0.2 and k value 0.
+	
+	So the formula to calculate this is $e^{-0.2} \frac{0.2^0}{0!} = e^{-0.2}$
+
+	b) 2 or more errors.
+
+	The probability is equal to the complement event of not having 0 or 1 errors.
+
+	That is, the probability is equal to 1 minus the probability of 0 or 1 errors.
+
+	This is $1 - e^{-0.2} - e^{-0.2} \frac{0.2^1}{1!} = 1 - e^{-0.2} - 0.2e^{-0.2}$
+
+\item[5.1]
+
+  Let $X$ be a random variable with probability density function $f(x) = c(1-x^2), -1 < x < 1, 0, otherwise$
+
+  a) What is the value of $c$?
+
+  We know that for any continuous random variable, the integral across the real line is equal to 1
+
+  So $\int_{-\infty}^{\infty} f(x) = 1$, so $cx - c\frac{1}{3}x^3 |_{-1}^{1} = 1$
+
+  So $c = \frac{3}{4}$
+
+  b) What is the cumulative distribution function of $X$?
+
+  This is $\int_{-\infty}^{x} f(x)$
+
+  So the cumulative distribution function of $X$ is $\int_{-1}^{x} \frac{3}{4} (1-x^2) dx$ for $x \in (-1, 1)$
+
+  Evaluating the integral, this is $c[x - \frac{1}{3}x^3] |_{-1}^{x}, c = \frac{3}{4}$
+
+  $c[x - \frac{1}{3}x^3] - c[-1 + \frac{1}{3}(-1)^3], c = \frac{3}{4}$. Defined on $x \in (-1, 1) $
+
+  Which is equal to $[\frac{3}{4}x - \frac{1}{4}x^3] - [-\frac{3}{4} + \frac{1}{4}]$
+
+  So the cumulative distribution function of $X$ is $\frac{3}{4}x - \frac{1}{4}x^3 + \frac{1}{2}$
+
+  \item[5.8]
+
+    The lifetime in hours of an electronic tube is a random variable having probability density function given by $f(x) = xe^{-x}, x \geq 0$
+
+    Compute the expected lifetime of such a tube.
+
+    We know E[X] of a continuous random variable is $\int_{R} xf(x) dx$
+
+    So E[X] = $\int_0^{\infty} x*x^{-x} dx$
+
+    We can use the gamma function to calculate this. $\Gamma(3) = (3-1)! = 2$
+
+    So $E[X] = 2$
+
+  \item[5.11]
+
+   A point is chosen at random on a line segment of length $L$. Interpret this statement, and find the probability that the ratio of the shorter to the longer segment is less than $\frac{1}{4}$
+
+   Assuming that the points are uniformly distributed,
+
+   A point $Z$ will be chosen randomly, so segment 1 will be length $Z$, and segment 2 will be length $L - Z$
+
+   So we want the probability that the ratio of the smaller segment to the larger segment is less than $\frac{1}{4}$
+
+   That is, we want $P( min(\frac{Z}{L-Z}, \frac{L-Z}{Z}) < \frac{1}{4})$
+
+   This is equal to $1 - P( min(\frac{Z}{L-Z}, \frac{L-Z}{Z}) > \frac{1}{4})$
+
+   This is $1 - P( min(\frac{Z}{L-Z} > \frac{1}{4}, \frac{L-Z}{Z}) > \frac{1}{4})$
+
+   $=1 - P(4X > L - X, 4L - 4X > X)$
+
+   Rewriting, $= 1 - P(\frac{L}{5} < X, \frac{4L}{5} > x)$
+
+   $= 1 - P(\frac{L}{5} < X < \frac{4L}{5})$
+
+   Since X is uniformly distributed, we can say this is equal to
+
+   $= 1 - \frac{3}{5}$
+
+\item[5.16]
+
+  The annual rainfall (in inches) in a certain region is normally distributed with $\mu = 40, \sigma = 4$. What is the probability that starting with this year, it will take more than 10 years before a year occurs having a rainfall of more than 50 inches? What assumptions are you making?
+
+  We are assuming that the probability of rain each year is independent.
+
+  $P(X > 50) = P(\frac{X-40}{4} > \frac{10}{4}) = 1- \phi(2.5)$
+
+  So for each year, probability of less than 50 inches of rain is $P(X < 50) = \phi(2.5) \approx 0.9938$
+
+  Assuming independent each year, probability of less than 50 inches for 10 years in a row is $\phi(2.5)^{10}$
+
+\end{itemize}
+\end{document}

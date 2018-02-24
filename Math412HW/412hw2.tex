@@ -1,0 +1,400 @@
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsthm}
+
+\begin{document}
+\begin{itemize}
+
+\newpage
+
+\item[10.1]
+
+	1. For a real number $a$, verify that $(x^2 + a) = x^2 + 2a + a^2$
+
+	Done.
+
+	2. For a real number $b$, conclude that the polynomial $x^2 + bx + \frac{b}{4}$ is the square of a degree one polynomial
+
+		$x^2 + bx + \frac{b}{4} = (x + \frac{b}{2})^2$
+
+	3. For real numbers $b, c$, rewrite $x^2 + bx + c$ by adding and subtracting $\frac{b^2}{4}$ and find that solving the equation $x^2 + bx + c = 0$ is equivalent to solving an equation of the form $(x + \frac{b}{2})^2 = \frac{d}{4}$
+
+		$x^2 + bx + c = 0 \leftrightarrow (x + \frac{b}{2})^2 - \frac{b^2}{4} + c = 0$
+
+		$(x + \frac{b}{2})^2 = \frac{b^2}{4} - c$
+
+		So solving for $x^2 + bx + c = 0$ is the same as solving for $(x + \frac{b}{2})^2 = \frac{d}{4}$ for $d = b^2 - 4c$
+
+		4. Deduce that if $d = 0$, then $x^2 + bx + c$ factors as $(x + \frac{b}{2})$, and one solution to $x^2 + bx + c = 0$ is $x = - \frac{b}{2}$
+
+		We know that solving $x^2 + bx + c = 0$ is equivalent to solving for $(x + \frac{b}{2})^2 = \frac{d}{4}$. So when $d = 0$, $(x+\frac{b}{2})^2 = 0$, so it factors as $(x + \frac{b}{2})(x + \frac{b}{2})$, then one of the roots is $x = - \frac{b}{2}$
+
+		5. Deduce that if $d$ is negative, then there is no real solution in $\mathbb{R}$ to the equation $x^2 + bx + c = 0$, and is irreducible in $\mathbb{R}[x]$
+
+	$(x + \frac{b}{2})^2 = \frac{d}{4}$, for $d$ negative
+
+	So $(x + \frac{b}{2}) = \pm \sqrt{\frac{-d}{4}}i$. 
+
+		So there are no real solutions, so it is irreducible in $\mathbb{R}[x]$
+
+	6. Deduce that if $d$ is positive, then there are 2 real solutions to $x^2 + bx + c = 0$. Write them out explicitly in terms of $b, c$
+
+	$(x + \frac{b}{2})^2 = \frac{d}{4}$
+
+		$(x + \frac{b}{2}) = \pm \sqrt{\frac{d}{4}}$
+
+		$x = -\frac{b}{2} \pm \frac{\sqrt{d}}{2}$
+
+		So $x = -\frac{b}{2} \pm \frac{\sqrt{b^2 - 4c}}{2}$
+
+\newpage
+
+\item[10.4]
+
+	Consider the quadratic polynomial $x^2 + bx + c$, where $b,c$ real with non negative discriminant, so that the roots $r_1, r_2$ real
+
+		1. Recall that $c = r_1, r_2$, $b = -(r_1 + r_2)$
+
+	2. If $c = 0$, the nature of the roots are easy to determine. Explain why
+
+		This is because the equation is now $x^2 + bx$, which factors as $x(x + b)$, so we have roots $r_1, r_2 = x, -b$
+
+	3. Assume that $c \neq 0$, show that if the roots $r_1, r_2$ have the same sign, then $c > 0$, and if the roots have the opposite sign, $c < 0$
+
+		$r_1, r_2$ have same signs:
+
+		Case 1: both positive
+
+		Then $c = r_1 * r_2$ is positive * positive = positive, $c > 0$
+
+		Case 2: both negative
+
+		Then $c = r_1 * r_2$ is negative * negative = positive, $c > 0$
+
+		$r_1, r_2$ have opposite signs:
+
+		Without loss of generality, assume $r_1$ negative, $r_2$ positive, then the product $c = r_1 * r_2$ is the product of a negative and a positive, so $c$ is negative, so $c < 0$
+
+	4. Conclude that there is an odd number of positive roots when $c$ is negative, and an even number of positive roots when $c$ is positive
+
+		This is because when $c$ is positive, $r_1, r_2$ either both positive or both negative, so there are 0 or 2 positive roots. And if exactly one of the roots is negative and the other positive, then there is an odd number of positive roots for $c$ negative.
+
+	5. Assume that $c$ is positive, show that the roots are positive precisely when $b  < 0$, and negative when $b > 0$
+
+		$c > 0$, so $r_1*r_2 > 0$, and $r_1, r_2$ must have the same sign
+
+		And $b = -(r_1 + r_2)$
+
+		Case 1: $b < 0$
+
+		Then the sum $-(r_1 + r_2)$ must be positive
+
+		So $r_1, r_2$ must both be positive
+
+		Case 2: $b > 0$
+
+		Then the sum $-(r_1 + r_2)$ must be negative
+
+		Then $r_1, r_2$ must both be negative
+
+	6. Conclude that you can use $b, c$ to determine the signs of the roots. Describe exactly how you would do so
+
+		For nonnegative discriminant, we can use $b,c$ to determine the signs of the roots. If $c = 0$, finding roots is trivial, they are $x, -b$. First, if $c$ nonzero, we can determine whether the roots are the same sign (if $c > 0$) or oppposite sign ($c < 0$). And if they are the same sign, we can use $b$ to determine whether both are positive ($b < 0$), or both negative ($b > 0$).
+		
+
+\newpage
+
+\item[10.7]
+
+	We begin with the cubic polynomial $y^3 + py + q$. We can assume that $p$ is nonzero, for if $p = 0$, the equation is $y^3 = -q$, and the solution is easily obtained as the cube root of $-q$. Introduce a new variable satisfying $$y = z - \frac{p}{3z}$$
+
+	1. Substitute $z - \frac{p}{3z}$ for $y$ in the equation, expand, and simplify, to obtain $$z^3 - \frac{p^3}{27z^3} + q = 0$$
+
+	For $y = z - \frac{p}{3z}$, we have $(z - \frac{p}{3z})^3 + p(z-\frac{p}{3z}) + q = 0$
+
+	$(z^2 - \frac{2p}{3} + \frac{p^2}{9z^2})(z-\frac{p}{3z}) + pz - \frac{p^2}{3z} + q = 0$
+
+	$[z^3 - \frac{2pz}{3} + \frac{p^2}{9z}] - [\frac{pz}{3} - \frac{2p^2}{9z} + \frac{p^3}{27z^3}] + pz - \frac{p^2}{3z} + q = 0$
+
+	$z^3 - pz + \frac{p^2}{3z} - \frac{p^3}{27z^3} + pz - \frac{p^2}{3z} + q = 0$
+
+	$z^3 - \frac{p^3}{27z^3} + q = 0$
+
+	2. Multiply by $z^3$ to clear the value in the denominator to obtain $z^6 - \frac{p^3}{27} + qz^3 = 0$
+
+	3. Observe that this is the quadratic equation in $z^3$. Use the quadratic formula to obtain $z^3 = -\frac{q}{2} \pm \sqrt{\frac{q^2 + \frac{4p^3}{27}}{4}}$
+
+	If we let $x$ to be $z^3$, then we can apply the quadratic formula to solve for $x^2 + qx - \frac{p^3}{27} = 0$
+
+	The roots we obtain are $x = \frac{-q}{2} \pm \frac{\sqrt{q^2 - \frac{4p^3}{27}}}{2}$
+
+	Plugging back in $z^3 = x$, we get $z^3 = \frac{-q}{2} \pm \frac{\sqrt{q^2 - \frac{4p^3}{27}}}{2}$
+
+	Which is equal to $z^3 = \frac{-q}{2} \pm \sqrt{\frac{q^2 - \frac{4p^3}{27}}{4}}$
+
+	4.  Introduce $R$ as an abbreviation for $(\frac{p}{3})^3 + (\frac{q}{2})^2$ and rewrite the last equality as $z^3 = -\frac{q}{2} \pm \sqrt{R}$
+
+	The value inside the square root term is equal to $\frac{q^2}{4} - \frac{p^3}{27}$, which is equal to $(\frac{p}{3})^3+ (\frac{q}{2})^2$
+
+	So we can rewrite the equality as $z^3 = -\frac{q}{2} \pm \sqrt{R}$
+
+	5. There are two possible values for $z^3$, namely, $-\frac{q}{2} + \sqrt{R}, -\frac{q}{2} - \sqrt{R}$
+
+	Multiply these two values together and simplify. Show that you get $$(-\frac{q}{2} + \sqrt{R})(-\frac{q}{2} - \sqrt{R}) = (-\frac{p}{3})^3$$
+
+	Multiplying, we get $(\frac{q^2}{4} - R^2)$
+
+	Plugging back in $R = (\frac{p}{3})^3 + (\frac{q}{2})^2$, we get
+
+	$(\frac{q^2}{4} - (\frac{p}{3})^3 + (\frac{q}{2})^2$
+
+	Which simplifies to $(-\frac{p}{3})^3$
+
+	6. Take the cube root of both sides above and deduce that the two values of $z$ have a product satisfying $$\sqrt[3]{-\frac{q}{2} + \sqrt{R}} * \sqrt[3]{-\frac{q}{2} - \sqrt{R}} = -\frac{p}{3}$$
+
+	7. Observe that this means that if you choose $z$ to be the cube root of $\frac{q}{2} + \sqrt{R}$, then $-\frac{p}{3z}$ is the cube root of $-\frac{q}{2} - \sqrt{R}$
+
+	This is true, since if it is the cuberoot, then $z*\sqrt[3]{-\frac{q}{2} - \sqrt{R}} = -\frac{p}{3}$
+
+	Which is equal to $\sqrt[3]{-\frac{q}{2} -\sqrt{R}} = -\frac{p}{3z}$
+
+	8. Recall that $z$ was introduced to satisfy $z - \frac{p}{3z}$. You have shown that the two terms on the right of this equation, $z, -\frac{p}{3z}$ are the cube roots of $-\frac{q}{2} + \sqrt{R}$ and $-\frac{q}{2} - \sqrt{R}$ respectively.
+
+	9. Conclude that $y$ is the sum of these two cube roots
+
+	$$y = \sqrt[3]{-\frac{q}{2} + \sqrt{R}} + \sqrt[3]{-\frac{q}{2} - \sqrt{R}}$$
+
+	Since $y = z - \frac{p}{3z}$, we can plug in $z = \sqrt[3]{-\frac{q}{2} + \sqrt{R}}, \frac{p}{3z} = \sqrt[3]{-\frac{q}{2} - \sqrt{R}}$
+
+	We obtain $y = \sqrt[3]{-\frac{q}{2} + \sqrt{R}} + \sqrt[3]{-\frac{q}{2} - \sqrt{R}}$
+
+
+
+	
+\newpage
+
+\item[10.10]
+
+	Solve $y^3 - 7y + 6 = 0$
+
+	1. Show that Cardano's formula yields the solution $$y = \sqrt[3]{-3 + \frac{10}{9}\sqrt{-3}} + \sqrt[3]{-3 -\frac{10}{9}\sqrt{-3}}$$
+
+	Using Cardano's formula, with $p = -7, q = 6$, we have 
+
+	$y = \sqrt[3]{-\frac{6}{2} + \sqrt{(\frac{-7}{3})^3 + (\frac{6}{2})^2}} + \sqrt[3]{-\frac{6}{2} + \sqrt{(\frac{-7}{3})^3 - (\frac{6}{2})^2}}$
+
+	This is equal to $y = \sqrt[3]{-3 + \frac{10}{9}\sqrt{-3}} + \sqrt[3]{-3 - \frac{10}{9}\sqrt{-3}}$
+
+	2. Again, the solutions are not complicated; what is complicated is the cube root calculation that Cardano's formula requires. Check that
+
+	$$(1 + \frac{2}{3}\sqrt{-3})^3 = -3 + \frac{10}{9}\sqrt{-3}$$ and $$(1 - \frac{2}{3}\sqrt{-3})^3 = -3 - \frac{10}{9}\sqrt{-3}$$
+
+	Expanding, the first term, we get $(1 + \frac{4}{3}\sqrt{-3} + \frac{4}{9}*(-3))(1+\frac{2}{3}\sqrt{-3})$
+
+	This is equal to $-3 + \frac{10}{9}\sqrt{-3}$
+
+	Expanding the second term, we get $(1 - \frac{4}{3}\sqrt{-3} + \frac{4}{9}*(-3))(1 - \frac{2}{3}\sqrt{-3})$
+
+	This is equal to $-3 - \frac{10}{9}\sqrt{-3}$
+
+	So $y = 1 + \frac{2}{3} \sqrt{-3} + 1 - \frac{2}{3}\sqrt{-3}$
+
+	So $y = 2$ is a solution
+
+	Then by theorem 9.7, $y - 2$ divides $y^3 - 7y + 6$
+
+	By long division, we obtain $\frac{y^3 - 7y + 6}{y-2} = y^2 + 2y -3$
+
+	Which factors as $(y-1)(y+3)$
+
+	So $y^3 - 7y + 6 = (y-2)(y-1)(y+3)$
+
+	With roots $y = 2, y = 1, y = -3$
+
+\newpage
+
+\item[10.13]
+
+Use Cardano's formula, as clarified in Exercise 10.12, to obtain all three solutions to the cubic equation $y^3 - 7y + 6 = 0$
+
+1. Write down the solution given by the formula as a sum of cuberoots. Observe that it involves the cube roots of $-3 + \frac{10}{9}\sqrt{-3}$ and $-3 - \frac{10}{9}\sqrt{-3}$
+
+The solution is $y = \sqrt[3]{-3 + \sqrt{10}{9}\sqrt{-3}} + \sqrt[3]{-3 - \frac{10}{9}\sqrt{-3}}$
+
+2. Using the numbers $\omega, \omega ^2$, and the earlier determination of one cube root of $-3 + \frac{10}{9}\sqrt{-3}$, write expressiosn for the three complex numbers that are cube roots of $-3 + \frac{10}{9}\sqrt{-3}$. Also write down the three complex numbers that are cube roots of $-3 - \frac{10}{9}\sqrt{-3}$
+
+We know from problem 10.10 that a cuberoot of $-3 + \frac{10}{9}\sqrt{-3}$ is $1 + \frac{2}{3}\sqrt{-3}$
+
+So using $\omega = -\frac{1}{2} + \frac{\sqrt{-3}}{2}$, the cuberoots of $-3 + \frac{10}{9}\sqrt{-3}$ are 
+
+$1 + \frac{2}{3}\sqrt{-3}$
+
+$[1 + \frac{2}{3}\sqrt{-3}]*\omega = [1 + \frac{2}{3}\sqrt{-3}]*(-\frac{1}{2} + \frac{\sqrt{-3}}{2}) = \frac{-3}{2} + \frac{\sqrt{-3}}{6}$
+
+$[1 + \frac{2}{3}\sqrt{-3}]*\omega ^2 = \frac{1}{2} - \frac{5}{6}\sqrt{-3}$
+
+Cuberoots of $-3 - \frac{10}{9}\sqrt{-3}$ are
+
+$1 - \frac{2}{3}\sqrt{-3}$
+
+$\frac{1}{2} + \frac{5}{6}\sqrt{-3}$
+
+$\frac{-3}{2} - \frac{1}{6}\sqrt{-3}$
+
+3. Pair the cube roots of $-3 + \frac{10}{9}\sqrt{-3}$ and $-3-\frac{10}{9}\sqrt{-3}$ as specified in exercise 10.12 to get three pairs such that the product of the complex numbers in each pair equals $\frac{7}{3}$
+
+For $A = 1 + \frac{2}{3}\sqrt{-3}, B = 1 - \frac{2}{3}\sqrt{-3}, \omega = -\frac{1}{2} + \frac{\sqrt{-3}}{2}$, the pairs are
+
+$AB, \omega A * \omega ^2 B, \omega ^2 A * \omega B$
+
+These are:
+
+$[1 + \frac{2}{3}\sqrt{-3}]*[1 - \frac{2}{3}\sqrt{-3}]$
+
+$[-\frac{3}{2} + \frac{\sqrt{-3}}{6}]*[-\frac{-3}{2} - \frac{1}{6}\sqrt{-3}]$
+
+$[\frac{1}{2} - \frac{5}{6}\sqrt{-3}]*[\frac{1}{2} + \frac{5}{6}\sqrt{-3}]$
+
+4. Add together the complex numbers in each pair to obtain all three solutions of $y^3 - 7y + 6 = 0$.
+
+The roots are $r_1 = A + B, r_2 = \omega A + \omega ^2 B, r_3 = \omega ^2 A + \omega B$
+
+$r_1 = [1 + \frac{2}{3}\sqrt{-3}] + [1 - \frac{2}{3}\sqrt{-3}] = 2$
+
+$r_2 = [-\frac{3}{2} + \frac{\sqrt{-3}}{6}] + [-\frac{-3}{2} - \frac{1}{6}\sqrt{-3}] = -3$ 
+
+$r_3 = [\frac{1}{2} - \frac{5}{6}\sqrt{-3}] + [\frac{1}{2} + \frac{5}{6}\sqrt{-3}] = 1$
+
+\newpage
+
+\item[10.24]
+
+	We can immediately dispose of one special case, that in which $r = 0$. Consider the quartic polynomial $z^4 + qz^2 + s$
+
+	1. Factor $z^4 + qz^2 + s$ (which is a quadratic polynomial in $z^2$) in the form ($z^2 - r_1)(z^2 - r_2)$ for two real or possibily complex numbers $r_1, r_2$.
+
+	Substitute $x = z^2, x^2 + xq + s = 0$
+
+	$x = -\frac{q}{2} \pm \sqrt{q^2 - 4s}$
+
+	Plugging back in $z^2 = x$,
+
+	So equation is $(z^2 -[-\frac{q}{2} + \frac{\sqrt{q^2 - 4s}}{2}])(z^2 -[-\frac{q}{2} - \frac{\sqrt{q^2 - 4s}}{2}])$
+
+	So there are two real or possibly complex numbers $r_1, r_2$
+
+	2. If $r_1, r_2$ real, you have obtained the desired factorization of $z^4 + qz^2 + s$ in $\mathbb{R}[x]$
+
+	Yes.
+
+	3. Alternatively, if $r_1, r_2$ are nonreal, observe that they are complex conjugates of each other. Using their square roots, factor $z^4 + qz^2 + s$ as a product of degree one polynomial in $\mathbb{C}[x]$. Show that the degree-one terms can be regrouped and combined in pairs to obtain a factorization of $z^4 + qz^2 + s$ as a product of quadratic polynomials in $\mathbb{R}[x]$
+
+	$r_1, r_2$ are complex conjugates of each other, since they are in the forms $a + bi, a - bi$ respectively
+
+	We can rewrite complex numbers $r_1, r_2$ as $a + bi$ and $a - bi$
+
+	If we take the square root of $(z^2 - (a+ bi))$ and $(z^2 -(a-bi))$, we get roots of $z^4 + qz^2 + s = 0$ are $(z + \sqrt{a - bi}), (z - \sqrt{a - bi}), (z + \sqrt{a + bi}), (z - \sqrt{a + bi})$
+
+	Then $z^4 + qz^2 + s =0$ is the product of 4 degree one polynomials in $\mathbb{C}[x]$
+
+	And these 4 degree one polynomials may be regrouped as a product of quadratic polynomials in $\mathbb{R}[x]$	
+
+
+\newpage
+
+\item[10.37]
+
+	Prove Theorem 10.6
+
+	Let $f(x)$ be a polynomial in $\mathbb{R}[x]$ of positive degree $n$
+
+	1. Show that $f(x)$ is a product of irreducible polynomials of degree 1 or 2:
+
+	By induction (on n)
+
+	Base case: If $n = 1$ or $n = 2$, true
+
+	Inductive step
+
+	Inductive Hypothesis: If $f(x)$ is a polynomial of degree $n$, $f(x)$ factors in $\mathbb{R}[x]$ as the product of irreducible polynomials of degree 1 or 2
+
+	Show that for $f(x)$ of degree $n+1$, $f(x)$ factors in $\mathbb{R}[x]$ as the product of polynomials of degree 1 or 2
+
+	$f(x)$ is degree $n+1$, so by theorem 10.5, it is not irreducible, rewrite it as $f(x) = g(x)h(x)$ for $g(x)$ degree 1 or 2, and $h(x)$ degree $n$ or $n - 1$
+
+	Then by the inductive hypothesis, $h(x)$ is a product of irreducible polynomials of degree 1 or 2
+
+	So $f(x)$ is a product of irreducible polynomials of degree 1 or 2
+		
+	2. Show that $f(x)$ has $n$ roots in $\mathbb{C}$
+
+	We know from part 1 that $f(x)$ is of degree $n$, and is the product of irreducible polynomials whose sum of degree is $n$, where there are $r$ degree one factors and $s$ degree two factors, such that $r + 2s = n$
+
+	If a factor is degree one in the form $(x-\gamma)$, with root $\gamma \in \mathbb{R}$, then it has a root $\gamma \in \mathbb{C}$
+
+	If a factor is degree 2 and irreducible in $\mathbb{R}[x]$, then it may be reduced in $\mathbb{C}[x]$ as $(x -r)(x - \bar{r})$. Then it has 2 complex roots, $r, \bar{r} \in \mathbb{C}$
+
+	Then the total number of roots in $\mathbb{C}$ is $r + 2s = n$
+
+	Then there are $n$ roots of $f(x) \in \mathbb{C}$
+
+	3. Show that the polynomial $f(x)$ factors in $\mathbb{C}[x]$ as the product of $n$ degree-one polynomials
+
+	We know from part 1 that $f(x)$ is of degree $n$, and is the product of polynomials whose sum of degree is $n$, where there are $r$ degree one factors and $s$ degree two factors, such that $r + 2s = n$
+
+	Each degree one factor is a polynomial in $\mathbb{R}[x]$, so it is a polynomial in $\mathbb{C}[x]$
+
+	Each irreducible degree 2 factor in $\mathbb{R}[x]$ may be reduced in $\mathbb{C}[x]$ as two degree one factors, $(x-\gamma),(x-\bar{\gamma})$
+
+	Then $f(x)$ is the product of $r + 2s = n$ degree one factors in $\mathbb{C}[x]$
+
+\newpage
+
+\item[10.40]
+
+	Prove theorem 10.9
+
+	Suppose that $f(x)$ is a polynomial of positive degree in $\mathbb{R}[x]$, and that $r$ is a root of $f(x)$ in $\mathbb{C}$
+
+	1. For the first part, show that $\bar{f}(x) = f(x)$
+
+	Since $f(x) \in \mathbb{R}[x]$, then $f(x)$ is in the form $(a_0 + 0i)x^0 + (a_1 + 0i)x^1 + ..... (a_n + 0i)x^n$
+
+	So its conjugate, $\bar{f}(x)$ is in the form $(a_0 - 0i)x^0 + (a_1 - 0i)x^1 + ..... (a_n - 0i)x^n$, which is equal to $f(x)$
+
+	2. For the second part, check that the coefficients of $(x-r)(x-\bar{r})$ are real, so that $(x-r)(x-\bar{r})$ lies in $\mathbb{R}[x]$
+
+	The polynomial $(x-r)(x-\bar{r})$ is equal to $x^2 + r^2$, with real coefficients.
+
+	3. Deduce that if $r$ is a nonreal complex number and $x-r$ divides $f(x)$ in $\mathbb{C}[x]$, then $(x-r)(x-\bar{r})$ divides $f(x)$ in $\mathbb{C}[x]$
+
+	We know by theorem 10.8 that since $(x-r)$ divides $f(x)$ in $\mathbb{C}[x]$, then $(x-\bar{r})$ divides $\bar{f}(x)$ in $\mathbb{C}[x]$
+
+	Since $\bar{f}(x) = f(x)$, then $(x-\bar{r})$ divides $f(x)$
+
+	4. Observe that to prove that $(x-r)(x-\bar{r})$ divides $f(x)$ in $\mathbb{R}[x]$, it suffices to prove the following statement: Suppose $f(x), g(x)$ are nonzero polynomials in $\mathbb{R}[x]$ and $h(x)$ is a polynomial in $\mathbb{C}[x]$ such that $f(x) = g(x)h(x)$. Then $h(x)$ lies in $\mathbb{R}[x]$
+
+	Yes
+
+	5. Prove this last statement.
+
+	We know by theorem 10.8 that since $f(x) \in \mathbb{R}[x]$, and therefore is in $\mathbb{C}[x]$, then for $f(x) = g(x)h(x)$, $\bar{f}(x) = \bar{g}(x)\bar{h}(x)$
+
+	Since $f(x), g(x)$ are in $\mathbb{R}[x]$, then the work shown in part 1 shows that $f(x) = \bar{f}(x), g(x) = \bar{g}(x)$
+
+	Then $f(x) = g(x)\bar{h}(x)$
+
+	Then $\bar{h}(x) = h(x)$
+
+	But this is only true when $h(x) \in \mathbb{R}[x]$
+
+	So $h(x)$ must be in $\mathbb{R}[x]$
+	
+
+\end{itemize}
+\end{document}
+
+

@@ -1,0 +1,313 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\begin{document}
+\noindent Brandon Chen \\
+MATH 394 \\
+HW 2 - 15, 17, 18, 30, 37, 40, 48, 49, 50, 55
+
+\begin{itemize}
+\item[15a]
+  A flush has five cards of the same suit. Out of options for suits, we pick one.
+  $\binom{4}{1}$
+
+  From that suit, we can take any 5 of the 13 values.
+  $\binom{13}{5}$
+
+  The total number of possibile flush hands is
+  $\binom{4}{1} \binom{13}{5}$
+
+  So the probability of being dealt a flush is
+  $\frac{\binom{4}{1} \binom{13}{5}}{\binom{52}{5}}
+  = \frac{33}{16660} \approx 0.00198$
+
+\item[15b]
+  First pick a value for a, out of 13 values from Ace to King.
+  $\binom{13}{1}$
+
+  With this value, there are 4 cards available (for each suit).
+  We need 2 out of the four for a pair.
+  $\binom{4}{2}$
+
+  For b, c, and d, we choose 3 different values out of the remaining 12 options.
+  $\binom{12}{3}$
+
+  For each of b, c, and d, there are 4 cards available (for each suit).
+  We only need to pick one of each.
+  $\binom{4}{1}$
+
+  Then the total number of possible hands with one pair is
+  $\binom{13}{1}\binom{4}{2}\binom{12}{3}{\binom{4}{1}^3}$
+
+  Then the probability of getting a hand with one pair is
+  $\frac{\binom{13}{1}\binom{4}{2}\binom{12}{3}{\binom{4}{1}}^3}{\binom{52}{5}} = \frac{352}{833} \approx 0.42256$
+
+\item[15c]
+  For two pairs, we pick 2 values out of the possible 13 to be our pairs.
+  $\binom{13}{2}$
+
+  For each pair, we need 2 cards out of the possible 4 with that value. $\binom{4}{2}$
+
+  For the last card, we only need one value, out of a possible 11 remaining values. $\binom{11}{1}$
+
+  For this last card, there are 4 cards with the matching value, we need 1. $\binom{4}{1}$
+
+  Then the total number of possible hands with two pairs is $\binom{13}{2}{\binom{4}{2}}^2 \binom{11}{1}\binom{4}{1}$
+
+  Then the probability of getting a hand with two pairs is $\frac{\binom{13}{2}{\binom{4}{2}}^2 \binom{11}{1}\binom{4}{1}}{\binom{52}{5}} = \frac{198}{4165} \approx 0.047539$
+
+\item[15d]
+  To find three of a kind, we pick 1 value out of 13 possible values to be the triplet. $\binom{13}{1}$
+
+  For the triplet, there are 4 possible cards that match that value. We need 3 of them. $\binom{4}{3}$
+
+  For the last cards, there are 12 remaining values. We need to pick 2 different ones. $\binom{12}{2}$
+
+  For these two different cards, there are 4 possible cards each, which we need 1 each of. ${\binom{4}{1}}^2$
+
+  Then the total number of possible hands with three of a kind is $\binom{13}{1}\binom{4}{3}\binom{12}{2}{\binom{4}{1}}^2$
+
+  Then the probability of getting a three of a kind is $\frac{\binom{13}{1}\binom{4}{3}\binom{12}{2}{\binom{4}{1}}^2}{\binom{52}{5}} = \frac{88}{4165} \approx 0.0211$
+
+\item[15e]
+  To get four of a kind, we pick 1 value out of 13 possible values to be the quadruplet. $\binom{13}{1}$
+
+  For the quadruplet, there are four possible cards, and we need 4 of them. $\binom{4}{4}$
+
+  For the last card, there are 12 possible values left, we need 1 value. $\binom{12}{1}$
+
+  For the last card, there are 4 cards with the selected value. We need 1 card. $\binom{4}{1}$
+
+  Then the total number of possible hands with four of a kind is $\binom{13}{1}\binom{4}{4}\binom{12}{1}\binom{4}{1}$
+
+  Then the probability of getting a four of a kind is $\frac{\binom{13}{1}\binom{4}{4}\binom{12}{1}\binom{4}{1}}{\binom{52}{5}} = \frac{1}{4165} \approx 0.00024$
+
+\item[17]
+  For 8 rooks to be placed such that no rook can capture another, they need to be placed with coordinates $x_i,y_i$ such that each $x_i$ and $y_i$ is unique. There are 8 possible values of $x$, and 8 possible values of $y$. Then there are 64 ordered pairs that represent the coordinates of each spot on a chess board.
+  For the first rook, there are 8 safe options for $x$ and 8 safe options for $y$. For the second rook, there are 7 safe options for both $x,y$. 3rd rook, 6 safe options for $x,y$ , 4th rook, 5 safe options, 5th rook, 4 safe options, 6th rook, 3 safe options, 7th rook, 2 safe options, 8th rook, 1 safe option for each $x,y$. So the total number of possible ways to safely put each rook on the board is $8 * 7 * 6 * 5 * 4 * 3 * 2 * 1 = 8! = 40320$
+
+  There are 64 possible places on the board, and we need to fill 8 of them with rooks, so there are $\binom{64}{8}$ total possibilities of setting up the board.
+
+  Then the probability that the rooks will be safe is
+  $\frac{8!}{\binom{64}{8}} = \frac{560}{6147519} \approx 9.10946*10^-6$
+\item[18]
+  Pick the first card value as an Ace, which is 1 out of 1 desired choices. $\binom{1}{1}$
+
+  There are 4 aces, and we need one of them. $\binom{4}{1}$
+
+  There are 4 desired values from 10 Jack Queen King, we need to choose 1 of them $\binom{4}{1}$
+
+  The value we picked has 4 cards available, and we need 1 of them. ${\binom{4}{1}}$
+
+  Then the total number of hands with a blackjack is $\binom{1}{1}\binom{4}{1}\binom{4}{1}{\binom{4}{1}}$
+
+  Then the probability of getting a black jack is $\frac{\binom{1}{1}\binom{4}{1}\binom{4}{1}{\binom{4}{1}}}{\binom{52}{2}} = \frac{33}{663} \approx 0.0482$
+\item[30a]
+  Rebecca and Elise are to be paired. Suppose Rebecca's school has 9 players, and there are 8 players on Elise's team.
+
+  Then for Rebecca's team, if she is on it, she is chosen, and then her 3 teammates out of the remaining 8 are chosen, which means $\binom{1}{1}\binom{8}{3}$ possibilities.
+
+  The probability of Rebecca actually being chosen on her team is then $\frac{\binom{1}{1}\binom{8}{3}}{\binom{9}{4}} = \frac{4}{9} \approx 0.444$
+
+  For Elise's team, if she is on it, she is chosen, and then her 3 teammates out of the remaining 7 are chosen, $\binom{1}{1}\binom{7}{3}$ possibilities.
+
+  The probability of Elise actually being chosen on her team is then $\frac{\binom{1}{1}\binom{7}{3}}{\binom{8}{4}} = \frac{1}{2} \approx 0.5$
+
+  Then the probability that Elise and Rebecca will both be chosen to represent their school is $\frac{1}{2} \frac{4}{9} = \frac{2}{9} \approx 0.222$
+
+  Rebecca and Elise are in the top 8, split into two different teams of 4.
+
+  Rebecca can play against any one of the 4 members of Elise's team, so the probability that she will go against Elise is $\frac{1}{4}$
+
+  Then the probability that Elise and Rebecca will be chosen as top 8 and play each other is $\frac{1}{4}\frac{2}{9} = \frac{1}{18} \approx 0.055$
+\item[30b]
+  The probability that they will be in the top 8 but not play each other is equal to the probability that they both are in the top 8 minus the probability that they do play each other
+
+  That is $\frac{2}{9} - \frac{1}{18} = \frac{3}{18} = \frac{1}{6} \approx 0.166$
+\item[30c]
+  $P(\text{Rebecca Plays}\oplus\text{Elise Plays})$ is equal to the probability that Rebecca serves and Elise does not, plus the probability that Elise serves and Rebecca does not.
+
+  If Rebecca plays and Elise does not, we know that the probability that Rebecca plays is $\frac{4}{9}$. We know that the probability that Elise does not play is equal to $\frac{1}{2}$
+
+  Then the probability that Rebecca plays and Elise does not is $\frac{4}{9} \frac{1}{2} = \frac{4}{18}$
+
+  If Elise plays and Rebecca does not, then the probability that Rebecca does not play is $\frac{5}{9}$, and the probability that Elise does play is $\frac{1}{2}$, then the probability that only Elise plays is $\frac{5}{9} \frac{1}{2} = \frac{5}{18}$
+
+  Then the probability that only one of Elise or Rebecca plays is $\frac{4}{18} + \frac{5}{18} = \frac{1}{2}$
+
+\item[37a]
+  The student knows how to do 7 problems. There are 5 problems on the test
+
+  Then there are $\binom{7}{5}$ possible tests that the student can fully solve.
+
+  There are 10 problems, and 5 of the problems are chosen. Then there are $\binom{10}{5}$ different test possibilities.
+
+  Then the probability that the student will get all of them correct is $\frac{\binom{7}{5}}{\binom{10}{5}} = \frac{1}{12} \approx 0.0833$
+\item[37b]
+  The probability that the student will get at least 4 points is equal to the probability that the student will get 4 points plus the probability that the student will get 5 points
+
+  If the student only gets 4 of them correctly, then there must have been 4 out of 7 known questions on the exam. $\binom{7}{4}$
+
+  There were 3 questions that the student did not know, and 1 of them was on the exam. $\binom{3}{1}$
+
+  Then the probability that the student got 4 points on the test is $\frac{\binom{7}{4}\binom{3}{1}}{\binom{10}{5}} = \frac{5}{12} \approx 0.4166$
+
+  Then the probability that the student got at least 4 points is $\frac{5}{12} + \frac{1}{12} = \frac{1}{2} = 0.5$
+\item[40]
+  The assumption being made is that any repairman can respond to any request, and that each repairman is equally likely to be requested
+
+  If 1 repairman called:
+
+  Out of 4 repairmen, we choose 1. $\binom{4}{1}$
+
+  For each request, we choose the same repairman. This is equal to ${\binom{1}{1}}^4$.
+
+  The probability of only 1 repairman being called is equal to the possible ways for 1 repairman to be called divided by all of the possible ways the repairmen may be called. For each request, there are 4 choices for each request, and there are 4 requests made total.
+
+  The total number of different outcomes for repairs and requests is ${\binom{4}{1}}^4$
+
+  Then the probability that 1 repairman is called is $\frac{{\binom{4}{1}\binom{1}{1}}^4}{{\binom{4}{1}}^4} = \frac{1}{64} \approx 0.0156$
+
+  If 2 repairmen are called:
+
+  Out of 4 repairmen, we choose 2. $\binom{4}{2}$
+
+  For each of the 4 requests, there are 2 repairmen to handle each request, so there are ${\binom{2}{1}}^4 = 16$ possible ways requests may be handled.
+
+  we only want the possibilities where both repairmen are called at least once. There are 2 ways that this does not happen, so the possible ways the repairmen may handle the problem is $16 - 2 = 14$.
+
+  Then the probability that 2 repairmen are called is $\frac{\binom{4}{2}*14}{{\binom{4}{1}^4}} = \frac{21}{64} \approx 0.3281$
+
+  If 3 repairmen are called: 
+
+  The probability that 3 repairmen are called is equal to 1 minus the probability that 3 repairmen are not called.
+
+  The probability that 3 repairmen are not called is equal to the sum of the probabilities that 1,2, and 4 repairmen are called (since each category is pairwise disjoint, the probabilities of their union is the sum)
+
+  This is equal to $\frac{1}{64} + \frac{21}{64} + \frac{6}{64} = \frac{28}{64}$
+
+  Then the probability that 3 repairmen are called is $1 - \frac{28}{64} = \frac{36}{64} = \frac{9}{16} \approx 0.5625$
+
+  If 4 repairmen are called:
+
+  Out of 4 repairmen, we choose 4. $\binom{4}{4}$
+
+  Since all 4 repairmen must be chosen, there are 4 options for the first request, 3 options for the second request, 2 options for the third request, and 1 option for the fourth request.
+
+  Then there are $4!$ ways in which the requests may be fulfilled, while having all 4 repairmen called.
+
+  Then probability that 4 repairmen are called is $\frac{4!}{4^4} = \frac{6}{64} \approx 0.09375$
+
+\item[48]
+  4 of the 12 months contain 2 birthdays. There are $\binom{12}{4}$ ways to choose these months.
+
+  4 of the remaining 8 months contain 3 birthdays. There are $\binom{8}{4}$ ways to choose these months
+
+  We want the number of ways the people may have this distribution of birthdays among the 8 selected months, with 4 months have 2 birthdays, and 4 months having 3 birthdays. This is equal to $\binom{20}{2,2,2,2,3,3,3,3}$
+
+  The total number of possibilities meeting the criteria is $\binom{12}{4}\binom{8}{4}\binom{20}{2,2,2,2,3,3,3,3}$
+
+
+  There are 12 months in the year, and 20 people, so there are $12^{20}$ possibilities for birthday distributions.
+
+  Then the probability is $\frac{\binom{12}{4}\binom{8}{4}\binom{20}{2,2,2,2,3,3,3,3}}{12^{20}} \approx 0.0010604$
+  
+\item[49]
+  The probability that both groups will have the same number of men is equal to the probability that one group has 3 men and 3 women.
+
+  Out of 6 men, choose 3. There are $\binom{6}{3}$ ways to do so.
+
+  Out of 6 women, choose 3. There are $\binom{6}{3}$ ways to do so.
+
+  Then the number of ways to form groups satisfying the restriction is $\binom{6}{3}\binom{6}{3} = 400$
+
+  The total number of ways to split the 12 people in to two groups of 6 is $\binom{12}{6}$
+
+  Then the probability that the groups will have an equal number of men on both sides is $\frac{\binom{6}{3}\binom{6}{3}}{\binom{12}{6}} = \frac{100}{231} \approx 0.4329$
+\item[50]
+  Our hand has 5 spades out of 13 spades, and for the remaining 8 cards, we choose from 39 non spade cards. There are $\binom{13}{5}\binom{39}{8}$ hands like this.
+
+  There are $\binom{52}{13}$ possible first hands.
+
+  The probability that we get 5 spades is therefore $\frac{\binom{13}{5}\binom{39}{8}}{\binom{52}{13}} = \frac{1164427407}{9338434700} \approx 0.12469$
+
+  Our partner has the remaining 8 spades out of 8 spades, and their remaining 5 cards are to be selected from the 31 non spade cards that we did not choose. They have $\binom{8}{8}\binom{31}{5}$ possible hands.
+
+  There are $\binom{39}{13}$ possible second hands.
+
+  Then the probability that our partner gets 8 spades on the second hand is $\frac{\binom{8}{8}\binom{31}{5}}{\binom{39}{13}} = \frac{1}{47804} \approx 0.000020918$
+
+  Then the probability that we will have 5 spades and our partner will have 13 spades is
+  $\frac{1}{47804}\frac{1164427407}{9338434700} = \frac{1656369}{635013559600} \approx 2.608*10^{-6}$
+
+\item[55a]
+  Let $A$ be the possibilities where the Ace and King of spades are in the 13 card hand.
+
+  Similarly, define $B, C, D$ for clubs, hearts, and diamonds.
+
+  To find the total number of possibilities in $A$, we choose the Ace and King of spades, and then we choose the 11 remaining cards from the 50 remaining cards in the deck. This is equal to $\binom{2}{2}\binom{50}{11} = \binom{50}{11}$
+
+  The total number of possibilities for $B, C, D$ can be found similarly. They all have the same number of possibilities.
+
+  We want the total number of possibilities for a hand to have the Ace and King of at least one suit. This would be equal to the union of possibilities for each $A, B, C, D$
+
+  By inclusion-exlcusion, we know that $|A \cup B \cup C \cup D| = |A| + |B| + |C| + |D| - |A\cap B| - |A \cap C| - |A \cap D| - |B \cap C| - |B \cap D| + |A \cap| B \cap C| + |A \cap B \cap D| + |A \cap C \cap D| + |B \cap C \cap D| - |A \cap B \cap C \cap D|$
+
+  $A \cap B$ occur whens the Ace and King of spades are in the hand, and the Ace and King of clubs are in the hand.
+
+  To find the total number of possibilities for a hand to have both Ace and King for both spades and clubs, we have our hand with our desired Ace and Kings. Then, there are 9 cards left to choose out of 48 remaining in the deck. The total number of possible hands with both Ace and King of spades and clubs is $\binom{48}{9}$
+
+  We can find $A \cap C, A \cap D, B \cap C, B \cap D, C \cap D$ similarly. They all have the same number of possibilities.
+
+  $A \cap B \cap C$ occurs when the Aces and Kings of spades, clubs, and hearts are all in the hand.
+
+  The total number of possibilities in $A \cap B \cap C$, we have to choose all 6 of the King and Ace of spade, club, and diamond. For the remaining 7 cards, we must pick from the remaining 46 cards in the deck. This means there are $\binom{46}{7}$ possible hands in $A \cap B \cap C$
+
+  Similarly, find $A \cap C \cap D, A \cap B \cap D, B \cap C \cap D$ They all have the same number of possibilities.
+
+  $A \cap B \cap C \cap D$ occurs when all kings and aces are chosen from all four suits.
+
+  To find the total number of possibilities in $A \cap B \cap C \cap D$, select all 8 ace and kings, and then choose the 5 remaining cards out of the 44 remaining cards in the deck. There are $\binom{44}{5}$ possibilities.
+
+  Using the inclusion-exclusion formula from earlier, we get $\binom{50}{11} + \binom{50}{11} + \binom{50}{11} + \binom{50}{11} - \binom{48}{9} - \binom{48}{9} - \binom{48}{9}- \binom{48}{9}- \binom{48}{9} - \binom{48}{9} + \binom{46}{7}  + \binom{46}{7}+ \binom{46}{7}+ \binom{46}{7} - \binom{44}{5}$
+
+  This is equal to $4\binom{50}{11} - 6\binom{48}{9} + 4\binom{46}{7} - \binom{44}{5}$
+
+  There are $\binom{52}{13}$ possible hands of 13
+
+  So the probability that a hand will have the Ace and King of at least one suit is $\frac{4\binom{50}{11} - 6\binom{48}{9} + 4\binom{46}{7} - \binom{44}{5}}{\binom{52}{13}} = \frac{9895443}{45023650} \approx 0.21978 $
+\item[55b]
+  Let $A_i = \text{\{hands with all four cards of denomination i\}}$
+
+  We want to find the total number of hands with at least one four of a kind.
+
+  This is equal the union of all the $A_i's$
+
+  The total number of possibilities in any $A_i$ can be found be choosing all four of the denomination, and then choosing 9 remaining cards from the 48 remaining cards in the deck. There are $\binom{48}{9}$ ways to do so.
+
+  The total number of possibilities in any $A_i \cap A_j$ for $i \neq j$ can be found by choosing all four of two different denominations, and then choosing the 5 remaining cards from the remaining 44 cards in the deck. There are $\binom{44}{5}$ ways to do so
+
+  The total number of possibilities in any $A_i \cap A_j \cap A_k$ for $i \neq j \neq k$ can be found by choosing all four of three different denominations, and then choosing the last remaining card from the remaining 40 in the deck. There are $\binom{40}{1}$ ways to do so
+
+  It is impossible to have more than 3 four card sets of any denomination in a single hand, since that would be over 13 cards.
+
+  By the inclusion-exclusion principle, the cardinality of the number of hands with all four in at least one set is equal to the sum of the cardinalities of the singletons $(all A_i's)$, subtract all the pairs $(A_i, A_j, i\neq j)$, and add all the triplets $(A_i, A_j, A_k, i\neq j \neq k)$
+
+  The cardinality of each singleton is the same, the cardinality of each pair is the same, and the cardinality of each triplet is the same.
+
+  There are 13 denominations to choose from, and each singleton contains one of those numbers. There are $\binom{13}{1}$ singletons to add.
+
+  There are 13 denominations to choose from, and each pair contains two of those numbers. There are $\binom{13}{2}$ pairs to subtract.
+
+  There are 13 denominations to choose from, and each triplet contains three of those numbers. There are $\binom{13}{3}$ triplets to add.
+
+  Then the total number of possibilities of hands with four cards in at least one denomination is $\binom{13}{1}\binom{48}{9} - \binom{13}{2}\binom{44}{5} + \binom{13}{3}\binom{40}{1}$
+
+  There are $\binom{52}{13}$ possible hands, so the probability that hands will have at least one four of a kind is
+
+  $\frac{\binom{13}{1}\binom{48}{9} - \binom{13}{2}\binom{44}{5} + \binom{13}{3}\binom{40}{1}}{\binom{52}{13}} = \frac{1357355571}{39688347475} \approx 0.0342$
+\end{itemize}
+\end{document}

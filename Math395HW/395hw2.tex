@@ -1,0 +1,176 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage[margin=1in]{geometry}
+
+\begin{document}
+
+\noindent Brandon Chen
+
+\noindent MATH 395 HW 2
+
+\noindent 5.26, 5.32, 5.39
+
+\noindent Self Test: TE 5.8, TE 5.9, TE 5.12
+
+\begin{itemize}
+
+\item[5.26]
+
+Fair)
+
+If the coin is fair, the conclusion is false when we have probability of head 0.5, and the number of heads tossed is greater than OR EQUAL TO 525.
+
+That is, for number of heads on a fair coin $X_{fair}, P(X_{fair} \geq 525)$
+
+We know that $X_{fair}$ is a binomial random variable with $p = 0.5, n = 1000, E[X_{fair}] = np = 500, Var(X_{fair}) = np(1-p) = 250$
+
+So we want $P(X_{fair} > 525)$.
+
+This can be approximated with a normal distribution
+
+$P(\frac{X_{fair} - E[X_{fair}]}{\sqrt{Var(X_{fair})}} \geq \frac{524.5 - E[X_{fair}]}{\sqrt{Var(X_{fair})}}$ 
+
+Replace with Z, for Z score.
+
+We get $P(Z \geq 1.5495)$
+
+So $P(X_{fair} \geq 525) \approx 1 - \Phi(1.55)$
+
+Using the table for normal distribution, we find that this is approximately equal to 0.0606
+
+Biased) 
+
+If the coin is biased, the conclusion is false when the number of heads tossed is STRICTLY LESS than 525.
+
+That is, for number of heads on a biased coin $X_b, P(X_b < 525)$
+
+We know that $X_b$ is a binomial random variable with $p = 0.55, n = 1000, E[X_b] = np = 550, Var(X_b) = np(1-p) = 247.5$
+
+We want $P(X_b < 525)$
+
+This can be approximated with a normal distribution
+
+$P(\frac{X_b - E[X_b]}{\sqrt{Var(X_b)}} < \frac{524.5 - E[X_b]}{Var(X_b)}$
+
+Replace with Z, for Z score
+
+We get $P(Z < -1.62)$
+
+So $P(X_b < 525) \approx P(Z < -1.62) \approx 0.052$
+
+\item[5.32]
+
+The time in hours required to repair a machine is exponentially distributed random variable with parameter $\lambda = \frac{1}{2}$
+
+a) Find the probability that a repair time exceeds 2 hours
+
+Exponential Random Variable, use formula
+
+$P(X > s) = \int_{s}^{\infty} (\lambda e^{-\lambda x})dx $
+
+$P(X > 2) = \int_{2}^{\infty} (0.5 e^{-0.5 x} dx$
+
+$P(X > 2) = -e^{-0.5x} |_{2}^{\infty}$
+
+$P(X > 2) = [-e^{-\infty}] - [-e^{-1}] = e^{-1}$
+
+b) Find the CONDITIONAL probability that a repair time is at least 10 hours, given that its duration exceeds 9 hours
+
+We know that for an exponential random variable, it has a memoryless property. That is, $P(X > 10 | X > 9) = P(X > 10 - 9)$
+
+So we want $P(X > 1)$
+
+This is $-e^{-0.5x} |_{1}^{\infty} = [-e^{\infty}] - [e^{-0.5}] = e^{-0.5}$
+\item[5.39]
+
+If $X$ is an exponential random variable with parameter $\lambda = 1$, compute the probability density function of the random variable $Y$ defined over $Y = log(x)$
+
+Work with cdf first, $F_Y(y) = P(log(x) \leq y)$
+
+$F_Y(y) = P(x \leq e^y) = F_X (e^y)$
+
+So pdf $f_Y(y)$ is the derivative of the cdf
+
+We get $f_Y (y) = \frac{d}{dx} F_X(e^y)$
+
+$f_Y(y) = f_X(e^y)*e^y$
+
+pdf $f_Y(y) = e^{-e^y}e^y$
+
+\item[TE 5.8]
+
+Let $X$ be a random variable that takes on values between 0 and c. That is $P(0 \leq X \leq c) = 1$. Show that $Var(X) \leq \frac{c^2}{4}$
+
+Hint: One approach is to argue that $E[X^2] \leq cE[X]$
+
+And then using the inequality to show that $Var(X) \leq c^2[\alpha(1-\alpha)]$ where $\alpha = \frac{E[X]}{c}$
+
+$E[X^2] = \int_0^{c} x^2 f(x) dx \leq \int_0^{c} cx f(x) dx = cE[X]$
+
+And we know $Var(X) = E[X^2] - (E[X])^2$
+
+So $Var(X) \leq cE[X] - (E[X])^2$
+
+$Var(X) \leq c^2(\frac{E[X]}{c} - \frac{(E[X])^2}{c^2})$
+
+So $Var(x) \leq c^2(\alpha -\alpha^2)$ for $\alpha = \frac{E[X]}{c}$
+
+We know that $\alpha - \alpha^2$ on the real line has maximum value at $\alpha = 0.5, \alpha - \alpha^2 = \frac{1}{4}$
+
+So $Var(X) \leq \frac{c^2}{4}$
+
+\item[TE 5.9]
+
+Show that if $Z$ is a standard normal random variable; then for $x > 0$
+
+a) Show that $P(Z > x) = P(Z < -x)$
+
+$P(Z > x) = P(-Z < -x)$
+
+But $-Z$ is also a standard normal random variable, 
+
+so $P(Z > x) = P(-Z < -x ) = P(Z < -x)$
+
+b) Show that $P(|Z| > x) = 2P(Z > x)$
+
+$P(|Z| > x) = P(Z>x) + P(-Z > x)$
+
+Since $-Z$ is another standard normal random variable, then htis is equal to $2P(Z > x)$
+
+c) Show that $P(|Z| < x) = 1 - 2P(Z < x)$
+
+$P(|Z| < x) = 1 - P(|Z| > x)$
+
+Using answer form part b, this is $1 - 2P(Z > x)$
+
+We know that $P(Z > x) = 1 - P(Z < x)$
+
+So $P(|Z| < x) = 1 - 2[1-P(Z<x)]$
+
+This is $2P(Z < x) - 1$
+
+\item[TE 5.12]
+
+The identity from 5.5 tells us that $E[X^n] = \int_{0}^{\infty} nx^{n-1} P(X > x) dx$
+
+So for $n = 2$, and an exponential random variable with parameter $\lambda$, this is
+
+$E[X^2] = \int_{0}^{\infty} 2x P(X > x) dx$
+
+$E[X^2] = \int_{0}^{\infty} 2x e^{-\lambda x} dx$
+
+$E[X^2] = 2\int_{0}^{\infty} x e^{-\lambda x} dx$
+
+$E[X^2] = 2[(x\frac{e^{-\lambda x}}{-\lambda}) |_0^{\infty} - (\int_0^{\infty} \frac{e^{-\lambda x}}{-\lambda} dx)]$
+
+First term evaluates to 0 
+
+$E[X^2] = \frac{2}{\lambda} \int_0^{\infty} e^{-\lambda x} dx$
+
+$E[X^2] = \frac{2}{\lambda ^2}$
+
+
+\end{itemize}
+\end{document}

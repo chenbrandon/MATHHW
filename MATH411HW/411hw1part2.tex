@@ -1,0 +1,62 @@
+\documentclass[11pt]{article}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\begin{document}
+\noindent Brandon Chen \\
+MATH 411
+\\
+
+1.6\\
+\\
+\begin{enumerate}
+\setcounter{enumi}{1}
+\item
+1,7,13,19,25,31,37,43,49\\
+2,8,14,20,26,32,38,44,50\\
+3,9,15,21,27,33,39,45,51\\
+4,10,16,22,28,34,40,46,52\\
+5,11,17,23,29,35,41,47,53\\
+6,12,18,24,30,36,42,48,54\\
+
+\item
+First accessible number:
+
+list 1 - 49
+
+list 2 - 20
+
+list 3 - 9
+
+list 4 - 40
+
+list 5 - 29
+
+list 6 - 6
+
+\item
+Every number after the first number accessible by (6,9,20), call it A, in the list is accessible because every number following A in the list is a combination of A and 6's, so they also must be accessible by (6,9,20).
+
+\item
+(6,9,20) inaccessible numbers:\\
+1,2,3,4,5,7,8,10,11,13,14,16,17,19,22,23,25,28,31,34,37,43
+
+\item
+The largest integer that is inaccessible by (6,9,20) is 43.
+The positive integers that are (6,9,20) accessible are numbers in their list greater than or equal to their first accessible number.
+
+
+\item
+The ideas that went into the solution include:
+
+\begin{itemize}
+\item Dividing the set of positive integers in to lists according to their remainders when divided by a number
+\item The first accessible number in a particular list that is not in the list with remainder of 0 must be accessible by the other numbers that we are using to determine accessibility. 
+\item The idea that every number in a list greater than or equal to accessible number in that list is also accessible.
+\end{itemize}
+
+
+These ideas allowed me to reduce the calculations necessary because I did not have to check each number in each list after the first accessible number was found, since I knew they must be accessible as well. Additionally, finding the first (6,9,20) accessible numbers in list 1-5 was as simple as finding the first (9,20) accessible number
+
+\end{enumerate}
+\end{document}

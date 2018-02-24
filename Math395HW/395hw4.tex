@@ -1,0 +1,307 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage[margin=1in]{geometry}
+
+\begin{document}
+
+\noindent Brandon Chen
+
+\noindent MATH 395 HW 4
+
+\noindent Ch 6:  21, 23, 27, 39, 41(a) only, 48
+
+\begin{itemize}
+
+\item[21]
+
+Let $f_{X,Y}(x,y) = 24xy, \quad 0 \leq x \leq 1, 0\leq y \leq 1, 0 \leq x + y \leq y$
+
+And let it equal 0 otherwise.
+
+a) Show that $f(x,y)$ is a joint probability density function
+
+We know if it is a joint pdf if the double integral is equal to 1
+
+If we integrate with respect to x first, $x$ goes from 0 to $1-y$
+
+Then, if we integrate with respect to y, y goes from 0 to 1
+
+This is
+
+$\int_0^1 \int_0^y 24xy dxdy$
+
+$\int_0^1 [12(1-y)^2]ydy$
+
+$\int_0^1 12(y - 2y^2 + y^3)dy$
+
+$12[\frac{1}{2}y^2 - \frac{2}{3}y^3 + \frac{1}{4}y^4]_0^1$
+
+$12[\frac{1}{2} - \frac{2}{3} + \frac{1}{4}] = 1$
+
+So it is a joint pdf
+
+b) To find $E[X]$, we must find $\int_{-\infty}^{\infty} x f_X(x) dx$
+
+This is $\int_0^1 \int_0^{1-x} 24x^2y dydx$
+
+$\int_0^1 12x^2(1-x)^2 dx$
+
+$\int_0^1 12x^2(1 - 2x + x^2) dx$
+
+$\int_0^1 12x^2 - 24x^3 + 12x^4 dx$
+
+$4x^3 - 6x^4 + \frac{12}{5}x^5|_0^1$
+
+$4 - 6 + \frac{12}{5} = \frac{2}{5}$
+
+c) Find $E[Y]$. We can tell that $E[Y]$ will be calculated the same way as $E[X]$, and so it will produce the same expected value
+
+$E[Y] = \frac{2}{5}$
+
+\item[23]
+
+The random varaibles $X,Y$ have joint density function
+
+$f_{X,Y}(x,y) = 12xy(1-x), \quad 0 < x < 1,  0 < y < 1$
+
+and equal to 0 otherwise
+
+a) Are $X,Y$ independent?
+
+$f_X(x) = \int_0^1 f_{X,Y}(x,y) dy$
+
+$f_X(x) = 6x(1-x)y^2|_0^1$
+
+$f_X(x) = 6x(1-x)$, for $0 < x < 1$
+
+$f_Y(y) = \int_0^1 f_{X,Y}(x,y) dx$
+
+$f_Y(y) = 12y[\frac{1}{2}x^2 - \frac{1}{3}x^3]_0^1$
+
+$f_Y(y) = 12y[\frac{1}{2} - \frac{1}{3}]$
+
+$f_Y(y) = 2y$ for $0 < y < 1$
+
+They are independent if $f_Y(y) * f_X(x) = f_{X,Y}(x,y)$
+
+$6x(1-x)*2y = 12xy(1-x)$, for $0< x < 1, 0 < y < 1$
+
+So they are independent
+
+b) Find $E[X]$
+
+$E[X] = \int_{-\infty}^{\infty} x f_X(x) dx$
+
+$\int_{0}^{1} x[6x(1-x)]dx$
+
+$\int_{0}^{1} 6[x^2-x^3]dx$
+
+$6[\frac{1}{3}x^3 - \frac{1}{4}x^4]_0^1$
+
+$6[\frac{1}{3} - \frac{1}{4}] = \frac{1}{2}$
+
+c) Find $E[Y]$
+
+$E[Y] = \int_{\mathbb{R}} y f_Y(y) dy$
+
+$\int_0^1 2y^2 dy$
+
+$\frac{2}{3}y^3 |_0^1 = \frac{2}{3}$
+
+d) Find Var(X)
+
+Var(X) = $E[X^2] - (E[X])^2$
+
+Find $E[X^2]$
+
+$E[X^2] = \int_{-\infty}^{\infty} x^2 f_X(x) dx$
+
+$\int_{0}^{1} x^2[6x(1-x)]dx$
+
+$\int_{0}^{1} 6[x^3 - x^4]dx$
+
+$6[\frac{1}{4}x^4 - \frac{1}{5}x^5]_0^1$
+
+$6[\frac{1}{4} - \frac{1}{5}] = \frac{6}{20}$
+
+Then Var(X) = $\frac{6}{20} - [\frac{1}{2}]^2 = \frac{1}{20}$
+
+e) Find Var(Y)
+
+Var(Y) = $E[Y^2] - (E[Y])^2$
+
+Find $E[Y^2]$
+
+$E[Y^2] = \int_{\mathbb{R}} y^2 f_Y(y) dy$
+
+$\int_0^1 2y^3 dy$
+
+$=\frac{1}{2}$
+
+Var(Y) = $\frac{1}{2} - [\frac{2}{3}]^2 = \frac{1}{18}$
+\item[27]
+
+If $X_1, X_2$ are independent exponential random variables with respective parameters $\lambda_1, \lambda_2$, find the distribution of $Z = \frac{X_1}{X_2}$. Also compute $P(X_1 < X_2)$
+
+Find the distribution means find the cdf
+
+a) Want $P(Z < a)$
+
+$P(\frac{X_1}{X_2} < a)$
+
+$=P(X_1 < aX_2)$
+
+Exponential, so $x_1$ goes from 0 to $aX_2$
+
+Exponential, so $x_2$ goes from 0 to $\infty$
+
+$F_Z(a) = \int_{0}^{\infty} [\int_{0}^{a(x_2)} \lambda_1 e^{-\lambda_1 x_1}dx_1] \lambda_2 e^{-\lambda_2 x_2} dx_2$
+
+$\int_{0}^{\infty} [-e^{-\lambda_1 x_1}]_0^{ax_2} \lambda_2 e^{-\lambda_2 x_2} dx_2$
+
+$\int_{0}^{\infty} [1-e^{-\lambda_1 ax_2}] \lambda_2 e^{-\lambda_2 x_2} dx_2$
+
+$\lambda_2 \int_{0}^{\infty} e^{-\lambda_2 x_2} - e^{-[\lambda_1 a+\lambda_2] x_2} dx_2$
+
+$-e^{-\lambda_2 x_2}|_0^{\infty} + \frac{\lambda_2}{\lambda_1 a + \lambda_2} e^{-[\lambda_1 a + \lambda_2] x_2}|_0^{\infty}$
+
+$[0 + 1] + \frac{\lambda_2}{\lambda_1 a + \lambda_2}[0 - 1]$
+
+$1 - \frac{\lambda_2}{\lambda_2 + \lambda_1 a}$
+
+b) Find $P(X_1 < X_2)$
+
+This is the same as part a, but we set $a = 1$
+
+This is just 
+
+$1 - \frac{\lambda_2}{\lambda_2 + \lambda_1}$
+
+\item[39]
+
+Two dice are rolled. Let $X,Y$ denote respectively, the largest and smallest values obtained. Compute the conditional mass function of $Y$ given $X = i$, for $i =1,..6$. Are $X,Y$ independent? Why?
+
+Conditional mass function
+
+$P_{Y|X} (y|x) = P(Y = j | X = i)$
+
+There are two possibilities, either $i = j$, when the rolls are equal, or $j < i$, since $X$ is the largest roll.
+
+If $j = i$
+
+$P_{Y|X} (y|x) = \frac{P(Y = i| X = i)}{P(X=i)}$
+
+$= \frac{P(Y = i, X = i)}{P(X = i)}$
+
+The larger roll is determined already, with probability $\frac{1}{6}$
+
+The smaller roll must match the larger roll, with probability $\frac{1}{6}$
+
+So probability of roll 1 matching roll 2 is $\frac{1}{36}$
+
+$= \frac{1}{36} \frac{1}{P(X = i)}$
+
+If $j < i$
+
+Then either the first roll is the smaller roll, with value j, or the second roll is smaller, with value j
+
+the probability of rolling specifically i or j is $\frac{1}{36}$, with equal probability of roll 1 or 2 having the smaller roll, j
+
+Then $P(Y = j, X = i) = \frac{2}{36} \frac{1}{P(X=i)}$
+
+Need to find $P(X = i)$
+
+Each specific outcome for roll 1 and 2 have probability $\frac{1}{36}$
+
+In the case where one value is strictly less than the other, we have $j < i$
+
+If roll 1 has the larger value, i, then the possible values of the other roll may range from 1 to $i-1$
+
+And the larger value i may occur on roll 1 or 2 with equal probability, so probability of $j < i$ on any roll is $\frac{1}{36}$
+
+Then the total probability of $X = i$ for $i < j$ on either roll is $\sum_1^{i-1} \frac{2}{36} = \frac{2i - 2}{36}$
+
+And in the case that the two rolls are equal, the probability is $\frac{1}{36}$
+
+Then the probability that $X = i$ is equal to the sum of the probabilities that $i = j, j < i$ 
+
+Which is $\frac{2i-2}{36} + \frac{1}{36}$
+
+Not independent, because $Y \leq X$, so it cannot be independent.
+
+\item[41a]
+
+The joint density function of $X,Y$ is given by $f_{X,Y} (x,y) xe^{-x(y+1)} \quad x > 0, y > 0$
+
+a) Find the conditional density of $X$, given $Y = y$, and of $Y, given X = x$
+
+Want $f_{X|Y}(x|y)$
+
+This is equal to $\frac{f_{X,Y}(x,y)}{f_Y(y)}$
+
+Find $f_Y(y)$
+
+$f_Y(y) = \int_0^{\infty} xe^{-x(y + 1)} dx$
+
+$\int_0^{\infty} xe^{-x(y+1)} dx$
+
+$[x* \frac{-1}{y + 1} e^{-x(y+1)}]_0^{\infty} - \int_0^{\infty} \frac{-1}{y+1} e^{-x(y+1)}$
+
+$[0 - 0] - [\frac{1}{(y+1)^2} e^{-x(y+1)}]_0^{\infty}$
+
+$-[0 - \frac{1}{(y+1)^2}]$
+
+$=\frac{1}{(y+1)^2}$
+
+$f_{X|Y}(x|y) = \frac{xe^{-x(y+1)}}{\frac{1}{(y+1)^2}}$
+
+$= (y+1)^2 xe^{-x(y+1)}$ for $x > 0$
+
+Want $f_{Y|X}(y|x)$
+
+This is equal to $\frac{f_{X,Y}(x,y)}{f_X(x)}$
+
+Find $f_X(x)$
+
+$f_X(x) = \int_0^{\infty} xe^{-x(y+1)} dy$
+
+$xe^{-x} \int_0^{\infty} e^{-xy}dy$
+
+$xe^{-x} \frac{-1}{x} e^{-xy}|_0^{\infty}$
+
+$xe^{-x}[0 + \frac{1}{x}]$
+
+$f_X(x) = e^{-x}$
+
+$f_{Y|X}(y|x) = \frac{xe^{-x(y+1)}}{e^{-x}}$
+
+$=xe^{-xy}$ for $y > 0$
+
+\item[48]
+
+If $X_1, X_2, X_3, X_4, X_5$ are independent and identically distributed exponential random variables with the paramter $\lambda$, compute
+
+Hint for 48a, $P(min < a) = 1 - p(min > a)$ and note the minimum is $>a$ iff each of the five X is $>a$
+
+a) $P(min(X_1,...X_5) \leq a)$
+
+This is equal to $1 - P(min(X_1,...X_5) > a)$
+
+There are 5 $X_i's$ that need to be all be greater than $a$
+
+$1 - [\int_a^{\infty} \lambda e^{-\lambda x}]^5$
+
+$1 - [e^{-a\lambda}]^5$
+
+b) $P(max(X_1,...x_5) \leq a)$
+
+Exponential has cdf $1-e^{-\lambda a}$
+
+Each $X_i$ must be greater than $a$, there are 5 of them
+
+$P(max(X_i) \leq a)$ = $[1 - e^{-\lambda a}]^5$
+
+\end{itemize}
+\end{document}
