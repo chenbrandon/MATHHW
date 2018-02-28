@@ -12,7 +12,7 @@ git clone https://github.com/chenbrandon/MATHHW.git
 * Math 395 - [Probability II](https://www.washington.edu/students/crscat/math.html#math395)
 * Math 411 - [Introduction to Modern Algebra for Teachers](https://www.washington.edu/students/crscat/math.html#math411)
 * Math 412 - [Introduction to Modern Algebra for Teachers](https://www.washington.edu/students/crscat/math.html#math412)
-*	Math 444 - [Geometry for Teachers](https://www.washington.edu/students/crscat/math.html#math444
+*	Math 444 - [Geometry for Teachers](https://www.washington.edu/students/crscat/math.html#math444)
 * Math 445 - [Geometry for Teachers](https://www.washington.edu/students/crscat/math.html#math445)
 
 ## Want to take
