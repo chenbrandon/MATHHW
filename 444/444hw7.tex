@@ -1,0 +1,74 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{mathrsfs}
+\usepackage[margin=1in]{geometry}
+
+\newcommand{\ray}[1]{\overrightarrow{#1}}
+\newcommand{\lines}[1]{\overleftrightarrow{#1}}
+\newcommand{\segment}[1]{\overline{#1}}
+
+\begin{document}
+
+\noindent Brandon Chen
+
+\noindent MATH 444 HW 7
+
+\noindent 5B, 5C, 5D, 5E, 5F
+
+\begin{itemize} 
+	\item[5B]
+
+		Prove Corollary 5.3 (to Pasch's theorem)
+
+		Theorem 5.2 (Pasch's theorem): Suppose $\Delta ABC$ is a triangle and $\ell$ is a line that does not contain any of the points $A,b,C$. If $\ell$ intersects one of the sides of $\Delta ABC$, then italso intersects another side.
+
+		Corollary 5.3: If $\Delta ABC$ is a triangle and $\ell$ is a line that does not contain any of the points $A,B,C$, then either $\ell$ intersects exactly two sides of $\Delta ABC$ or it intersects none of them.
+
+		$\ell$ is a line. It does not contain any of the points $A,B,C$, so it is not collinear to any of the segments $\segment{AB}, \segment{BC}, \segment{AC}$
+
+		Case: $\ell$ does not intersect any of the line segments. 
+
+		Then $\ell$ does not intersect any of the line segments.
+
+		Case: $\ell$ intersects one of the line segments. Then by theorem 5.2, it intersects another side.
+
+		Then $\ell$ intersects exactly two sides of $\Delta ABC$
+
+	\item[5C]
+
+		Suppose $\Delta ABC$ is a triangle and $\ell$ is a line (which might or might not contain one or more vertices). Is it possible for $\ell$ to intersect exactly one side of $\Delta ABC$? Exactly two? All three? In each case, either give an example or prove that it is impossible.
+
+		Case 1: Intersects exactly one side of $\Delta ABC$
+
+		If $\ell$ intersects at a vertice, for example $A$,  then since $A \in \segment{AB}, \segment{AC}$, then it intersects more than one side.
+
+		Then assume that $A$ does not intersect at a vertice, and intersects at one side.
+
+		But by theorem 5.2, we know that if it intersects at one side, it must intersect another side.
+
+		Then it is not possible for $\ell$ to intersect the triangle on exactly one side.
+
+		Case 2: Intersects exactly two sides of $\Delta ABC$
+
+		Yes, it is possible: example picture provided
+
+		Case 3: Intersects exactly three sides of $\Delta ABC$
+
+		Yes, it is possible: example picture provided
+
+	\item[5D]
+
+		Prove Theorem 5.8 (The converse to the isoceles triangle theorem). [Hint: One way to proceed is to construct an indirect proof, like Euclid's proof of proposition 1.6. Another is to mimic Pappus's proof of the isosceles triangle theorem.]
+
+	\item[5E]
+
+		Prove Theorem 5.10 (The triangle copying theorem)
+
+	\item[5F]
+
+		Prove Theorem 5.18 (The triangle inequality)
+			
+\end{itemize}
+\end{document}
