@@ -52,23 +52,50 @@
 
 		Case 2: Intersects exactly two sides of $\Delta ABC$
 
-		Yes, it is possible: example picture provided
+		Yes, it is possible: example picture provided (Picture is of triangle $\Delta ABC$, and line $\ell$, where $\ell$  intersects through sides $\segment{AB}, \segment{AC}$, and touches none of the vertices.)
 
 		Case 3: Intersects exactly three sides of $\Delta ABC$
 
-		Yes, it is possible: example picture provided
+		Yes, it is possible: example picture provided (Picture is of triangle $\Delta ABC$, and line $\ell$, where $\ell$ is collinear to $\segment{AB}$, and touches both vertices $A,B$)
 
 	\item[5D]
 
 		Prove Theorem 5.8 (The converse to the isoceles triangle theorem). [Hint: One way to proceed is to construct an indirect proof, like Euclid's proof of proposition 1.6. Another is to mimic Pappus's proof of the isosceles triangle theorem.]
 
+		Theorem 5.7: Isosceles Triangle theorem: If two sides of a triangle are congruent to each other, then the angles opposite those sides are congruent.
+
+		Theorem 5.8: If two angles of a triangle are congruent to each other, then the sides opposite those angles are congruent.
+
+		Let $\Delta ABC$ be a triangle with $\angle B \cong \angle C$
+
+		Then draw the mirrored image $\Delta A' B' C'$ under the correspondence $A \leftrightarrow B$, $B \leftrightarrow C$, and $C \leftrightarrow B$
+
+		The triangles $\Delta ABC, \Delta A'B'C'$ satisfy the hypothesis set by ASA congruence, since $\segment{BC} \cong \segment{B'C'}$
+
+		and $\angle B \equiv \angle B', \angle C \cong \angle C'$
+
+		Thus the corresponding sides $\segment{AB}, \segment{AC}$ are congruent
+
+		The figure shown is the same as Fig 5.7 from the book, mimicing Pappus's proof. 
+
 	\item[5E]
 
 		Prove Theorem 5.10 (The triangle copying theorem)
 
+		Suppose $\Delta ABC$ is a triangle and $\segment{DE}$ is a segment congruent to $\segment{AB}$. On eah side of $\lines{DE}$ there is a point $F$ such that $\Delta DEF \cong \Delta ABC$
+
+
 	\item[5F]
 
 		Prove Theorem 5.18 (The triangle inequality)
+
+		If $A,B,C$ are noncollinear points, then $AC < AB + BC$
+
+		Construct a triangle with vertices $A,B,C$, call it $\Delta ABC$
+
+		For the line $\lines{AB}$, take the point $D$, such that $BD = BC$
+
+
 			
 \end{itemize}
 \end{document}
