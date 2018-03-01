@@ -379,7 +379,32 @@ Prove Theorem 14.7 by imitating the proof of theorem 14.6
 	Use the division theorem for $\mathbb{Z}[i]$ to prove theorem 15.10 below.
 
 	Theorem 15.10: $\mathbb{Z}[i]$ is a Euclidean ring.
-	
+
+	It is a Euclidean Ring if it satisfies 
+
+	A) There is a norm function $N$ assigning every nonzeor element $a$ of $R$ a nonnegative integer $N(a)$ and assigning 0 a value $N(0)$ less than the norm of every nonzero element of R.
+
+	Yes, for $a = x + yi$
+
+	Then $N(a) = x^2 + y^2$
+
+	And for $N(0)$, this is $N(0) = (0)(0) = 0$, which is less than the Norm of any nonzero element $a$ of $R$
+
+	B) For any two nonzero elements $a,b$ of $R$, $N(a) \leq N(ab)$
+
+	Let $a = x + yi$
+
+	$b = j + ki$
+
+	$N(ab) = (x+yi)(x-yi)(j+ki)(j-ki)$
+
+	$N(ab) = (x^2+y^2)(j^2 + k^2)$
+
+	So $N(a) \leq N(ab)$
+
+	C) For any two nonzero elements $a, b$ of $R$, there exists elements $q,r$ such that $b = aq + r$ and $N(r) < N(a)$
+
+	We know this is true, by theorem 15.9
 
 \end{itemize}
 \end{document}
