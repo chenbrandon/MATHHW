@@ -268,10 +268,41 @@ Prove Theorem 14.7 by imitating the proof of theorem 14.6
 
 	And $N(b) < N(ab) = N(r)$
 
-	2. 
+	2. $r$ is not a unit and is non zero, so it is at least the third smallest size
 
-	$r$ is not a unit, and is nonzero
+	We know $r = ab$
 
+	And we know $N(r) = N(ab) \geq N(a)$, $N(ab) \geq N(b)$, by 15.1 part 4.
+
+	Show that $r$ is either ireducible or a product of irreducible elements
+
+	By induction on $N(r)$
+
+	Base case: $N(r)$ is of the third smallest size, so by 15.1 part 3, it is irreducible
+
+	Inductive Step:
+
+	Inductive Hypothesis: Assume that for $N(r)$ of size less than or equal to $n$, it is irreducible or a product of irreducibles.
+
+	Show that for $N(r)$ of size $n+1$ is irreducible or a product of irreducibles.
+
+	Case: $N(r) = N(ab) = N(a)$
+
+	or $N(r) = N(ab) = N(b)$
+
+	Then by 15.1 part 4, one of $a,b$ must be a unit.
+
+	But this contradicts that $r = ab$ is a nontrivial factorization, so this case is impossible.
+
+	Case: $N(r) = N(ab) > N(a)$ and $N(r) = N(ab) > N(b)$
+
+	Then neither of $a,b$ are units. 
+
+	Then $r$ is the product of 2 lower degree elements, $a,b$
+
+	And by inductive hypothesis, $a,b$ must be irreducible or products of irreducibles.
+
+	So $r$ is a product of irreducibles.
 
 
 \newpage 
@@ -293,8 +324,54 @@ Prove Theorem 14.7 by imitating the proof of theorem 14.6
 
 	and $N(b) < N(ab) = N(r)$
 
-	2. $r$ is not a unit and is non zero
+	2. $r$ is not a unit and is non zero, so it is at least the third smallest size
 
+	We know $r = ab$
+
+	And we know $N(r) = N(ab) \geq N(a)$, $N(ab) \geq N(b)$, by 15.1 part 4.
+
+	Show that $r$ is either ireducible or a product of irreducible elements
+
+	By induction on $N(r)$
+
+	Base case: $N(r)$ is of the third smallest size, so by 15.1 part 3, it is irreducible
+
+	Inductive Step:
+
+	Inductive Hypothesis: Assume that for $N(r)$ of size less than or equal to $n$, it is irreducible or a product of irreducibles.
+
+	Show that for $N(r)$ of size $n+1$ is irreducible or a product of irreducibles.
+
+	Case: $N(r) = N(ab) = N(a)$
+
+	or $N(r) = N(ab) = N(b)$
+
+	Then by 15.1 part 4, one of $a,b$ must be a unit.
+
+	But this contradicts that $r = ab$ is a nontrivial factorization, so this case is impossible.
+
+	Case: $N(r) = N(ab) > N(a)$ and $N(r) = N(ab) > N(b)$
+
+	Then neither of $a,b$ are units. 
+
+	Then $r$ is the product of 2 lower degree elements, $a,b$
+
+	And by inductive hypothesis, $a,b$ must be irreducible or products of irreducibles.
+
+	So $r$ is a product of irreducibles.
+
+	\begin{comment}
+	1. use part 4 of 15.1
+
+	r = ab ( take norm both sides)
+
+	2. Strong induction -> third smallest size starts induction
+
+	3. Everything Norm < n is product of irreducibles
+
+	N(r) = ab > na since a,b not a unit iff N(ab) > nb
+
+	\end{comment}
 
 \newpage 
 \item[15.8]
