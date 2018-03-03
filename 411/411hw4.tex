@@ -1,0 +1,333 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath} 
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage[margin=1in]{geometry} % for margins
+\begin{document}
+
+\begin{itemize}
+
+\newpage
+\item[6.3]
+	Prove that every negative real number has a multiplicative inverse.
+
+	Given any negative real number $r$,
+
+	We know that there exists an additive inverse $-r$ that is positive, since $r + (-r) = 0$
+
+	We know that every positive real number $-r$ has a multiplicative inverse $s$, by exercise 6.2
+
+	So $-r * s = 1$
+
+	We know there exists an additive inverse for $s, -s$, that is negative, since $s + (-s) = 0$
+
+	So $r * -s = 1$
+
+\newpage
+\item[6.7]
+	1) Suppose that $a + b\sqrt{2}$ is a unit in $\mathbb{Z}[\sqrt{2}]$ and that its multiplicative inverse is $c + d\sqrt{2}$. Show that $ac + 2bd = 1$ and $ad + bc = 0$
+
+	The multiplicative inverse of $a + b\sqrt{2}$ is $c + d\sqrt{2}$, so we know their product must equal $1$
+
+	So $ac + ad\sqrt{2} + cb\sqrt{2} + 2bd = 1$
+
+	Grouping like terms, we have 
+
+	$(ac + 2bd) + (ad + cb)\sqrt{2} = 1$
+
+	We know that $(ac + 2bd), (ad + cb), 1$ are integers
+
+	But the product $(ab + cb)\sqrt{2}$ is not an integer
+
+	So $(ab + cb)$ must equal 0
+
+	So $(ac + 2bd)$ must equal 1
+
+	2) Using these equations, deduce that $a - b\sqrt{2}$ is also a unit in $\mathbb{Z}[\sqrt{2}]$, and that its inverse is $c - d\sqrt{2}$
+
+	
+
+	3) continuing with these numbers, show that the product $$(a + b\sqrt{2})(a - b\sqrt{2})(c + d\sqrt{2})(c - d\sqrt{2})$$
+
+	equals 1 and deduce that $a^2 - 2b^2$ must equal $1 or -1$
+
+	We know that $(a + b\sqrt{2})$ has inverse $(c + d\sqrt{2})$, so their product will be equal to 1
+
+	We know that $(c - d\sqrt{2})$ has inverse $(a - b\sqrt{2})$ so their product will be equal to 1
+
+	So the product is equal to $1 * 1 = 1$
+
+	Expanding, we get 
+
+	$(a^2 - ab\sqrt{2} + ab\sqrt{2} - 2b^2)(c + d\sqrt{2})(c - d\sqrt{2}) = 1$ 
+
+	This is equal to
+
+	$(a^2 - 2b^2)(c + d\sqrt{2})(c - d\sqrt{2}) = 1$
+
+	$(a^2 - 2b^2)(c^2 - 2d^2) = 1$
+
+	We know that $(a^2 - 2b^2), (c^2 - 2d^2)$ are both integers, name them $e,f$
+
+	The only possible integer solution for $ef = 1$ would be $e = \pm 1, f = e$
+
+	So $e = (a^2 - 2b^2) = \pm 1$. And $f = (c^2 - 2d^2) = e$
+
+	4) You have proved that if $a + b\sqrt{2}$ is a unit in $\mathbb{Z}[\sqrt{2}]$, then $a^2 - 2b^2 = \pm 1.$
+
+	5) Conversely, suppose $a, b$ are integers satisfying $a^2 - 2b^2 = 1$ or $a^2 - 2b^2 = -1$. Prove that $a + b\sqrt{2}$ is a unit in $\mathbb{Z}[\sqrt{2}]$. What is its multiplicative inverse?
+
+	$a + b\sqrt{2}$ has multiplicative inverse $\frac{1}{a + b\sqrt{2}}$
+
+	This is equal to $\frac{1}{a + b\sqrt{2}} * \frac{a - b\sqrt{2}}{a - b\sqrt{2}} = \frac{a - b\sqrt{2}}{a^2 - 2b^2}$
+
+	We know that $a^2 - 2b^2 = \pm 1$
+
+	So the multiplicative inverse = $\pm(a - b\sqrt{2)}$
+
+	So the multiplicative inverse in a number in the ring $\mathbb{Z}[\sqrt{2}]$, so it is a unit.
+
+	6) Conclude that the units in $\mathbb{Z}[\sqrt{2}]$ correspond to solutions to the diophantine equations $$x^2 - 2y^2 = 1; x^2 - 2y^2 = -1$$
+
+	7) Observe that $(1,1)$ is a solution to one of these equations, as is $(3,2)$. Deduce that $\sqrt{2} + 1$ is a unit, with inverse $\sqrt{2} - 1$,  and $3 + 2\sqrt{2}$ is a unit with inverse $3 - 2\sqrt{2}$
+
+	8) Observe that $3 + 2\sqrt{2}$ is just $(\sqrt{2} + 1)^2$, and the inverse of $(3 + 2\sqrt{2})$ is $(\sqrt{2} - 1)^2$. More generally, show that $(\sqrt{2} + 1)^n$ is a unit for every positive integer $n$ by describing its inverse. Observe that we get in this way infinitely many units in $\mathbb{Z}[\sqrt{2}]$
+
+	Show that $(1 + \sqrt{2})^n$ is in $\mathbb{Z}[\sqrt{2}]$
+
+	By induction (on $n$)
+
+	Base case: $n = 1$
+
+	$(1 + \sqrt{2})$ is a a number in $\mathbb{Z}[\sqrt{2}]$
+
+	Inductive Step:
+
+	Inductive Hypothesis: Assume $(1 + \sqrt{2})^n$ is a number in $\mathbb{Z}[\sqrt{2}]$
+
+	So $(1 + \sqrt{2})^n$ has the form $e + f\sqrt{2}, e, f \in\mathbb{Z}$
+
+	So $(1 + \sqrt{2})^{n+1} = (e + f\sqrt{2})(1 + \sqrt{2}) = e + e\sqrt{2} + f\sqrt{2} + 2f$
+
+	Regrouping like terms, this is equal to $(e + 2f) + (e + f)\sqrt{2}$, so it is a number in $\mathbb{Z}[\sqrt{2}]$
+
+	$(1 + \sqrt{2})^n$ has multiplicative inverse $\frac{1}{(1 + \sqrt{2})^n} = \frac{1}{(1 + \sqrt{2})^n} * \frac{(-1 + \sqrt{2})^n}{(-1 + \sqrt{2})^n} = (-1 + \sqrt{2})^n$
+
+	Show that $(-1 + \sqrt{2})^n$ is a number in $\mathbb{Z}[\sqrt{2}]$
+
+	By induction (on $n$)
+
+	Base case: $n = 1$
+
+	$-1 + \sqrt{2}$ is a number in the ring, and is the multiplicative inverse to $(1 + \sqrt{2})^n$
+
+	Inductive Step:
+
+	Inductive Hypothesis: $(-1 + \sqrt{2})^n$ is a number in $\mathbb{Z}[\sqrt{2}]$
+
+	So $(-1 + \sqrt{2})^n = e + f\sqrt{2}, e,f \in\mathbb{Z}$
+
+	So $(-1 + \sqrt{2})^{n+1} = (e + f\sqrt{2})(-1 + \sqrt{2}) = -e + e\sqrt{2} - f\sqrt{2} + 2f$
+
+	Grouping like terms, we have $(-e + 2f) + (e - f)\sqrt{2}$
+
+	So it is a number in $\mathbb{Z}[\sqrt{2}]$, so $(1 + \sqrt{2})^n$ is a unit in $\mathbb{Z}[\sqrt{2}]$
+
+	There are infinitely many positive integers $n$
+
+	So there are infinitely many units in $\mathbb{Z}[\sqrt{2}]$
+
+	9) Prove that if $a$ is an even integer and $b$ is an integer, then the number $a + b\sqrt{2}$ cannot be a unit in $\mathbb{Z}[\sqrt{2}]$. (Is it possible for such a pair $(a,b)$ to satisfy the equation $x^2 - y^2 = \pm 1$?) Conclude that there are infinitely many numbers in $\mathbb{Z}[\sqrt{2}]$ that are not units.
+
+	We know $a + b\sqrt{2}$ is a unit in $\mathbb{Z}[\sqrt{2}]$ if and only if $a^2 - 2b^2 = \pm 1$
+
+	$a$ even, $a = 2k, k\in\mathbb{Z}$
+
+	So $a^2 - 2b^2 = 2(2k^2 - b^2)$
+
+	So $a^2 - 2b^2$ is even, so it is not possible for $a^2 - 2b^2 = \pm 1$
+
+	So $a + b\sqrt{2}$ is not a unit.
+
+	We know that there are infinitely many even integers, so, so there are infinitely many numbers in $\mathbb{Z}[\sqrt{2}]$ that are not units.
+
+\newpage
+\item[6.9]
+	Show that $\mathbb{Z}[i]$ is closed under additon and multplication. That is, the sum and product of every pair of numbers $a + bi$ and $c + di$ in $\mathbb{Z}[i]$ is another number in this form.
+
+	1) Show that $\mathbb{Z}[i]$ is closed under addition.
+	
+	Given numbers $a + bi, c + di$,
+
+	We have that their sum is $a + bi + c + di$
+
+	Grouping like terms, this is equal to $(a + c) + (b + d)i$
+
+	We know that $(a + c), (b + d)$ are both integers, name them $e, f$
+
+	Then the sum is equal to $e + fi$, which is another number in $\mathbb{Z}[i]$
+
+	2) Show that $\mathbb{Z}[i]$ is closed under multiplication.
+
+	Given numbes $a + bi, c + di$,
+
+	We have that their product is $ac + cbi + adi + bdi^2$
+
+	This is equal to $ac + cbi + adi - bd$
+
+	Grouping like terms, this is equal to $(ac - bd) + (cb + ad)i$
+
+	We know $(ac - bd), (cb + ad)$ are integers, name them $e, f$
+
+	Then the product is equal to $e + fi$, which is another number in $\mathbb{Z}[i]$
+
+\newpage
+\item[6.13]
+	1) Prove that if a pair of integers $a, b$ is a solution to the equation $x^2 + y^2 = n$, then $n$ factors in $\mathbb{Z}[i]$ as the product $(a + bi)(a - bi)$
+
+	We know $a,b$ are solutions to $x^2 + y^2 = n$
+
+	So $a^2 + b^2 = n$
+
+	Given integers $a,b$, we have that $(a + bi)(a - bi) = a^2 - abi + abi - b^2i^2$
+
+	Simplifying, this is equal to $a^2 - (-1)b^2$
+
+	This is equal to $a^2 + b^2$, which is equal to $n$
+
+	2) Describe a nontrivial factorization of $2$ in $\mathbb{Z}[i]$
+
+	We know from exercise $6.13-1$ that a number $n$ that can be written as $x^2 + y^2 = n$, then there exists $a, b \in \mathbb{Z}$ such that $(a + bi)(a - bi) = n$
+
+	In this case, we know that the equation $x^2 + y^2 = 2$ has solutions for $x,y = \pm 1$
+
+	So $a, b \in \{-1,1\}$
+
+	An example nontrivial factorization of $2$ is $(1 - i)(1 + i)$
+
+	This is equal to $1^2- i + i -(i)^2 = 1 + 1 = 2$
+
+	3) Let $p$ be each of the prime numbers $5, 13, 17, 29, 37, 41, 53, 61, 73, 89$
+
+	Describe a nontrivial factorization of $p$ in $\mathbb{Z}[i]$
+
+	$5 = 2^2 + 1^2$, so $5 = (2 + i)(2 - i)$
+
+	$13 = 3^2 + 2^2$, so $13 = (3 + 2i)(3 - 2i)$
+
+	$17 = 4^2 + 1^2 = (4 + i)(4 - i)$
+
+	$29 = 5^2 + 2^2 = (5 + 2i)(5 - 2i)$
+
+	$37 = 6^2 + 1^2 = (6 + i)(6 -i)$
+
+	$41 = 5^2 + 4^2 = (5 + 4i)(5 - 4i)$
+
+	$53 = 7^2 + 2^2 = (7 + 2i)(7 - 2i)$
+
+	$61 = 6^2 + 5^2 = (6 + 5i)(6 - 5i)$
+
+	$73 = 8^2 + 3^2 = (8 + 3i)(8 - 3i)$
+
+	$89 = 8^2 + 5^2 = (8 + 5i)(8 - 5i)$
+
+	4) Using Fermat's theorem, show that every prime $p$ congruent to $1$ modulo $4$ has a nontrivial factorization in $\mathbb{Z}[i]$
+
+	We know by Fermat's theorem that every prime $p$, $p \equiv 1 (mod 4)$, has a solution $x^2 + y^2 = p,$ for $x,y \in\mathbb{Z}$
+
+	We know by exercise $6.13-1$ that $x^2 + y^2 = (x + yi)(x - yi)$
+
+	So $p$ has a nontrivial factorization in $\mathbb{Z}[i]$
+
+\newpage
+\item[6.19]
+	Look at the rings $\mathbb{Z}_m$ for small $m$
+
+	1) Suppose $m = 2$
+	
+		a) Write the multiplication table for $\mathbb{Z}_2$
+
+\begin{tabular}{l|l l}
+
+x & 0 & 1 \\
+\hline
+0 & 0	& 0 \\
+1	& 0	& 1 \\
+
+\end{tabular}
+
+		b) Using the multiplication table, check that 1 is a multiplicative identity for $\mathbb{Z}_2$
+
+		Yes, $1 * 1 = 1$, it is a multliplicative identity.
+
+		c) Which numbers in $\mathbb{Z}_2$ are units? What are their multiplicative inverses? Is $\mathbb{Z}_2$ a field?
+
+	The only that is a unit is 1, with inverse 1.
+
+	$\mathbb{Z}_2$ is a field since all non zero numbes have a multiplicative inverse.
+
+	2) Suppose $m = 3$
+
+		a) Write the multiplication table for $\mathbb{Z}_3$. Have you seen this table before?
+
+
+\begin{tabular}{l|l l l }
+
+x & 0 & 1 & 2 \\
+
+\hline
+
+0 & 0	& 0 & 0 \\
+
+1	& 0	& 1 & 2 \\
+
+2	& 0	&	2	&	1 \\
+
+\end{tabular}
+
+		b) Using the multiplication table, check that 1 is a multiplicative identity for $\mathbb{Z}_3$
+
+		Yes.
+
+		c) Which numbers in $\mathbb{Z}_3$ are units? What are their multiplicative inverses? Is $\mathbb{Z}_3$ a field?
+
+		1 has inverse 1, 2 has inverse 2
+
+		It is a field since all non zero numbers in $\mathbb{Z}_3$ have inverses
+
+	2) Suppose $m = 4$
+
+		a) Write the multiplication table for $\mathbb{Z}_4$. Have you seen this table before?
+
+		Yes, we have seen this table before (in the fruit rings example
+
+\begin{tabular}{l|l l l l}
+
+x & 0 & 1 & 2 & 3\\
+
+\hline
+
+0 & 0	& 0 & 0 & 0\\
+
+1	& 0	& 1 & 2 & 3\\
+
+2	& 0	&	2	&	0 & 2\\
+3 & 0 & 3 & 2 & 1\\
+
+\end{tabular}
+
+
+		b) Using the multiplication table, check that 1 is a multiplicative identity for $\mathbb{Z}_4$
+
+	Yes.
+
+		c) Which numbers in $\mathbb{Z}_4$ are units? What are their multiplicative inverses? Is $\mathbb{Z}_4$ a field?
+
+		1 is a unit with inverse 1, and 3 is a unit with inverse 3. 
+
+		It is not a field, since 2 does not have a multiplicative inverse.
+\end{itemize}
+\end{document}
+
+
+
