@@ -24,7 +24,6 @@
 
 		a) The expected number of flips;
 
-		b) The probability that the last flip lands of heads.
 
 	\item[7.69ab]
 
@@ -119,6 +118,14 @@
 		uniformly distributed over (0, 0.5), to replace a 
 		failed bulb. Approximate the probability that all bulbs
 		have failed by time 550.
+
+		Light bulb fails, replace the $ith$ bulb, time to replace $R_i$, $E[R_i] = 0.25$
+
+		$P(\sum^{100} X_i + \sum^{99} R_i \leq 550)$
+
+		$=P(Z \leq \frac{550-524.75}{\sqrt{2502}}$
+
+		$=P(Z \leq 0.504798) \approx 0.69315$
 
 \end{itemize}
 \end{document}
