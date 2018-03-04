@@ -24,6 +24,21 @@
 
 		a) The expected number of flips;
 
+		Want $E[$at least one head and at least one tails$]$
+
+		$=E[X|\text{first flip is Tail}]
+		*P(\text{first flip tail})
+		+ E[Y|\text{first flip is heads}]
+		*P(\text{first flip head})$
+
+		This is $(1 + \frac{1}{p})(1-p) + (1 + \frac{1}{1-p})p$
+
+		b) The probability that the last flip lands on heads
+
+		If $X$ is the event that the last flip is heads, 
+		then $X$ is the event that the first flip is tails.
+
+		Then $P(X) = 1- p$
 
 	\item[7.69ab]
 
@@ -36,7 +51,28 @@
 
 		a) 0 accidents
 
+		$P(X = 0) = \int_0^{\infty} P(X=0|\lambda)
+		*f(\lambda)d\lambda$
+
+		$=\int_0^{\infty} e^{-\lambda} e^{-\lambda} d\lambda$
+
+		$=\frac{1}{2} \int_0^{\infty} 2e^{-2\lambda} d\lambda$
+
+		$=\frac{1}{2}$
+
 		b) exactly 3 accidents in a certain year?
+
+		$P(X=3) = \int_0^{\infty} P(X=3|\lambda)
+		*f(\lambda)d\lambda$
+
+		$=\int_0^{\infty} \frac{\lambda^3e^{-\lambda}}{3!}
+		e^{-\lambda} d\lambda$
+
+		$= \frac{\Gamma(4)}{3!2^4} \int_0^{\infty}
+		\frac{(2\lambda)^32e^{-2\lambda}}{\Gamma(4)}d\lambda$
+
+		$=\frac{1}{16}$
+
 
 	\item[8.2]
 
