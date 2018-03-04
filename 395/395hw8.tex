@@ -50,15 +50,32 @@
 		in addition, that the professor knows that the 
 		variance of a student's test score is equal to 25.
 
+		$P(X \geq a) \leq \frac{E[x]}{a}$
 
+		Upper bound $P(X \geq 85) \leq \frac{75}{85}$
 
 		b) What can be said about the probability that
 		a student will score between 65 and 85?
+
+		$P(|X-\mu| \geq b)  \leq \frac{\sigma^2}{b^2}$
+
+		$P(|X-75| \geq 10) \leq \frac{25}{100}$
 
 		c) How many students would have to take the 
 		examination to ensure with a probability at least 0.9 
 		that the class average would be within 5 of 75? 
 		Do not use the central limit theorem.
+
+		$P(|\frac{1}{n} \sum_{1}^{n} X_i
+		- \mu| \geq \epsilon) \leq \frac{\sigma^2}{n\epsilon^2}$
+
+		$P(|\frac{1}{n}\sum_{1}^{n} X_i - 75| \geq 5) =
+		\frac{25}{n25} = \frac{1}{n}$
+
+		$P(|\frac{1}{n}\sum_{1}^{n} X_i - 75| < 5) \geq
+		1 - \frac{1}{n}$
+
+		So for $p \geq 0.9$, this is $n \geq 10$
 
 	\item[8.4]
 		
