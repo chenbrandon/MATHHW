@@ -162,9 +162,37 @@
 
 	\item[11] If $b = 1 + 8i, a = 2-4i$, find Gaussian integers $q,r$ so that $b = aq + r, N(r) \leq \frac{1}{2} N(a)$. There are two correct answers.
 
+		$b = 1 + 8i, N(b) = 65$
+
+		$a = 2 - 4i, N(a) = 20$
+
+		Need $b = aq + r$, for $N(r) \leq \frac{1}{2} N(a) = 10$
+
+		So find $\frac{1+8}{2-4i}$
+
+		Multiply top and bottom by conjugate of $2-4i$ to clear denominator of $i$
+
+		$\frac{(1+8i)(2+4i)}{(2-4i)(2+4i)} = \frac{(1+8i)(2-4i)}{20}$
+
+		$=\frac{-30+20i}{20} = -1.5 + i$
+
+		Since $1.5 \not \in \mathbb{Z}$, we need to round for approximation
+
+		Since it is exactly 0.5, we can either round up or down
+
+		These are $r = -1 + i, N(r) = 2$
+
+		and $r = -2 + i, N(r) = 5$
+
 	\item[12] Consider the polynomial $f(x) = x^2 + bx + 1$ in $\mathbb{F}_{11}[x]$, where $b\in \mathbb{F}_{11}$ is a fixed constant. Determine all $b$ (if any) so that the qudratic is reducible. In the reducible cases, factor the quadratic.
 
 	\item[13] Is $f(x) = x^2 + 1$ irreducible in $\mathbb{F}_{101}[x]$? Explain
+
+		We know by theorem 16.15 that for $p \equiv 3$ mod 4, then $x^2 + 1$ factors nontrivially in $\mathbb{F}_p$
+
+		We also know by theorem 16.16 that for $p \equiv 1$ most 4, then $x^2 + 1$ is irreducible in $\mathbb{F}_p$
+
+		Then for $101 \equiv 1$ mod 4, $x^2 + 1$ is irreducible in $\mathbb{F}_{101}[x]$
 
 	\item[14] Prove from scratch that the elements of third smallest norm in $\mathbb{Z}[i]$ are irreducible and list all such elements.
 
