@@ -347,9 +347,35 @@
 
 		a) List all nonzero elements of $\mathbb{F}_{13}$ that are squares. List elements as numbers in the set $\{0,1,...12\}$
 
+		The squares are	$1, 3, 4, 9, 10, 12$
+
 		b) Determine if the polynomial $x^2 + x + 6$ is irreducible in $\mathbb{F}_{13}[x]$. If so, explain. If not, full factor as a product of irreducibles.
 
+		If it is irreducible, has no degree 1 factors, has no roots
+
+		Plug in $x = 0,1,2..12$
+
+		$x =4 \rightarrow 4^2 + 4 + 6 = 26 = 0$ in the ring
+
+		Then $x^2+x+6$ has a degree one factor, $x-4 = x+9$
+
+		And for $x = 8$, it is a root, so other factor is $x-8 = x+5$
+
+		So $x^2 + x + 6 = (x+5)(x+9)$
+
 		c) Determine whether the polynomial $x^2 + x + 8$ is irreducible in $\mathbb{F}_{13}[x]$. If so explain. If not, fully factor as a product of irreducibles.
+
+		irreducible if no degree 1 factorsm which means no roots
+
+		Plug in $x = 0,1,2..,12$
+
+		All of them are non zero
+
+		Then $x^2 + x + 8$ has no roots in the ring
+
+		Then it has no degree 1 factors.
+
+		Then $x^2 + x + 8$ is irreducible.
 
 	\item[10] In this quesiton, we work in the Gaussian integers $\mathbb{Z}[i]$  with the norm $N(a+bi) = a^2 + b^2$
 
