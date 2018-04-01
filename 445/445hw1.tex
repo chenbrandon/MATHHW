@@ -32,6 +32,8 @@
 
 		Then by theorem 4.30, we know there exists a unique line $\ell$ that is perpenedicular to $\lines{AB}$ through point $M$
 
+		So $\ell$ goes through the bisector $M$ and is perpendicular to $\lines{AB}$, so $\ell$ is the unique perpendicular bisector of $\segment{AB}$
+
 \item[7D]
 
 	Prove Theorem 7.10 (Existence and uniqueness of a reflected point)
@@ -54,7 +56,9 @@
 
 		$m$ is perpendicular to $\ell$ through point $P$
 
-		Then for the segment $\segment{AA'}$, it has midpoint $P$, and has line $\ell$ perpendicular to $\segment{AA'}$
+		Then for the segment $\segment{AA'}$, it has midpoint $P$, and has line $\ell$ perpendicular to $\segment{AA'}$ through the midpoint $P$
+
+		Then $\ell$ is the unique perpendicular bisector of $\segment{AA'}$
 
 \item[7E]
 
@@ -64,7 +68,7 @@
 
 		a) If $C$ is a closest point to $P$ in $S$, then $C' \in S$ is also a closest point to $P$ if and only if $PC' = PC$
 
-		b) If $C$ is a point in $S$ such that $PX > PC$ for every point $X \in S$ other than $C$, then $C$ ius the unique closest point to $P$ in $S$.
+		b) If $C$ is a point in $S$ such that $PX > PC$ for every point $X \in S$ other than $C$, then $C$ is the unique closest point to $P$ in $S$.
 
 	prove a: 
 	
@@ -159,5 +163,53 @@
 	Prove theorem 7.14 (The closest point on a segment) [Hint: consider separately the cases in which $P\in \lines{AB}$ and $P\not\in \lines{AB}$, and divide the second case into two subcases depending on whether the foot of the perpendicular from $P$ to $\lines{AB}$ does or does not lie in $\segment{AB}$].
 
 	Theorem 7.14: Suppose $\lines{AB}$ is a segment and $P$ is any point. Then there is a unique closest point to $P$ in $\lines{AB}$
+
+	
+	$\segment{AB}$ is a segment formed by two distinct points $A,B$
+	
+	$P$ is any point. 
+
+	Case: $P$ on $\segment{AB}$
+
+	Then the closest point to $P$ on $\segment{AB}$ is itself
+
+	Case: $P$ on $\lines{AB}$, not on $\segment{AB}$
+
+	Then either $P * A * B$, or $A * B * P$
+
+	If $P * A * B$, then there exists a coordinate function $f$ such that $f(P) = 0, f(A) > 0$
+
+	Claim: $A$ is a closest point for $P$ on $\segment{AB}$
+	
+	For $X \in \segment{AB}$, $A * X * B$. 
+
+	So $AP = f(A)$, and $AX = f(X)$
+
+	Since $A * X * B$, then $f(A) \leq f(X)$ for all $X \in \segment{AB}$, so $A$ is a closest point
+
+	Claim: $A$ is the unique closest point.
+
+	$A \neq X$, so $f(A) < f(X)$ and $AP < XP$ for all $X \neq A \in \segment{AB}$
+
+	So by lemma 7.12b, $A$ is the unique closest point.
+
+	Similarly, if $A * B * P$, we can show that $B$ is the unique closest point.
+
+	Case: $P$ not on $\lines{AB}$
+
+	By theorem 7.1, we can construct a line $m$ perpendicular to $\lines{AB}$ perpendicular to $\ell$ through point $P$
+
+	Let $F$ be the point of intersection of lines $m, \ell$
+
+	If $F \in \segment{AB}$, then by theorem 7.13a, $F$ is the unique closest point to $P$ on $\segment{AB}$
+
+	If $F \not \in \segment{AB}$, then either $F * A * B$ or $A * B * F$. Use the coordinate function $f$ as defined in previous case.
+
+	If $F * A * B$, then by theorem 7.13b, for $X \in \segment{AB}, X \neq A$, we have $XP > AP$
+
+	Then by lemma 7.12b, $A$ must be the unique closest point to $P$ on $\segment{AB}$
+
+	If $A * B * F$, we can show that for $X \neq B$, $XP > BP$, so that $B$ is the unique closest point to $P$ on $\segment{AB}$
+
 \end{itemize}
 \end{document}
