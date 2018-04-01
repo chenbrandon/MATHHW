@@ -24,11 +24,37 @@
 
 	Theorem 7.7: Every segment has a unique perpendicular bisector
 
+	Let $\segment{AB}$ be the segment formed by two distinct points $A,B$.
+
+		We know there exists a midpoint $M$ on $\segment{AB}$
+
+		Let $\lines{AB}$ be the line containing segment $\segment{AB}$
+
+		Then by theorem 4.30, we know there exists a unique line $\ell$ that is perpenedicular to $\lines{AB}$ through point $M$
+
 \item[7D]
 
 	Prove Theorem 7.10 (Existence and uniqueness of a reflected point)
 
-	Theorem 7.10: Let $\ell$ be a line and let $A$ be a point not on $\ell$. Then there is a unique point $A'$, called the reflection of $A$ across $\ell$, such that $\ell$ is hte perpendicular bisector of $\segment{AA'}$.
+	Theorem 7.10: Let $\ell$ be a line and let $A$ be a point not on $\ell$. Then there is a unique point $A'$, called the reflection of $A$ across $\ell$, such that $\ell$ is the perpendicular bisector of $\segment{AA'}$.
+
+	By theorem 7.1, taking point $A$ not on $\ell$, we can construct a line $m$ through point $A$ perpendicular to $\ell$
+
+	$m, \ell$ perpendicular, intersect at a point, call it $P$
+
+		$m$ is a line, so there exists a coordinate function $f$ such that $f(A) = 0$, $f(p) > 0$
+
+		Then $AP = |f(p) - f(a)| = f(p)$
+
+		Let $A'$ be the point on the opposite side of $\ell$ such that $A' = f^{-1} (2p)$
+
+		Then $A'P = |f(2p) - f(p)| = f(p) = AP$
+
+		This $A'$ is unique by bijectivity of coordinate function $f$
+
+		$m$ is perpendicular to $\ell$ through point $P$
+
+		Then for the segment $\segment{AA'}$, it has midpoint $P$, and has line $\ell$ perpendicular to $\segment{AA'}$
 
 \item[7E]
 
@@ -39,6 +65,26 @@
 		a) If $C$ is a closest point to $P$ in $S$, then $C' \in S$ is also a closest point to $P$ if and only if $PC' = PC$
 
 		b) If $C$ is a point in $S$ such that $PX > PC$ for every point $X \in S$ other than $C$, then $C$ ius the unique closest point to $P$ in $S$.
+
+	prove a: 
+	
+	Forwards: Assume $C$ and $C'$ are both closest points to $P$ in $S$. 
+		
+	$C$ is a closest point, and $C'$ is another point in $S$, so we have that $PC \leq PC'$
+
+	$C'$ is a closest point, and $C$ is another point in $S$, so we have that $PC' \leq PC$
+
+	Then $PC = PC'$
+
+	Backwards: Assume $C$ is a closest point. Assume $PC' = PC$ 
+
+	By definition of closest point, $PC \leq PX$ for all $X \in S$ 
+
+	and $PC' = PC$
+
+	So $PC' \leq PX$ for all $X \in S$
+
+	So $C'$ is also a closest point to $P$ in $S$
 
 \item[7F]
 
@@ -52,7 +98,7 @@
 
 \item[7G]
 
-	Prove theorem 7.14 (The lcosest point on a segment) [Hint: consider separately the cases in which $P\in \lines{AB}$ and $P\not\in \lines{AB}$, and divide the second case into two subcases depending on whether the foot of the perpendicular from $P$ to $\lines{AB}$ does or does not lie in $\segment{AB}$].
+	Prove theorem 7.14 (The closest point on a segment) [Hint: consider separately the cases in which $P\in \lines{AB}$ and $P\not\in \lines{AB}$, and divide the second case into two subcases depending on whether the foot of the perpendicular from $P$ to $\lines{AB}$ does or does not lie in $\segment{AB}$].
 
 	Theorem 7.14: Suppose $\lines{AB}$ is a segment and $P$ is any point. Then there is a unique closest point to $P$ in $\lines{AB}$
 \end{itemize}
