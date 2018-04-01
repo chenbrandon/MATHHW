@@ -86,6 +86,24 @@
 
 	So $C'$ is also a closest point to $P$ in $S$
 
+	prove b: 
+
+	By contradiction
+	
+	Assume $C$ is a point in $S$, $PX > PC$ for every point $X\in S$ other than $C$
+
+	Assume $C$ is not the unique closest point to $P$ in $S$
+
+	$C$ is not unique closest, then there exists another closest point, $C'$
+
+	Then by part a, $PC = PC'$
+
+	But this contradicts that $PX > PC$ for every point $X \in S$ other than $C$
+
+	In particular, that $PC' > PC$
+
+	Then $C$ must be the unique cloest point to $P$ in $S$
+
 \item[7F]
 
 	Prove Theorem 7.13 (The closest point on a line)
@@ -95,6 +113,34 @@
 	a) $F$ is the unique closest point to $P$ on $\ell$
 
 	b) If $A, B$ are points on $\ell$ such that $F * A * B$, then $PB > PA$
+
+	prove a:
+
+	$\ell$ is a line, $P$ not on $\ell$, $F$ is hte foot of the perpendicular form $P$ to $\ell$
+
+	Let $A$ be a point on $\ell$ not equal to $F$
+
+	Then $\Delta PFA$ is a right triangle with measure $\angle PFA = 90$
+
+	Then by corrolary 5.15, since every triangle must have two acute angles, angles $\angle FAP, \angle FPA$ must both be acute.
+
+	So $\angle PFA > \angle FAP$ and $\angle PFA > \angle FPA$
+
+	So by Theorem 5.16, scalene inequality, $\segment{PA}$ is the longest side of the triangle.
+
+	So for any point $A$ on $\ell$ not equal to $F$, the distance $FP < AP$
+
+	So $F$ is a closest point to $P$ on $\ell$
+
+	Show that $F$ is the unique cloest point to $P$ on $\ell$
+
+	$FP < AP$ for all $A$ on $\ell$ not equal to $F$
+
+	So by Lemma 7.12b, $F$ is the unique closest point to $P$ on $\ell$
+
+	prove b:
+
+
 
 \item[7G]
 
