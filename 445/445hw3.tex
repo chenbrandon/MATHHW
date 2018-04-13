@@ -23,6 +23,53 @@
 		
 		Prove theorem 11.10 (The area of a triangle) [Be careful: you have to prove that the area formula holds no matter which base is chosen. There are several cases to consider, dpeending on whether the altitude meets hte base at an interior point, at a vertex, or not at all.]
 
+		Let $\Delta ABC$ be a triangle.
+
+		Let $\segment{BC}$ be the base, with length $b$
+
+		$\segment{BC}$ is on line $\lines{BC}$, so drop a perpendicular from $A$ to $\lines{BC}$
+
+		Call this the height of $\Delta ABC$, $h$, and label the point of intersection $F$
+
+		Case: $F = B$ or $F = C$
+
+		Then $\Delta ABC$ is a right triangle, and $\alpha(\Delta ABC) = \frac{1}{2}b*h$, by lemma 11.9
+
+		Case: $F \in \segment{BC}$
+
+		Then $B*F*C$, and $\angle BFA, \angle AFC$ are right.
+
+		This forms right triangles $\Delta ABF, \Delta AFC$
+
+		Where $BF = BC - FC$
+
+		Then by lemma 11.9, $\alpha(\Delta ABF) = \frac{1}{2}(BC-FC)*h$
+
+		And $\alpha(\Delta AFC) = \frac{1}{2}(FC)*h$
+
+		Then since $\segment{AF}$ is a chord of $\Delta ABC$, then $\alpha(\Delta ABC) = \alpha(\Delta ABF) + \alpha(\Delta ACF)$
+
+		$\alpha(\Delta ABC) = \frac{1}{2}(BC-FC)*h + \frac{1}{2}(FC)*h = \frac{1}{2}BC*h$
+
+		Case: $F$ is outside of $\segment{BC}$
+
+		$\angle AFC$ is a right angle, by construction of perpendicular segment $\segment{AF}$
+
+		Then $\Delta AFC$ is a right triangle with base $\segment{FC}$. 
+
+		We know $FC = FB + BC$
+		
+		By lemma 11.9, $\Delta AFC$ has area $\alpha(\frac{1}{2}[FB + BC]*h$
+
+		$\Delta AFB$ is also a right triangle, with base $\segment{FB}$
+
+		Then by lemma 11.9, $\alpha(\Delta AFB) = \frac{1}{2}[BC]*h$
+
+		Since $\segment{AB}$ is a chord in $\Delta AFC$, then $\alpha(\Delta AFC) = \alpha(\Delta AFB) + \alpha(\Delta ABC)$
+
+		Then $\frac{1}{2}[FB + BC]*h - \frac{1}{2}[FB]*h = \alpha(\Delta ABC)$
+
+		Then $\alpha(\Delta ABC) = \frac{1}{2}BC*h$
 	\item[11B]
 
 		Prove Corollary 11.11 (The triangle sliding theorem)
