@@ -1,0 +1,80 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{mathrsfs}
+\usepackage[margin=1in]{geometry}
+
+\newcommand{\ray}[1]{\overrightarrow{#1}}
+\newcommand{\lines}[1]{\overleftrightarrow{#1}}
+\newcommand{\segment}[1]{\overline{#1}}
+
+\begin{document}
+
+\noindent Brandon Chen
+
+\noindent MATH 445 HW 3
+
+\noindent 11: A, B, C, D, E
+
+\begin{itemize}
+
+	\item[11A]
+		
+		Prove theorem 11.10 (The area of a triangle) [Be careful: you have to prove that the area formula holds no matter which base is chosen. There are several cases to consider, dpeending on whether the altitude meets hte base at an interior point, at a vertex, or not at all.]
+
+	\item[11B]
+
+		Prove Corollary 11.11 (The triangle sliding theorem)
+
+	\item[11C]
+
+		Prove Corollary 11.12 (The triangle area proportion theorem)
+
+	\item[11D]
+
+		Prove Theorem 11.13 (The area of a trapezoid) [Hint: Use a diagonal to decompose the trapezoid into triangles]
+
+
+
+	\item[11E]
+
+		Suppose $ABCD$ is a parallelogram and $E,F,G,H$ are points satisfying the hypotheses of Lemma 11.3 and in addition suppose that the point $X$ where $\segment{HF}$ meets $\segment{EG}$ lies on the diagonal $\segment{AC}$. What is the relationship between $\alpha(EBFX)$ and $\alpha(GDHX)$ Prove your answer is correct.
+
+		The relationship is that the areas are the same.
+
+		$ABCD$ is a parallelogram, so $AD = BC, AB = DC$
+
+		So we can form triangles $\Delta ADC, \Delta ABC$
+
+		By theorem 10.25a, $\Delta ADC, \Delta ABC$ must be congruent.
+
+		Since $\segment{AC}$ is a chord in $ABCD$, $\alpha(ABCD) = \alpha(ADC) + \alpha(ABC)$
+
+		For triangle $\Delta ADC$, since $\segment{HX}$ is a chord, $\alpha(ADC) = \alpha(AXH) + \alpha(HXCD)$
+
+		And since $\segmenet{XG}$ is a chord, then $\alpha(HXCD) = \alpha(HXGD) + \alpha(XFGC)$
+
+		So $\alpha(ADC) = \alpha(AXH) + \alpha(HXGD) + \alpha(XFGC)$
+
+		Similarly, $\alpha(ABC) = \alpha(AEX) + \alpha(EBFX) + \alpha(XFC)$
+
+		And we know $\Delta ADC \cong \Delta ABC$, so $\alpha(ADC) = \alpha(ABC)$
+
+		So $\alpha(AXH) + \alpha(HXGD) + \alpha(XFGC) = \alpha(AEX) + \alpha(EBFX) + \alpha(XFC)$
+
+		Since points $E,F,G,H$ satisfy lemma 11.3, then $AEXH, EBFX, XFCG, HXGD$ are all parallelograms
+
+		For parallelogram $AEXH$, there is a diagonal segment $\segment{AX}$ forming triangles $\Delta AEX, \Delta AXH$, so by theorem 10.25a, $\Delta AEX, \Delta AXH$ are congruent.
+
+		Using a similar argument for parallelogram $XFCG$ for triangles $\Delta XFC, \Delta XCG$, they are congruent.
+
+		So $\alpha(AEX) = \alpha(AXH)$
+
+		And $\alpha(XFC) = \alpha(XCG)$
+
+		Since $\alpha(AXH) + \alpha(HXGD) + \alpha(XFGC) = \alpha(AEX) + \alpha(EBFX) + \alpha(XFC)$,
+
+		then $\alpha(HXGD) = \alpha(EBFX)$
+\end{itemize}
+\end{document}
