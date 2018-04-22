@@ -25,11 +25,73 @@
 
 	\item[12A]
 
+		Prove theorem 12.5 (The SSS similarity theorem). [Hint: Use the similar triangle construction theorem to construct triangle $\Delta D'E'F'$ that is similar to $\Delta ABC$, but with $\segment{D'E'} \cong \segment{DE}$. Then use the hypothesis and a little algebra to show that $\Delta D'E'F' \cong \Delta DEF$
+
+	Theorem 12.5: If $\Delta ABC$ and $\Delta DEF$ are triangles such that $\frac{AB}{DE} = \frac{AC}{DF} = \frac{BC}{EF}$, then $\Delta ABC ~ \Delta DEF$
+
+	By theorem 12.4, we can construct a triangle $\Delta D'E'F'$ similar to $\Delta ABC$ with side length $D'E' \cong DE$. 
+
+	Then by construction of similar triangle, $\frac{AB}{D'E'} = \frac{BC}{E'F'} = \frac{BC}{E'F'}$
+
+	By transitive property of similarity, $\Delta DEF ~ \Delta D'E'F'$
+
+	Then by definition of similar triangle, $\frac{DE}{D'E'} = \frac{D'F'}{D'F'} = \frac{E'F'}{E'F'}$
+
+	But we know that $D'E' = DE$
+
+	So $DE = D'E', D'F' = D'F', E'F' = E'F'$
+
+	Then $\frac{AB}{DE} = \frac{AC}{DF} = \frac{BC}{EF}$
+
 	\item[12D]
+
+		CONVERSE TO THE ANGLE BISECTOR PROPORTION THEOREM: Suppose $\Delta ABC$ is a triangle and $D$ is a point in the interior of $\segment{BC}$ such that $\frac{BD}{DC} = \frac{AD}{AC}$. Prove that $\ray{AD}$ is the bisector of $\angle BAC$
+
+
 
 	\item[12E]
 
+		Prove that the three midsegments of a triangle yield an admissible decomposition of the triangle into four congruent triangles, each of which is similar to the original one and has one quarter the area.
+
+		Construct a triangle $\Delta ABC$
+
+		Let $D$ be the midpoint of $\segment{AB}$
+
+		Let $E$ be the midpoint of $\segment{BC}$
+
+		Let $F$ be the midpoint of $\segment{AC}$
+
+		$\frac{AD}{AB} = \frac{1}{2} = \frac{AF}{AC}$
+
+		For triangle $\Delta ADF$, it has angle $\angle BAC \cong \angle DAF$
+
+		So by theorem 12.6, SAS similarity, $\Delta ADF ~ \Delta ABC$
+
+		Using a similar argument for $\Delta DBE, \Delta EFC$, we find that
+
+		$\Delta DBE ~ \Delta ABC$, and $\Delta EFC ~ \Delta ABC$
+
+		So $\Delta ADF ~ \Delta DBE ~ \Delta EFC$
+
+		So by definition of similar triangles $\frac{AD}{DB} = \frac{AF}{DE} = \frac{DF}{BE}$
+
+		Since length $AD = DB$, then $AF = DE$ and $DF = BE$
+
+		So by SSS congruence, $\Delta ADF \cong \Delta DBE$
+
+		Similarly, we show that $\Delta EFC \cong \Delta ADF \cong DBE$
+
+		For triangle $\Delta DEF$, it is formed by shared side lengths with the other triangles.
+
+		We get that $DF \cong DF$, $DE \cong DE \cong AF$, and $FE \cong FE \cong AD$
+
+		Then $\Delta DEF \cong \Delta ADF \cong DBE \cong EFC$
+
+		And $\Delta DEF ~ \Delta ADF ~ \Delta DBE ~ \Delta EFC ~ \Delta ABC$
+
 	\item[13A]
+
+
 
 	\item[13C]
 
