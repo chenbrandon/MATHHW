@@ -91,9 +91,79 @@
 
 	\item[13A]
 
+		Use the idea suggested by figure 13.13 to give a proof of the pythagorean theorem. [Hint: bacuse the only figure given to you by the hypothesis is an arbitrary right triangle, first you have to explain how a figure like the one in the diagram can be constructed and justify any claims you make about relationships that the diagram suggests.] 
 
+		Construct a right triangle $\Delta ABC$ with side lengths $AB = a, BC = b, AC = c$ and let side length $AC = c$ be the hypotenuse.
+
+		On $\lines{BC}$, take point $D$ such that $BD = a + b$
+
+		Through point $D$, there exists a line $\ell$ parallel to $\segment{AB}$, take point $E$ on $\ell$ such that $DE = b$, $E$ on the same half plane as $A$
+
+		Then $\angle CDE = 90$, is right
+
+		And $\Delta CDE$ is a triangle with $CD = a = AB, \angle CDE = \angle ABC, DE = b = BC$
+
+		So by SAS congruence, $\Delta CDE \cong \Delta ABC$
+
+		So $CE = AC = c$
+
+		$\angle BCA, \angle ACE, \angle ECD$ form a linear triple, so $\angle BCA + \angle ACE + \angle ECD = 180$
+
+		We know that $\angle ECD \cong \angle BAC$
+
+		So $\angle BCA + \angle ACE + \angle BAC$
+
+		So $\angle ACE \cong \angle ABC$, is right angle.
+
+		So for $\Delta ACE$, $AC = c = CE$, and $\angle ACE = 90$
+
+		$\segment{AB} \parallel \segment{DE}$ by construction, 
+
+		So points $ABDE$ form a trapezoid.
+
+		Let $\segment{AB}, \segment{ED}$ be the bases of the trapezoid.
+
+		then $ABDE$ has height $a + b$ and bases with lengths $a, b$
+
+		Then $ABDE$ has area $\frac{1}{2}[a + b] * [a+b] = \frac{a^2 + b^2 + 2ab}{2}$
+
+		$\Delta ABC, \Delta CDE, \Delta ACE$ are an admissible decomposition of $ABDE$
+
+		So the area $\alpha(ABDE)$ is equal to $\alpha(ABC) + \alpha(CDE) + \alpha(ACE)$
+
+		For right triangle $\Delta ABC$, let $\segment{BC} = b$ be the base, and the height be $\segment{AB} = a$, then it has area $\frac{1}{2}ab$
+
+		And since $\Delta ABC \cong \Delta CDE$, then $\alpha(CDE) = \frac{1}{2}ab$
+
+		For right triangle $\Delta ACE$, let side $\segment{AC}$ be the base, and let $\segment{CE}$ with s, so it has area $\frac{1}{2}c^2$
+
+		Then $\frac{a^2 + b^2 + 2ab}{2} = \frac{1}{2}ab + \frac{1}{2}ab + \frac{1}{2}c^2$
+
+		Then $a^2 + b^2 = c^2$
 
 	\item[13C]
+
+		Prove theorem 13.2 (the converse to the pythagorean theorem). [Hint: Construct a right triangle whose legs have lengths $a,b$ and show that it is congruent to $\Delta ABC$.]
+
+		Theorem 13.2: Suppose $\Delta ABC$ is a triangle with side lengths $a,b,c$. If $a^2 + b^2 = c^2$, then $\Delta ABC$ is a right triangle, and its hypotenuse is the side of length $c$
+
+		By contradiction, assume $\Delta ABC$ is a triangle with side lengths $a,b,c$ and $a^2 + b^2 = c^2$, but $\Delta ABC$ not a right triangle
+
+		Construct another triangle $\Delta PQR$ with $PQ = a, QR = b, \angle Q$ is a right angle
+
+		By pythagorean theorem, $(PR)^2 = a^2 + b^2$
+
+		We know by hypothesis that $a^2 + b^2 = c^2$
+
+		So $PR^2 = c^2$, and $PR = c$
+
+		So $PR = c = AC$, so by SSS congruence, $\Delta ABC = \Delta PQR$
+
+		Then $\angle PQR \cong \angle ABC = 90$
+
+		But this contradicts that $\Delta ABC$ is not a right triangle.
+
+		Then $\Delta ABC$ must be a right triangle, with hypotenuse $AC = c$
 
 \end{itemize}
 \end{document}
