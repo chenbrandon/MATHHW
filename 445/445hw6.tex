@@ -1,0 +1,124 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{mathrsfs}
+\usepackage[margin=1in]{geometry}
+
+\newcommand{\ray}[1]{\overrightarrow{#1}}
+\newcommand{\lines}[1]{\overleftrightarrow{#1}}
+\newcommand{\segment}[1]{\overline{#1}}
+
+\begin{document}
+
+\noindent Brandon Chen
+
+\noindent MATH 445 HW 5
+
+\noindent Due Friday 5/11/18
+
+\noindent 14 C,D
+
+\noindent 15 A,C
+
+\begin{itemize}
+
+	\item[14C]
+
+		Suppose that $\ell$ is a line, $C$ and $D$ are points on opposite sides of $\ell$, and $r = CD$. Prove that $\mathscr{C}(C,R)$ intersects $\ell$ in exactly two points.
+
+		Draw the segment $\segment{CD}$
+
+		Since $C,D$ on opposite sides of $\ell$, they must intersect at a point, call it $P$, with $C * P * D$
+
+		$P$ on $\segment{CD}$, with $C * P * D$, so $CP < CD$
+
+		Then $P$ must be on the interior of $\mathscr{C}(C,r)$
+
+		So by theorem 14.6, since $\ell$ contains point $P$ on the interior of the circle, $\ell$ is a secant line for $\mathscr{C}$ and thus there are exactly two points where $\ell$ intersects $\mathscr{C}$
+
+	\item[14D]
+
+		Suppose that $A,B$ are distinct points and $r = AB$. Prove that $C = \mathscr{C}(A,R)$ and $D = \mathscr{C}(B,r)$ intersect. 
+
+		We know that $AB = r$
+
+		Then for circle $D = \mathscr{C}(B,r)$, it contains point $A$
+
+		The distance from the point $A$ to itself is 0, which is strictly less than the radius of $C$, $r$
+
+		Then by definition of interior point, $A$ is an interior point of $C$ on the circle $D$
+
+		Draw the line $\lines{AB}$
+
+		Then take the point $E$ on the line $\lines{AB}$ such that $EB = r$, with $A * B * E$
+
+		Then $AE = 2r$
+
+		Then by definition of exterior point, $E$ is an exterior point of $C$ on the circle $D$
+
+		Then by theorem 14.10, $D$ and $C$ intersect at exactly two points.
+
+	\item[15A]
+
+		Prove that a circular region is a convex set. 
+
+		To show that a circular region is convex, we need to show that given any two points $A, B$ in the circular region, any point $P$ between them are also in the set.
+
+		There are three cases: 
+
+		Case : Points $A,B$ are on the boundary of the region.
+
+		Suppose that we are given 2 points $A,B$
+
+		Draw the triangle $\Delta OAB$
+
+		Since $A,B$ are on the boundary, the distances $OA = OB = r$
+
+		Then $\Delta OAB$ is isosceles, and $\angle OAB = \angle OBA$, both acute
+
+		We need to show that for any point $P$ between $A,B$ on the segment $\segment{AB}$, $OP < r$
+
+		Take a point $P$ on $\segment{AB}$
+
+		Without loss of generality, assume that angle $\angle OPB$ is not acute (it is either right or obtuse)
+
+		Then since $\angle OBA$ is acute, $\angle OPB > \angle OBA$
+
+		Then by scalene inequality, $OP < OB$
+
+		Then $OP < r$, so $P$ must be within the circular region.
+
+		Case : Points $A,B$ both in interior of circular region.
+
+		Draw line $\lines{AB}$, it contains point $A$ in the interior of the circular region, so $\lines{AB}$ intersects the circle at exactly two points, call them $A', B'$
+
+		Then by the previous case, all points in between $A', B'$ on the segment $\segment{A'B'}$ are in the circular region.
+
+		Then since $\segment{AB}$ is a subset of $\segment{A'B'}$, then all points between $A,B$ on $\segment{AB}$ are also in the circular region.
+
+		Case : Point $A$ on boundary of the circular region, $B$ on interior of circular region.
+
+		As in the previous case, draw line $\lines{AB}$, it intersects the cicle at two points, one of them is $A$, call the other $B'$
+
+		Then $A * B * B'$
+
+		Then by the first case, all points between $A, B'$ on the segment $\segment{AB'}$ are in the circular region.
+
+		Since $\segment{AB}$ is a subset of $\segment{AB'}$, then all points between $A,B$ on $\segment{AB}$ are also in the circular region.
+
+	\item[15C]
+	
+		Prove that the area of every sector of a circle of radius $r$ is $\frac{\pi r^2}{360}$ times the measure of the arc that determines it.
+
+		Given any real number $x$ such that $0 < x < 360$, let $a(x)$ denote the area of any sector of $\mathscr{C}$ whose measure is $x$. It suffices to show that $a(x) = \pi r^2 \frac{x}{180}$ whenever $ 0 < x \leq 180$
+
+		Step 1: specific case, let the arc measure be $x = 180$
+
+		Then by property 1, since sectors with the same radius and measure have the same area, the area of the sector with arc measure $x = 180$ is $\frac{\pi r^2 }{2}$
+
+		Step 2: 
+
+
+\end{itemize}
+\end{document}
