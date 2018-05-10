@@ -15,110 +15,209 @@
 
 \noindent MATH 445 HW 5
 
-\noindent Due Friday 5/11/18
+\noindent Due Friday 5/3/18
 
-\noindent 14 C,D
-
-\noindent 15 A,C
+\noindent 13 C, G, H, K
 
 \begin{itemize}
 
-	\item[14C]
 
-		Suppose that $\ell$ is a line, $C$ and $D$ are points on opposite sides of $\ell$, and $r = CD$. Prove that $\mathscr{C}(C,R)$ intersects $\ell$ in exactly two points.
+	\item[13C]
 
-		Draw the segment $\segment{CD}$
+		Prove theorem 13.2 (the converse to the pythagorean theorem). [Hint: Construct a right triangle whose legs have lengths $a,b$ and show that it is congruent to $\Delta ABC$.]
 
-		Since $C,D$ on opposite sides of $\ell$, they must intersect at a point, call it $P$, with $C * P * D$
+		Theorem 13.2: Suppose $\Delta ABC$ is a triangle with side lengths $a,b,c$. If $a^2 + b^2 = c^2$, then $\Delta ABC$ is a right triangle, and its hypotenuse is the side of length $c$
 
-		$P$ on $\segment{CD}$, with $C * P * D$, so $CP < CD$
+		By contradiction, assume $\Delta ABC$ is a triangle with side lengths $a,b,c$ and $a^2 + b^2 = c^2$, but $\Delta ABC$ not a right triangle
 
-		Then $P$ must be on the interior of $\mathscr{C}(C,r)$
+		Construct another triangle $\Delta PQR$ with $PQ = a, QR = b, \angle Q$ is a right angle
 
-		So by theorem 14.6, since $\ell$ contains point $P$ on the interior of the circle, $\ell$ is a secant line for $\mathscr{C}$ and thus there are exactly two points where $\ell$ intersects $\mathscr{C}$
+		By pythagorean theorem, $(PR)^2 = a^2 + b^2$
 
-	\item[14D]
+		We know by hypothesis that $a^2 + b^2 = c^2$
 
-		Suppose that $A,B$ are distinct points and $r = AB$. Prove that $C = \mathscr{C}(A,R)$ and $D = \mathscr{C}(B,r)$ intersect. 
+		So $PR^2 = c^2$, and $PR = c$
 
-		We know that $AB = r$
+		So $PR = c = AC$, so by SSS congruence, $\Delta ABC = \Delta PQR$
 
-		Then for circle $D = \mathscr{C}(B,r)$, it contains point $A$
+		Then $\angle PQR \cong \angle ABC = 90$
 
-		The distance from the point $A$ to itself is 0, which is strictly less than the radius of $C$, $r$
+		But this contradicts that $\Delta ABC$ is not a right triangle.
 
-		Then by definition of interior point, $A$ is an interior point of $C$ on the circle $D$
+		Then $\Delta ABC$ must be a right triangle, with hypotenuse $AC = c$
 
-		Draw the line $\lines{AB}$
+	\item[13G]
 
-		Then take the point $E$ on the line $\lines{AB}$ such that $EB = r$, with $A * B * E$
+		Prove that the cosine function is bijective from $[0,180]$ to $[-1,1]$
 
-		Then $AE = 2r$
+		Show that cosine is injective:
 
-		Then by definition of exterior point, $E$ is an exterior point of $C$ on the circle $D$
+		By theorem 13.11, the cosine function is injective.
 
-		Then by theorem 14.10, $D$ and $C$ intersect at exactly two points.
+		Show that cosine is surjective:
 
-	\item[15A]
+		That is, given any $y$ in $[-,1,1]$, we can find $x \in [0,180]$ such that $cos(x) = y$
 
-		Prove that a circular region is a convex set. 
+		Case: $y \in \{-1, 0, 1\}$
 
-		To show that a circular region is convex, we need to show that given any two points $A, B$ in the circular region, any point $P$ between them are also in the set.
+		For $y = 0$, take $x = 0$. For $y = -1$, take $x = 180$. For $y = 1$, take $x = 1$
 
-		There are three cases: 
+		Case: $0 < y < 1$
 
-		Case : Points $A,B$ are on the boundary of the region.
+		We can construct a right triangle $\Delta ABC$ with hypotenuse $AB$, $m \angle ACB = 90$, and other side lengths $AC = 1, BC = x$
 
-		Suppose that we are given 2 points $A,B$
+		Then by pythagorean theorem, side length of hypotenuse is $AB = \sqrt{1 + x^2}$
 
-		Draw the triangle $\Delta OAB$
+		By definition of cosine, $cosine(\angle BAC) = \frac{BC}{AB}$
 
-		Since $A,B$ are on the boundary, the distances $OA = OB = r$
+		This is $cos(\angle BAC) = \frac{x}{\sqrt{1 +x^2}}$
 
-		Then $\Delta OAB$ is isosceles, and $\angle OAB = \angle OBA$, both acute
+		Then if we take $x = \frac{y}{\sqrt{1-y^2}}$, $cos)\angle BAC) = y$
 
-		We need to show that for any point $P$ between $A,B$ on the segment $\segment{AB}$, $OP < r$
+		Case: $-1 < y < 0$
 
-		Take a point $P$ on $\segment{AB}$
+		We know that $cos(y) = -cos(180 - y)$, by definition of cosine.
 
-		Without loss of generality, assume that angle $\angle OPB$ is not acute (it is either right or obtuse)
+		So we can find $0 < -y < 1$. By the previous case, we know there exists an $x$ in $[0,180]$ that satisfies $cos(x) = -y$
 
-		Then since $\angle OBA$ is acute, $\angle OPB > \angle OBA$
+		Then $cos(180 - x) = y$
 
-		Then by scalene inequality, $OP < OB$
+		So cosine is bijective.
 
-		Then $OP < r$, so $P$ must be within the circular region.
+	\item[13H]
 
-		Case : Points $A,B$ both in interior of circular region.
+	Prove theorem 13.14 (the law of sines). [Hint: it suffices to prove one of the stated equations. You will need to consider separately the cases in which both angles that appear in the chosen equation are acute, one is right, and one is obtuse].
 
-		Draw line $\lines{AB}$, it contains point $A$ in the interior of the circular region, so $\lines{AB}$ intersects the circle at exactly two points, call them $A', B'$
+	Theorem 13.14: Let $\Delta ABC$ be any triangle, and let $a,b,c$ denote the lengths of the sides opposite $A,B,C$, respectively, then $\frac{sin \angle A}{a} = \frac{sin \angle B}{b} = \frac{sin \angle C}{c}$
 
-		Then by the previous case, all points in between $A', B'$ on the segment $\segment{A'B'}$ are in the circular region.
+	case: $\Delta ABC$ is right. Without loss of generality, assume $\angle ACB$ is right.
 
-		Then since $\segment{AB}$ is a subset of $\segment{A'B'}$, then all points between $A,B$ on $\segment{AB}$ are also in the circular region.
+	By definition of sine, $sin(A) = \frac{a}{c}$ and $sin(B) = \frac{b}{c}$
 
-		Case : Point $A$ on boundary of the circular region, $B$ on interior of circular region.
+	Then $c = \frac{b}{sin(B)}$ and $c = \frac{a}{sin(A)}$
 
-		As in the previous case, draw line $\lines{AB}$, it intersects the cicle at two points, one of them is $A$, call the other $B'$
+	Then $\frac{b}{sin(B)} = \frac{a}{sin(A)}$
 
-		Then $A * B * B'$
+	We know that $\angle C$ is right, so $sin(C) = 1$
 
-		Then by the first case, all points between $A, B'$ on the segment $\segment{AB'}$ are in the circular region.
+	Then we can say that $sin(C) = \frac{c}{c}$
 
-		Since $\segment{AB}$ is a subset of $\segment{AB'}$, then all points between $A,B$ on $\segment{AB}$ are also in the circular region.
+	Then $c = \frac{c}{sin(C)} = \frac{b}{sin(B)} = \frac{a}{sin(A)}$
 
-	\item[15C]
+	This is the same as $\frac{sin(A)}{a} = \frac{sin(B)}{b} = \frac{sin(C)}{c}$
+
+	case: $\Delta ABC$ is acute. 
+
+	Let the base be $\segment{BC}$
+
+	Then take the altitude from $A$ to $\segment{BC}$, call it $h$, with foot $F$
+
+	For triangle $\Delta ABF$, it is a right triangle with right angle $\angle BFA$.
+
+	Then $sin(B) = \frac{AF}{AB} = \frac{h}{c}$
+
+	And for $\Delta AFC$, it is a right triangle with right angle $\angle CFA$
+
+	Then $sin(C) = \frac{AF}{AC} = \frac{h}{b}$
+
+	Then $bsin(C) = csin(B)$
+
+	Then $\frac{sin(C)}{c} = \frac{sin(B)}{b}$
+
+	Draw another altitude, from B to $\segment{AC}$, call it $h'$, and call the foot $F'$
+
+	Then for $\Delta BF'A$, it has right angle $\angle BF'A$
+
+	Then $sin(A) = \frac{h'}{c}$
+
+	And for $\Delta BF'C$, it has right angle $\angle BF'C$
+
+	Then $sin(C) = \frac{h'}{a}$
+
+	Then $asin(C) = csin(A)$
+
+	Then $\frac{sin(A)}{a} = \frac{sin(C)}{c}$
+
+	Then $\frac{sin(A)}{a} = \frac{sin(B)}{b} = \frac{sin(C)}{c}$
+
+	case: $\Delta ABC$ is obtuse. Without loss of generality, assume that $\angle ACB$ is obtuse.
+
+	Draw altitude from $C$ to $\segment{AB}$, call it $h$, and call the foot $F$
+
+	As in the previous cases, we can find that $sin(A) = \frac{h}{b}, sin(B) = \frac{h}{a}$
+
+	Then $\frac{sin(B)}{b} = \frac{sin(A)}{a}$
+
+	Draw another altitude, from $A$ to $\lines{BC}$, call it $h'$, and label the foot $F'$
+
+	We know that the foot $F'$ lies outside of the triangle. 
+
+	We have right triangles $\Delta CF'A$ and $\Delta BF'A$
+
+	$\angle BF'A = \angle CF'A = 90$
+
+	Then $sin(B) = \frac{h}{c}$
+
+	We know that $\angle C, \angle ACF'$ form a linear pair, so $\angle C + \angle ACF
+	 = 180$
+
+	Then by definition of sine, $sin(C) = sin(\angle ACF')$
+
+	$sin(C) = sin(\angle ACF') = \frac{h}{b}$
+
+	Then $\frac{sin(C)}{c} = \frac{sin(B)}{b} = \frac{sin(A)}{a}$
+
+	\item[13K]
+
+	Prove theorem 13.18 (Heron's formula). [Hint: One proof uses the formulas for $x,y,h$ that were derived in the proofo f Theorem 13.6; another one uses the law of cosines and pythagorean identity.
+
+	Theorem 13.18: Let $\Delta ABC$ be a triangle, and let $a,b,c$ denote that lengths of the sides opposite $A,B,C$, respectively. Then $\alpha(\Delta ABC) = \sqrt{s(s-a)(s-b)(s-c)}$ where $s = \frac{(a+b+c)}{2}$
+
+	Using the law of cosines, we get $a^2 + b^2 + c^2 + 2abcos(C)$
+
+	Then $cos(C) = \frac{a^2 + b^2 + c^2}{2ab}$
+
+	We by pythagorean identity that $sin^2 (C) = 1 - cos^2(C)$
+
+	Then $sin(C) = \sqrt{1-cos^2(C)}$
+
+	Then $sin(C) = \sqrt{1-(\frac{a^2+b^2+c^2}{2ab})^2}$
+
+	$sin(C) = \sqrt{\frac{(2ab)^2 - (a^2 + b^2 + c^2)}{(2ab)^2}}$
+
+	$sin(C) = \frac{\sqrt{4a^2b^2 - (a^2 + b^2 + c^2)}}{2ab}$
 	
-		Prove that the area of every sector of a circle of radius $r$ is $\frac{\pi r^2}{360}$ times the measure of the arc that determines it.
+	To find the area of the triangle, let the base be $BC = a$
 
-		Given any real number $x$ such that $0 < x < 360$, let $a(x)$ denote the area of any sector of $\mathscr{C}$ whose measure is $x$. It suffices to show that $a(x) = \pi r^2 \frac{x}{180}$ whenever $ 0 < x \leq 180$
+	Then draw the altitude from $A$ to $\segment{BC}$, call it $h$, with foot $F$
 
-		Step 1: specific case, let the arc measure be $x = 180$
+	In triangle $\Delta CFA$, it is a right triangle with right angle $\angle CFA$
 
-		Then by property 1, since sectors with the same radius and measure have the same area, the area of the sector with arc measure $x = 180$ is $\frac{\pi r^2 }{2}$
+	So $sin(C) = \frac{h}{b}$
 
-		Step 2: 
+	That is, $h = bsin(C)$
 
+	Then $\alpha(\Delta ABC) = \frac{1}{2} a*bsin(C)$
+
+	$\alpha(ABC)  =\frac{1}{2}a*b*\frac{\sqrt{4a^2b^2 - (a^2 + b^2 + c^2)}}{2ab}$
+
+	$=\frac{1}{4} \sqrt{(4a^2b^2 - (a^2 + b^2 + c^2)^2}$
+
+	Factor difference of two squares, $x = 2ab, y = a^2 + b^2 + c^2$
+
+	$=\frac{1}{4} \sqrt{(2ab - (a^2 + b^2 - c^2))(2a+(a^2 + b^2 - c^2))}$
+
+	Factor difference of two squares, $x = c, y = a-b$
+
+	$=\frac{1}{4}\sqrt{(c^2 - (a-b)^2)((a+b)^2 - c^2)}$
+
+	$=\sqrt{\frac{(c-(a-b))(c+(a-b))((a+b)-c)((a+b)+c)}{16}}$
+
+	$=\sqrt{\frac{a+b+c}{2}\frac{b+c-a}{2}\frac{a+c-b}{2}\frac{a+b-c}{2}}$
+
+	Let $s = \frac{a+b+c}{2}$
+
+	Then $\alpha(\Delta ABC) = \sqrt{s(s-a)(s-b)(s-c)}$
 
 \end{itemize}
 \end{document}
