@@ -1,0 +1,69 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{mathrsfs}
+\usepackage[margin=1in]{geometry}
+
+\newcommand{\ray}[1]{\overrightarrow{#1}}
+\newcommand{\lines}[1]{\overleftrightarrow{#1}}
+\newcommand{\segment}[1]{\overline{#1}}
+
+\begin{document}
+
+\noindent Brandon Chen
+
+\noindent In-Class Presentation
+
+\noindent Construction Problem 16.28
+
+\begin{itemize}
+
+	\item[16.28]
+
+		Let $\mathscr{C}$ be a circle, and $A$ be a point on the circle.
+
+		Draw the line $\lines{OA}$, and take point $P$ on $\mathscr{C}$ different from $A$
+
+		Take point $G$ on $\segment{OP}$ with $\frac{PO}{PG}$ equal to the golden ratio
+
+		Draw circle $\mathscr{D}$ with center $P$ containing point $G$.
+
+		Then by theorem 14.10, $\mathscr{D}$ contains an interior point in $\mathscr{C}$, so it must intersect at exactly two other points, call them $C,D$
+
+		Draw circle with center $C$ containing point $D$, call the other point of intersection $B$
+
+		Draw circle with center $D$ containing point $E$, call the other point of intersection $E$
+
+		Draw pentagon $ABCDE$
+
+		We know $\segment{PC} \cong \segment{PG} \cong \segment{PD}$, since both are radii of same circle $\mathscr{C}$
+
+		Similary $\segment{OP} \cong \segment{OC}$
+
+		We know $\frac{PO}{PC} = \frac{PO}{PG}$, then $\Delta POC$ is a golden triangle.
+
+		Then $\angle POC = 36$
+
+		Similarly, $\angle POD = 36$
+
+		Since $D,C$ on opposite sides of $\lines{OP}$, and by two circles theorem, $\angle POC, \angle POD$ are adjacent angles, so $\angle COD = 72$
+
+		$\Delta COD \cong \Delta BOC \cong \Delta DOE$ by SSS
+
+		Then $\angle BOC = \angle DOE = 72$
+
+		Apply linear triple theorem for angles $\angle AOB, \angle BOC, \angle POC$
+
+		Then $\angle AOB$ must be 72
+
+		Apply linear triple theorem for $\angle AOE, \angle EOD, \angle POD$, then $\angle AOE = 72$
+
+		Then by SAS, triangles $\Delta AOB, \Delta AOE$ are congruent to triangles $\Delta BOC, \Delta COD, \Delta DOE$
+
+		Then $AB = BC = CD = DE = EA$
+
+		Then $ABCDE$ is equilateral.
+
+\end{itemize}
+\end{document}
