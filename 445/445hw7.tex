@@ -1,0 +1,203 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{mathrsfs}
+\usepackage[margin=1in]{geometry}
+
+\newcommand{\ray}[1]{\overrightarrow{#1}}
+\newcommand{\lines}[1]{\overleftrightarrow{#1}}
+\newcommand{\segment}[1]{\overline{#1}}
+
+\begin{document}
+
+\noindent Brandon Chen
+
+\noindent MATH 445 HW 7
+
+\noindent Due Friday 5/18/18
+
+\noindent 16 A, E, K, N, P
+
+\begin{itemize}
+
+	\item[16A]
+
+		Construction Problem 16.5 (Perpendicular Bisector)
+		
+		Given a segment, construct its perpendicular bisector.
+
+		The given segment has end points, call them $A,B$
+
+		Draw a circle with radius $AB$ and center $A$, call it circle $\mathscr{A}$
+
+		Draw a circle with radius $AB$ and center $B$, call it circle $\mathscr{B}$
+
+		Take a point on the interior of the segment $\segment{AB}$, call it $P$
+
+		Then the circle $\mathscr{A}$ has point $P$ on its interior, and $\mathscr{B}$ has point $P$ on its interior
+
+		Then by theorem 14.10, $\mathscr{A}, \mathscr{B}$ must intersect at exactly two points, call them $C, D$
+
+		Since $C,D$ on $\mathscr{A}, \mathscr{B}$, which are circles with radius $AB$, then $AB = AC = BC = AD = BD$
+
+		Then by definition, $ACBD$ is a kite, it has diagonals $\segment{CD}, \segment{AB}$
+
+		Then by problem 9F, its diagonals are perpendicular and one of them bisects the other.
+
+	\item[16E]
+
+		Construction Problem 16.9 (Copying a Triangle to a Given Segment)
+
+		Given a triangle $\Delta ABC$, a segment $\segment{DE}$ congruent to $\segment{AB}$, and a side of $\lines{DE}$, construct a point $F$ on the given side such that $\Delta DEF \cong \Delta ABC$
+
+		Draw circle $\mathscr{D}$ with center $D$ and radius $AC$
+
+		Draw circle $\mathscr{E}$ with center $E$, radius $BC$
+
+		Then by two circles theorem, $\mathscr{E}$ intersects $\mathscr{D}$ at exactly two points on each side of $\lines{DE}$
+
+		Take the point of intersection on the side of $\lines{DE}$ given, call it $F$
+
+		Then draw triangle $\Delta DEF$
+
+		By hypothesis, we have that $\segment{DE} \cong \segment{AB}$
+
+		By construction, $DF$ has length $AC$
+
+		And $EF$ has length $BC$
+
+		Then by SSS, $\Delta DEF \cong \Delta ABC$
+
+	\item[16K]
+
+		Construction Problem 16.15 (Cutting Segment into $n$ Equal Parts)
+
+		Given a segment $\segment{AB}$ and an integer $n \geq 2$, construct points $C_1, ... , C_n \in Int \segment{AB}$ such that $A* C_1 * ... *C_{n-1} * B$ and $AC_1 = C_1C_2 = ... = C_{n-1}B$
+
+		We are given $\segment{AB}$
+
+		Draw a ray $\ray{r}$ from point $A$ such that the angle between $\ray{r}$ and $\segment{AB}$ is acute.
+
+		Choose a positive radius $m$
+
+/usr/bin/bash: kq: command not found
+
+		Draw line segment $\segment{P_n}{B}$
+
+		Draw line segments through points $P_i$ parallel to $\segment{P_n}{B}$, it intersects $\segment{AB}$ at a point, call it $C_i$
+
+		By construction of the circles of radius $i * m$, $A*P_1 * ... * P_n$
+
+		And since points $C_1 .. C_{n-1}$ are formed as an intersection of parallel lines, then $A*C_1 * .. C_{n-1} * B$
+
+		Show that $AC_1 = C_1C_2 = ... = C_{n-1}B$
+
+		We will show that each length is the same by examining the triangles formed by $A, P_i, C_i$
+
+		For $n = 1$, there will only be one triangle, then it will have only one side length $AB$, it is equal.
+
+		For $n > 2$, compare two consecutive triangles
+		
+		First, compare the first two: $\Delta AC_1P_1$ is a triangle, $\Delta AC_2P_2$ is a triangle
+
+		By construction of parallel segments $\segment{P_1}{C_1}$, $\segment{P_2}{C_2}$, $\angle AC_1P_1 \cong \angle AC_2P_2$ and $\angle AP_1C_1 \cong \angle AP_2C_2$
+
+		Then by AAA similarity, they are similar
+			
+		By construction, $AP_2 = 2*AP_1$
+
+		Then $AC_2 = 2 * AC_1$
+
+		We know that $AC_2 = AC_1 + C_1C_2$
+
+		Then $AC_1 = C_1C_2$
+
+		Assume that for $i$, $AC_i = AC_1 * i$,  $C_{i-2}C_{i-1} = C_{i-1}C_{i}$
+
+		Show that for $i+1$, $C_{i} = C{i+1}$
+
+		Distance $AP_{i+1}$ is $(i+1)*m$, by construction
+
+		Since $\segment{P_{i+1}C_{i+1}}$ is parallel to $\segment{P_1C_1}$, then $\Delta AC_1P_1 \sim AC_{i+1}P_{i+1}$
+
+		Then for $\frac{AP_{i+1}}{AP_{1}} = i+1$, it must be the case that $\frac{AC_{i+1}}{AC_1} = i+1$
+
+		Then $AC_{i+1}$ has length $AC_1 * (i + 1)$
+
+		By inductive hypothesis, $AC_i$ has length $AC_1 * i$
+
+		We know that $AC_{i+1} = AC_i + C_iC_{i+1}$
+
+		Then $C_iC_{i+1} = AC_1 = C_{i-1}C_{i}$
+
+		Then each segment is equal length
+
+	\item[16N]
+
+		Construction Problem 16.23 (Doubling a square)
+
+		Given a square, construct a new square whose area is twice that of the original one
+
+		We are given a square, it has length $l$
+
+		Construct a right triangle with 2 side lengths $AB = l, BC = l$
+
+		Then it has hypotenuse $AC = \sqrt{2}l$
+
+		Draw a circle with center $A$ and radius $2l$
+
+		It intersects the line $\lines{AB}$ on the same side as $B$ at one point, call it $D$
+
+		Draw a circle with center $C$ and radius $2l$
+
+		It intersects the line $\lines{BC}$ on the same side as $B$ at one point, call it $E$
+
+		By construction, $AD = 2l$, then $BD = l$
+
+		Similarly, $BE = l$
+
+		By 4 right angles theorem, $\angle ABC, \angle CBD, \angle DBE, \angle EBA$ are right
+
+		Then by SAS, $\Delta ABC \cong \Delta CBD \cong \Delta DBE \cong \Delta EBA$
+
+		Then $AC = CD = ED = AE = \sqrt{2}l$
+
+		Then $ACDE$ is a square with side length $\sqrt{2}l$
+
+		Then $ACDE$ has area $2l$
+
+	\item[16P]
+
+		Construction Problem 16.25 (Inscribed Circle)
+
+		Given a triangle, construct its inscribed circle.
+
+		We are given a triangle $\Delta ABC$
+
+		Draw lines bisecting $\angle ABC, \angle ACB$
+
+		They intersect at a point inside the triangle, call it $D$
+
+		From $D$, drop perpendiculars $DE \perp AB, DG \perp AC, DF \perp BC$
+
+		$\angle ABD = \angle CBD$, by construction of angle bisector $\lines{BD}$
+
+		By construction of perpendicular, $\angle BED = \angle BFD = 90$
+
+		Then by ASA, $\Delta EBD \cong \Delta FBD$
+
+		Then $DE = DF$
+
+		Similarly, we can show that $\Delta CGD \cong \Delta CDF$
+
+		Then $DG = DF$
+
+		Then $DE = DG = DF$
+
+		So if we draw a circle $\mathscr{C}$ with center $D$ and radius $DF$, it will contain three points $E,F,G$ on the triangle.
+
+		Then $\mathscr{C}$ is an inscribed circle in the triangle $\Delta ABC$.
+
+\end{itemize}
+\end{document}
